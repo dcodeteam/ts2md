@@ -1,9 +1,10 @@
 import * as ts from "typescript";
+
 import { ClassParseResult } from "./parsers/ClassParseResult";
-import { NodeParseResult } from "./parsers/NodeParseResult";
-import { InterfaceParseResult } from "./parsers/InterfaceParseResult";
-import { VariableListParseResult } from "./parsers/VariableListParseResult";
 import { FunctionParseResult } from "./parsers/FunctionParseResult";
+import { InterfaceParseResult } from "./parsers/InterfaceParseResult";
+import { NodeParseResult } from "./parsers/NodeParseResult";
+import { VariableListParseResult } from "./parsers/VariableListParseResult";
 
 export interface ParserResult {
   readonly nodes: Map<string, NodeParseResult>;

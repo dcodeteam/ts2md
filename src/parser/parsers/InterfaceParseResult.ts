@@ -1,4 +1,5 @@
 import * as ts from "typescript";
+
 import { NodeParseResult } from "./NodeParseResult";
 
 export class InterfaceParseResult extends NodeParseResult {

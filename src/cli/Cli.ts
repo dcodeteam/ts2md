@@ -1,5 +1,8 @@
-import * as commander from "commander";
+import * as fs from "fs";
 import * as path from "path";
+
+import * as commander from "commander";
+
 import { App } from "../app/App";
 
 export class Cli {
@@ -13,28 +16,25 @@ export class Cli {
 
     commander
       .version(version)
-      .option("--entry <entry>", "path to entry file")
-      .option("--project [path]", "path to tsconfig file");
+      .option("--out <out>", "path to output file")
+      .option("--entry <entry>", "path to entry file");
   }
 
   public bootstrap() {
     commander.parse(this.argv);
 
-    const { entry, project = "tsconfig.json" } = commander;
+    const { entry, out = "docs.json" } = commander;
 
     if (!entry) {
       throw new Error("Pass 'entry' file.");
     }
 
-    if (!project || typeof project !== "string") {
-      throw new Error("Invalid 'project' value.");
-    }
-
     const entryPath = path.join(this.cwd, entry);
-    const projectPath = path.join(this.cwd, project);
+    const outputPath = path.join(this.cwd, out);
 
-    const app = new App(entryPath, projectPath);
+    const app = new App(entryPath);
+    const docs = app.generateDocs();
 
-    app.generateJson();
+    fs.writeFileSync(outputPath, docs, "utf-8");
   }
 }

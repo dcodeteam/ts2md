@@ -11,7 +11,12 @@
   "repository": "https://github.com/dcodeteam/ts2md.git",
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "scripts": {
+    "ci": "yarn lint && yarn dts && yarn cover --ci && yarn build",
+    "all": "yarn lint --fix && yarn dts && yarn cover && yarn build",
+    "dts": "tsc --noEmit",
     "test": "jest --watch",
+    "cover": "jest --coverage",
+    "lint": "js-scripts lint",
     "start": "yarn build -w",
     "prebuild": "rimraf lib",
     "build": "tsc --project tsconfig.cjs.json"
