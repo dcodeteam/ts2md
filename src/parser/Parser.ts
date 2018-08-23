@@ -15,14 +15,9 @@ export class Parser {
 
   private readonly program: ts.Program;
 
-  public constructor(fileName: string, program?: ts.Program) {
+  public constructor(fileName: string, program: ts.Program) {
+    this.program = program;
     this.fileName = fileName;
-    this.program =
-      program ||
-      ts.createProgram([fileName], {
-        module: ts.ModuleKind.ESNext,
-        target: ts.ScriptTarget.ESNext
-      });
   }
 
   public parse(): ParserResult {
