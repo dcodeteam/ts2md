@@ -95,44 +95,6 @@ Object {
 }
 `;
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-members.ts 1`] = `
-Object {
-  "nodes": Map {
-    "ClassMembers" => ClassParseResult {
-      "constructors": Array [],
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "extendedClass": null,
-      "id": "ClassMembers",
-      "implementedInterfaces": Array [],
-      "methods": Array [],
-      "properties": Array [
-        PropertyParseResult {
-          "documentation": "",
-          "documentationTags": Array [],
-          "id": "a",
-          "type": "number",
-        },
-        PropertyParseResult {
-          "documentation": "",
-          "documentationTags": Array [],
-          "id": "b",
-          "type": "string | number",
-        },
-        PropertyParseResult {
-          "documentation": "",
-          "documentationTags": Array [],
-          "id": "c",
-          "type": "Promise<boolean>",
-        },
-      ],
-    },
-  },
-}
-`;
-
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-methods.ts 1`] = `
 Object {
   "nodes": Map {
@@ -236,6 +198,56 @@ Object {
       ],
       "methods": Array [],
       "properties": Array [],
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-properties.ts 1`] = `
+Object {
+  "nodes": Map {
+    "ClassProperties" => ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "ClassProperties",
+      "implementedInterfaces": Array [],
+      "methods": Array [],
+      "properties": Array [
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "a",
+          "type": "number",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "b",
+          "type": "string | number",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "c",
+          "type": "Promise<boolean>",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "d",
+          "type": "() => string | number",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "e",
+          "type": "(a: number) => number",
+        },
+      ],
     },
   },
 }
