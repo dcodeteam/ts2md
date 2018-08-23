@@ -8,19 +8,38 @@ Object {
       "constructors": Array [
         ConstructorParseResult {
           "accessibility": "public",
-          "documentation": "",
-          "documentationTags": Array [],
+          "documentation": "Creates new instance.",
+          "documentationTags": Array [
+            Object {
+              "comment": "This is \`foo\` argument.",
+              "tag": "param",
+            },
+            Object {
+              "comment": "And this is \`bar\` argument.",
+              "tag": "param",
+            },
+          ],
           "id": "constructor",
           "parameters": Array [
             ParameterParseResult {
-              "documentation": "",
-              "documentationTags": Array [],
+              "documentation": "This is \`foo\` argument.",
+              "documentationTags": Array [
+                Object {
+                  "comment": "This is \`foo\` argument.",
+                  "tag": "param",
+                },
+              ],
               "id": "foo",
               "type": "string",
             },
             ParameterParseResult {
-              "documentation": "",
-              "documentationTags": Array [],
+              "documentation": "And this is \`bar\` argument.",
+              "documentationTags": Array [
+                Object {
+                  "comment": "And this is \`bar\` argument.",
+                  "tag": "param",
+                },
+              ],
               "id": "bar",
               "type": "number",
             },
@@ -28,7 +47,11 @@ Object {
         },
       ],
       "defaultExported": false,
-      "documentation": "",
+      "documentation": "This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor(\\"foo\\", 1);
+\`\`\`",
       "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,

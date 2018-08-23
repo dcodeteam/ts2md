@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class class-constructor.ts 1`] = `
+"#### Class ClassConstructor
+This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor(\\"foo\\", 1);
+\`\`\`
+
+------
+##### constructor
+\`\`\`typescript
+new ClassConstructor(foo: string, bar: number)
+\`\`\`
+------
+Creates new instance.###### Parameters
+- **foo**: *string*
+  This is \`foo\` argument.
+- **bar**: *number*
+  And this is \`bar\` argument.
+"
+`;
+
+exports[`class class-docs.ts 1`] = `
+"#### Class Calculator
+
+"
+`;
+
+exports[`class class-extends.ts 1`] = `
+"#### Class A
+
+
+#### Class ClassExtends
+### Extends A
+
+"
+`;
+
+exports[`class class-implements.ts 1`] = `
+"#### Class ClassImplements
+### Implements
+- A
+- B
+
+"
+`;
+
+exports[`class class-methods.ts 1`] = `
+"#### Class ClassMethods
+
+"
+`;
+
+exports[`class class-mixed-extends-and-implements.ts 1`] = `
+"#### Class A
+
+
+#### Class ClassMixedExtendsAndImplements
+### Extends A
+### Implements
+- B
+- C
+
+"
+`;
+
+exports[`class class-properties.ts 1`] = `
+"#### Class ClassProperties
+
+"
+`;
