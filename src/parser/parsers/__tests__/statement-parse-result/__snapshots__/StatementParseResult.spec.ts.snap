@@ -12,8 +12,8 @@ Object {
       "extendedClass": null,
       "id": "Foo",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
   },
 }
@@ -31,8 +31,8 @@ Object {
       "extendedClass": null,
       "id": "default",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
   },
 }
@@ -47,7 +47,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "foo",
-      "kind": 237,
     },
   },
 }
@@ -63,7 +62,6 @@ Object {
       "exported": true,
       "extendedInterfaces": Array [],
       "id": "Foo",
-      "kind": 239,
     },
   },
 }
@@ -78,7 +76,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "foo",
-      "kind": 237,
     },
   },
 }
@@ -94,7 +91,6 @@ Object {
       "exported": true,
       "extendedInterfaces": Array [],
       "id": "Foo",
-      "kind": 239,
     },
   },
 }
@@ -109,7 +105,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "FOO",
-      "kind": 235,
       "type": "string",
     },
   },

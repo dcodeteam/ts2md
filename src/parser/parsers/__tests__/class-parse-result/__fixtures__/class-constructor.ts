@@ -1,10 +1,5 @@
-export class Foo {
-  public foo: string;
-
-  public bar: number;
-
-  public constructor(foo: string, bar: number) {
-    this.foo = foo;
-    this.bar = bar;
-  }
+export class ClassConstructor {
+  // @ts-ignore
+  // eslint-disable-next-line no-empty-function
+  public constructor(foo: string, bar: number) {}
 }

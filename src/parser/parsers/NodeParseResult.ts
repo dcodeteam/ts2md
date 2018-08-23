@@ -8,15 +8,12 @@ export interface NodeDocumentationTag {
 export class NodeParseResult {
   public id: string;
 
-  public kind: ts.SyntaxKind;
-
   public documentationTags: NodeDocumentationTag[];
 
   public documentation: string;
 
   public constructor(node: ts.Node) {
     this.id = "Anonymous";
-    this.kind = node.kind;
 
     this.documentation = "";
 

@@ -1,3 +1,3 @@
-class Foo {}
+class A {}
 
-export class Bar extends Foo {}
+export class ClassExtends extends A {}

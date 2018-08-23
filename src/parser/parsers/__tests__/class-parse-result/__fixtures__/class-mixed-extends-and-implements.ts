@@ -1,6 +1,6 @@
-interface Foo {}
-interface Bar {}
+class A {}
 
-class Baz {}
+interface B {}
+interface C {}
 
-export class Quoz extends Baz implements Foo, Bar {}
+export class ClassMixedExtendsAndImplements extends A implements B, C {}

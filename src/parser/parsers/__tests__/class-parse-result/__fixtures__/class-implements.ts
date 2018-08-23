@@ -1,4 +1,4 @@
-interface Foo {}
-interface Bar {}
+interface A {}
+interface B {}
 
-export class Baz implements Foo, Bar {}
+export class ClassImplements implements A, B {}

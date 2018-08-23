@@ -9,7 +9,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "FOO",
-      "kind": 235,
       "type": "number",
     },
     "BAR" => VariableParseResult {
@@ -18,7 +17,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "BAR",
-      "kind": 235,
       "type": "number",
     },
     "BAZ" => VariableParseResult {
@@ -27,7 +25,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "BAZ",
-      "kind": 235,
       "type": "string",
     },
     "QUOZ" => VariableParseResult {
@@ -36,7 +33,6 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "QUOZ",
-      "kind": 235,
       "type": "string",
     },
   },

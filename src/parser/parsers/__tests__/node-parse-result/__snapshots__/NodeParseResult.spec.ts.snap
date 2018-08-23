@@ -12,7 +12,6 @@ Object {
       "extendedClass": null,
       "id": "Calculator",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [
         MethodParseResult {
           "accessibility": "public",
@@ -30,13 +29,11 @@ Object {
             },
           ],
           "id": "add",
-          "kind": 154,
           "parameters": Array [
             ParameterParseResult {
               "documentation": "",
               "documentationTags": Array [],
               "id": "numbers",
-              "kind": 149,
               "type": "number[]",
             },
           ],
@@ -58,19 +55,18 @@ Object {
             },
           ],
           "id": "subtract",
-          "kind": 154,
           "parameters": Array [
             ParameterParseResult {
               "documentation": "",
               "documentationTags": Array [],
               "id": "numbers",
-              "kind": 149,
               "type": "number[]",
             },
           ],
           "returnType": "number",
         },
       ],
+      "properties": Array [],
     },
   },
 }
@@ -82,10 +78,14 @@ Object {
     "FOO" => VariableParseResult {
       "defaultExported": false,
       "documentation": "",
-      "documentationTags": Array [],
+      "documentationTags": Array [
+        Object {
+          "comment": "Represents value of \`FOO\`.",
+          "tag": "description",
+        },
+      ],
       "exported": true,
       "id": "FOO",
-      "kind": 235,
       "type": "string",
     },
   },

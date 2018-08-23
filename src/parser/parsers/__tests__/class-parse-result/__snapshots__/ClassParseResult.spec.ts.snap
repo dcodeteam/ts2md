@@ -3,14 +3,13 @@
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-constructor.ts 1`] = `
 Object {
   "nodes": Map {
-    "Foo" => ClassParseResult {
+    "ClassConstructor" => ClassParseResult {
       "constructors": Array [
         ConstructorParseResult {
           "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "constructor",
-          "kind": 155,
         },
       ],
       "defaultExported": false,
@@ -18,10 +17,10 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,
-      "id": "Foo",
+      "id": "ClassConstructor",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
   },
 }
@@ -30,29 +29,29 @@ Object {
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-extends.ts 1`] = `
 Object {
   "nodes": Map {
-    "Foo" => ClassParseResult {
+    "A" => ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": false,
       "extendedClass": null,
-      "id": "Foo",
+      "id": "A",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
-    "Bar" => ClassParseResult {
+    "ClassExtends" => ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": true,
-      "extendedClass": "Foo",
-      "id": "Bar",
+      "extendedClass": "A",
+      "id": "ClassExtends",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
   },
 }
@@ -61,38 +60,74 @@ Object {
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-implements.ts 1`] = `
 Object {
   "nodes": Map {
-    "Foo" => InterfaceParseResult {
+    "A" => InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
-      "id": "Foo",
-      "kind": 239,
+      "id": "A",
     },
-    "Bar" => InterfaceParseResult {
+    "B" => InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
-      "id": "Bar",
-      "kind": 239,
+      "id": "B",
     },
-    "Baz" => ClassParseResult {
+    "ClassImplements" => ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,
-      "id": "Baz",
+      "id": "ClassImplements",
       "implementedInterfaces": Array [
-        "Foo",
-        "Bar",
+        "A",
+        "B",
       ],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-members.ts 1`] = `
+Object {
+  "nodes": Map {
+    "ClassMembers" => ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "ClassMembers",
+      "implementedInterfaces": Array [],
+      "methods": Array [],
+      "properties": Array [
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "a",
+          "type": "number",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "b",
+          "type": "string | number",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "c",
+          "type": "Promise<boolean>",
+        },
+      ],
     },
   },
 }
@@ -101,23 +136,21 @@ Object {
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-methods.ts 1`] = `
 Object {
   "nodes": Map {
-    "Foo" => ClassParseResult {
+    "ClassMethods" => ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,
-      "id": "Foo",
+      "id": "ClassMethods",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [
         MethodParseResult {
           "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
-          "id": "bar",
-          "kind": 154,
+          "id": "a",
           "parameters": Array [],
           "returnType": "Promise<void>",
         },
@@ -125,14 +158,12 @@ Object {
           "accessibility": "protected",
           "documentation": "",
           "documentationTags": Array [],
-          "id": "baz",
-          "kind": 154,
+          "id": "b",
           "parameters": Array [
             ParameterParseResult {
               "documentation": "",
               "documentationTags": Array [],
-              "id": "foo",
-              "kind": 149,
+              "id": "a",
               "type": "number",
             },
           ],
@@ -142,20 +173,19 @@ Object {
           "accessibility": "private",
           "documentation": "",
           "documentationTags": Array [],
-          "id": "quoz",
-          "kind": 154,
+          "id": "c",
           "parameters": Array [
             ParameterParseResult {
               "documentation": "",
               "documentationTags": Array [],
-              "id": "foo",
-              "kind": 149,
+              "id": "a",
               "type": "string",
             },
           ],
           "returnType": "string",
         },
       ],
+      "properties": Array [],
     },
   },
 }
@@ -164,50 +194,48 @@ Object {
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-mixed-extends-and-implements.ts 1`] = `
 Object {
   "nodes": Map {
-    "Foo" => InterfaceParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": false,
-      "extendedInterfaces": Array [],
-      "id": "Foo",
-      "kind": 239,
-    },
-    "Bar" => InterfaceParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": false,
-      "extendedInterfaces": Array [],
-      "id": "Bar",
-      "kind": 239,
-    },
-    "Baz" => ClassParseResult {
+    "A" => ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": false,
       "extendedClass": null,
-      "id": "Baz",
+      "id": "A",
       "implementedInterfaces": Array [],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
-    "Quoz" => ClassParseResult {
+    "B" => InterfaceParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "B",
+    },
+    "C" => InterfaceParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "C",
+    },
+    "ClassMixedExtendsAndImplements" => ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
       "exported": true,
-      "extendedClass": "Baz",
-      "id": "Quoz",
+      "extendedClass": "A",
+      "id": "ClassMixedExtendsAndImplements",
       "implementedInterfaces": Array [
-        "Foo",
-        "Bar",
+        "B",
+        "C",
       ],
-      "kind": 238,
       "methods": Array [],
+      "properties": Array [],
     },
   },
 }

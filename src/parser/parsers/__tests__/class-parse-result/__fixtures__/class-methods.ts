@@ -1,14 +1,11 @@
-export class Foo {
+export class ClassMethods {
   // eslint-disable-next-line no-empty-function
-  public async bar(): Promise<void> {}
+  public async a(): Promise<void> {}
 
-  protected async baz(foo: number): Promise<string> {
-    await this.bar();
+  // @ts-ignore
+  // eslint-disable-next-line no-empty-function
+  protected async b(a: number): Promise<string> {}
 
-    return this.quoz(String(foo));
-  }
-
-  private quoz(foo: string): string {
-    return foo;
-  }
+  // @ts-ignore
+  private c(a: string): string {}
 }

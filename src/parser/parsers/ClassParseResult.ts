@@ -2,6 +2,7 @@ import * as ts from "typescript";
 
 import { ConstructorParseResult } from "./ConstructorParseResult";
 import { MethodParseResult } from "./MethodParseResult";
+import { PropertyParseResult } from "./PropertyParseResult";
 import { StatementParseResult } from "./StatementParseResult";
 
 export class ClassParseResult extends StatementParseResult {
@@ -13,6 +14,8 @@ export class ClassParseResult extends StatementParseResult {
 
   public methods: MethodParseResult[];
 
+  public properties: PropertyParseResult[];
+
   public constructor(node: ts.ClassDeclaration, program: ts.Program) {
     super(node);
 
@@ -22,6 +25,7 @@ export class ClassParseResult extends StatementParseResult {
     this.implementedInterfaces = [];
 
     this.methods = [];
+    this.properties = [];
     this.constructors = [];
 
     if (node.name) {
@@ -39,6 +43,10 @@ export class ClassParseResult extends StatementParseResult {
 
       if (ts.isConstructorDeclaration(x)) {
         this.constructors.push(new ConstructorParseResult(x, program));
+      }
+
+      if (ts.isPropertyDeclaration(x)) {
+        this.properties.push(new PropertyParseResult(x, program));
       }
     });
 
