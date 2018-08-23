@@ -70,7 +70,7 @@ export class Parser {
       }
 
       if (ts.isVariableStatement(node)) {
-        const result = new VariableListParseResult(node);
+        const result = new VariableListParseResult(node, this.program);
 
         result.declarations.forEach(x => {
           nodes.push(x);

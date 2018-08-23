@@ -10,7 +10,7 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "FOO",
-      "type": "string",
+      "type": "\\"foo\\"",
     },
   ],
 }
@@ -26,7 +26,7 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "FOO",
-      "type": "number",
+      "type": "1",
     },
     VariableParseResult {
       "defaultExported": false,
@@ -42,7 +42,7 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "BAZ",
-      "type": "string",
+      "type": "\\"baz\\"",
     },
     VariableParseResult {
       "defaultExported": false,

@@ -139,7 +139,7 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "variable",
-      "type": "string",
+      "type": "\\"variable\\"",
     },
   ],
 }
@@ -211,7 +211,7 @@ Object {
       "documentationTags": Array [],
       "exported": true,
       "id": "variable",
-      "type": "string",
+      "type": "\\"variable\\"",
     },
   ],
 }

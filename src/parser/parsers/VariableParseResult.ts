@@ -3,29 +3,22 @@ import * as ts from "typescript";
 import { StatementParseResult } from "./StatementParseResult";
 
 export class VariableParseResult extends StatementParseResult {
-  public type: null | "number" | "string";
+  public type: string;
 
-  public constructor(node: ts.VariableDeclaration) {
+  public constructor(node: ts.VariableDeclaration, program: ts.Program) {
     super(node);
 
-    if (ts.isIdentifier(node.name)) {
-      this.id = node.name.text;
-    }
+    this.type = "unknown";
 
-    this.type = null;
+    const checker = program.getTypeChecker();
+    const symbol = checker.getSymbolAtLocation(node.name);
 
-    if (
-      (node.initializer && ts.isNumericLiteral(node.initializer)) ||
-      (node.type && node.type.kind === ts.SyntaxKind.NumberKeyword)
-    ) {
-      this.type = "number";
-    }
+    if (symbol) {
+      this.fulfillSymbolData(symbol, checker);
 
-    if (
-      (node.initializer && ts.isStringLiteral(node.initializer)) ||
-      (node.type && node.type.kind === ts.SyntaxKind.StringKeyword)
-    ) {
-      this.type = "string";
+      this.type = checker.typeToString(
+        checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration)
+      );
     }
   }
 }
