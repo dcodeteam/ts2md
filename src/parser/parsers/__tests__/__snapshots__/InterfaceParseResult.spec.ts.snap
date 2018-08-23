@@ -1,6 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-constructor.ts 1`] = `
+exports[`interface export-default-interface.ts 1`] = `
+Object {
+  "nodes": Array [
+    InterfaceParseResult {
+      "constructors": Array [],
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "ExportDefaultInterface",
+      "methods": Array [],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
+exports[`interface export-interface.ts 1`] = `
+Object {
+  "nodes": Array [
+    InterfaceParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "ExportInterface",
+      "methods": Array [],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
+exports[`interface interface-constructor.ts 1`] = `
 Object {
   "nodes": Array [
     InterfaceParseResult {
@@ -39,7 +75,7 @@ Object {
 }
 `;
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-extends.ts 1`] = `
+exports[`interface interface-extends.ts 1`] = `
 Object {
   "nodes": Array [
     InterfaceParseResult {
@@ -82,7 +118,7 @@ Object {
 }
 `;
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-methods.ts 1`] = `
+exports[`interface interface-methods.ts 1`] = `
 Object {
   "nodes": Array [
     InterfaceParseResult {
@@ -145,7 +181,7 @@ Object {
 }
 `;
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-properties.ts 1`] = `
+exports[`interface interface-properties.ts 1`] = `
 Object {
   "nodes": Array [
     InterfaceParseResult {

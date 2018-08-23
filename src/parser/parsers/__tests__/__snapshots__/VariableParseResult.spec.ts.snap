@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ variable-type.ts 1`] = `
+exports[`variable export-variable.ts 1`] = `
+Object {
+  "nodes": Array [
+    VariableParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "EXPORT_VARIABLE",
+      "type": "string",
+    },
+  ],
+}
+`;
+
+exports[`variable variable-docs.ts 1`] = `
+Object {
+  "nodes": Array [
+    VariableParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "FOO",
+      "type": "string",
+    },
+  ],
+}
+`;
+
+exports[`variable variable-type.ts 1`] = `
 Object {
   "nodes": Array [
     VariableParseResult {

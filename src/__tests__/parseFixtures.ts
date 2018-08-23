@@ -3,11 +3,11 @@ import * as path from "path";
 
 import * as ts from "typescript";
 
-import { Parser } from "../../Parser";
+import { Parser } from "../parser/Parser";
 
-export function parseFixtures(dir: string): void {
-  describe(path.dirname(dir), () => {
-    const fixturesDir = path.join(dir, "__fixtures__");
+export function parseFixtures(type: string): void {
+  describe(type, () => {
+    const fixturesDir = path.join(__dirname, "__fixtures__", type);
 
     const files = fs
       .readdirSync(fixturesDir)
@@ -20,7 +20,9 @@ export function parseFixtures(dir: string): void {
     });
 
     files.forEach(filePath => {
-      test(path.basename(filePath), () => {
+      const spec = path.basename(filePath);
+
+      test(spec, () => {
         const parser = new Parser(filePath, program);
 
         expect(parser.parse()).toMatchSnapshot();
