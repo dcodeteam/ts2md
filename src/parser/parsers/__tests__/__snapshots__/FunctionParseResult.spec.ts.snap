@@ -1,39 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`function export-default-function.ts 1`] = `
-Object {
-  "nodes": Array [
-    FunctionParseResult {
-      "defaultExported": true,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "exportDefaultFunction",
-      "parameters": Array [],
-      "returnType": "void",
-    },
-  ],
-}
-`;
-
-exports[`function export-function.ts 1`] = `
-Object {
-  "nodes": Array [
-    FunctionParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "exportFunction",
-      "parameters": Array [],
-      "returnType": "void",
-    },
-  ],
-}
-`;
-
 exports[`function function-arguments.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     FunctionParseResult {
       "defaultExported": false,

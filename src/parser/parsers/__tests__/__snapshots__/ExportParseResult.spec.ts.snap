@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`export classes.ts 1`] = `
+Object {
+  "exported": Array [],
+  "nodes": Array [
+    ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "Class",
+      "implementedInterfaces": Array [],
+      "methods": Array [],
+      "properties": Array [],
+    },
+    ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "DefaultClass",
+      "implementedInterfaces": Array [],
+      "methods": Array [],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
+exports[`export export.ts 1`] = `
+Object {
+  "exported": Array [
+    Object {
+      "exportedId": "Class",
+      "id": "Class",
+    },
+    Object {
+      "exportedId": "default",
+      "id": "DefaultClass",
+    },
+    Object {
+      "exportedId": "fn",
+      "id": "fn",
+    },
+    Object {
+      "exportedId": "default",
+      "id": "defaultFunction",
+    },
+    Object {
+      "exportedId": "Interface",
+      "id": "Interface",
+    },
+    Object {
+      "exportedId": "default",
+      "id": "DefaultInterface",
+    },
+    Object {
+      "exportedId": "variable",
+      "id": "variable",
+    },
+    Object {
+      "exportedId": "default",
+      "id": "defaultVariable",
+    },
+  ],
+  "nodes": Array [
+    ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "Class",
+      "implementedInterfaces": Array [],
+      "methods": Array [],
+      "properties": Array [],
+    },
+    ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "DefaultClass",
+      "implementedInterfaces": Array [],
+      "methods": Array [],
+      "properties": Array [],
+    },
+    FunctionParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "fn",
+      "parameters": Array [],
+      "returnType": "void",
+    },
+    FunctionParseResult {
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "defaultFunction",
+      "parameters": Array [],
+      "returnType": "void",
+    },
+    InterfaceParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "Interface",
+      "methods": Array [],
+      "properties": Array [],
+    },
+    InterfaceParseResult {
+      "constructors": Array [],
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "DefaultInterface",
+      "methods": Array [],
+      "properties": Array [],
+    },
+    VariableParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "variable",
+      "type": "string",
+    },
+  ],
+}
+`;
+
+exports[`export functions.ts 1`] = `
+Object {
+  "exported": Array [],
+  "nodes": Array [
+    FunctionParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "fn",
+      "parameters": Array [],
+      "returnType": "void",
+    },
+    FunctionParseResult {
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "defaultFunction",
+      "parameters": Array [],
+      "returnType": "void",
+    },
+  ],
+}
+`;
+
+exports[`export interfaces.ts 1`] = `
+Object {
+  "exported": Array [],
+  "nodes": Array [
+    InterfaceParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "Interface",
+      "methods": Array [],
+      "properties": Array [],
+    },
+    InterfaceParseResult {
+      "constructors": Array [],
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "DefaultInterface",
+      "methods": Array [],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
+exports[`export variables.ts 1`] = `
+Object {
+  "exported": Array [],
+  "nodes": Array [
+    VariableParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "variable",
+      "type": "string",
+    },
+  ],
+}
+`;

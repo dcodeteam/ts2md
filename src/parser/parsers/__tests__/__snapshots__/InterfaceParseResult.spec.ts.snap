@@ -1,43 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`interface export-default-interface.ts 1`] = `
-Object {
-  "nodes": Array [
-    InterfaceParseResult {
-      "constructors": Array [],
-      "defaultExported": true,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "extendedInterfaces": Array [],
-      "id": "ExportDefaultInterface",
-      "methods": Array [],
-      "properties": Array [],
-    },
-  ],
-}
-`;
-
-exports[`interface export-interface.ts 1`] = `
-Object {
-  "nodes": Array [
-    InterfaceParseResult {
-      "constructors": Array [],
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "extendedInterfaces": Array [],
-      "id": "ExportInterface",
-      "methods": Array [],
-      "properties": Array [],
-    },
-  ],
-}
-`;
-
 exports[`interface interface-constructor.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     InterfaceParseResult {
       "constructors": Array [
@@ -77,6 +42,7 @@ Object {
 
 exports[`interface interface-extends.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     InterfaceParseResult {
       "constructors": Array [],
@@ -120,6 +86,7 @@ Object {
 
 exports[`interface interface-methods.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     InterfaceParseResult {
       "constructors": Array [],
@@ -183,6 +150,7 @@ Object {
 
 exports[`interface interface-properties.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     InterfaceParseResult {
       "constructors": Array [],

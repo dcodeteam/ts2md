@@ -1,3 +1,3 @@
-import { parseFixtures } from "../../../__tests__/parseFixtures";
+import { testParser } from "../../../__tests__/test-utils";
 
-parseFixtures("function");
+testParser("function");

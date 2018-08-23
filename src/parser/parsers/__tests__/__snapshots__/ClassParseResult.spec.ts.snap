@@ -2,6 +2,7 @@
 
 exports[`class class-constructor.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     ClassParseResult {
       "constructors": Array [
@@ -42,6 +43,7 @@ Object {
 
 exports[`class class-docs.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     ClassParseResult {
       "constructors": Array [],
@@ -122,6 +124,7 @@ Object {
 
 exports[`class class-extends.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     ClassParseResult {
       "constructors": Array [],
@@ -153,6 +156,7 @@ Object {
 
 exports[`class class-implements.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     InterfaceParseResult {
       "constructors": Array [],
@@ -197,6 +201,7 @@ Object {
 
 exports[`class class-methods.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     ClassParseResult {
       "constructors": Array [],
@@ -255,6 +260,7 @@ Object {
 
 exports[`class class-mixed-extends-and-implements.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     ClassParseResult {
       "constructors": Array [],
@@ -311,6 +317,7 @@ Object {
 
 exports[`class class-properties.ts 1`] = `
 Object {
+  "exported": Array [],
   "nodes": Array [
     ClassParseResult {
       "constructors": Array [],
@@ -354,44 +361,6 @@ Object {
           "type": "(a: number) => number",
         },
       ],
-    },
-  ],
-}
-`;
-
-exports[`class export-class.ts 1`] = `
-Object {
-  "nodes": Array [
-    ClassParseResult {
-      "constructors": Array [],
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "extendedClass": null,
-      "id": "ExportClass",
-      "implementedInterfaces": Array [],
-      "methods": Array [],
-      "properties": Array [],
-    },
-  ],
-}
-`;
-
-exports[`class export-default-class.ts 1`] = `
-Object {
-  "nodes": Array [
-    ClassParseResult {
-      "constructors": Array [],
-      "defaultExported": true,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "extendedClass": null,
-      "id": "ExportDefaultClass",
-      "implementedInterfaces": Array [],
-      "methods": Array [],
-      "properties": Array [],
     },
   ],
 }
