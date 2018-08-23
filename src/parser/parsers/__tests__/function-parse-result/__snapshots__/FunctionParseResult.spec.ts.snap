@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ function-arguments.ts 1`] = `
+Object {
+  "nodes": Map {
+    "foo" => FunctionParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": true,
+      "id": "foo",
+      "kind": 237,
+    },
+  },
+}
+`;

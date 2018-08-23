@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-docs.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => ClassParseResult {
+      "defaultExported": false,
+      "docs": Array [
+        Object {
+          "comment": "Foo class",
+          "tag": "description",
+        },
+        Object {
+          "comment": "foo",
+          "tag": "see",
+        },
+        Object {
+          "comment": "\`\`\`javascript
+ * const foo = new Foo();
+ * \`\`\`",
+          "tag": "usage",
+        },
+      ],
+      "exported": true,
+      "extendedClass": null,
+      "id": "Foo",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-extends.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => ClassParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedClass": null,
+      "id": "Foo",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+    },
+    "Bar" => ClassParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": true,
+      "extendedClass": "Foo",
+      "id": "Bar",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-implements.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "Foo",
+      "kind": 239,
+    },
+    "Bar" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "Bar",
+      "kind": 239,
+    },
+    "Baz" => ClassParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "Baz",
+      "implementedInterfaces": Array [
+        "Foo",
+        "Bar",
+      ],
+      "kind": 238,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-mixed-extends-and-implements.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "Foo",
+      "kind": 239,
+    },
+    "Bar" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "Bar",
+      "kind": 239,
+    },
+    "Baz" => ClassParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedClass": null,
+      "id": "Baz",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+    },
+    "Quoz" => ClassParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": true,
+      "extendedClass": "Baz",
+      "id": "Quoz",
+      "implementedInterfaces": Array [
+        "Foo",
+        "Bar",
+      ],
+      "kind": 238,
+    },
+  },
+}
+`;

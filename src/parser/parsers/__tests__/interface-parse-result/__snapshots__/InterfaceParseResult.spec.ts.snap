@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-extends.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "Foo",
+      "kind": 239,
+    },
+    "Bar" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "Bar",
+      "kind": 239,
+    },
+    "Baz" => InterfaceParseResult {
+      "defaultExported": false,
+      "docs": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [
+        "Foo",
+        "Bar",
+      ],
+      "id": "Baz",
+      "kind": 239,
+    },
+  },
+}
+`;
