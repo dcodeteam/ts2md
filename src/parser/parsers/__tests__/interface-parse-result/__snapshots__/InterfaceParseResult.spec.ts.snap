@@ -5,7 +5,8 @@ Object {
   "nodes": Map {
     "Foo" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Foo",
@@ -13,7 +14,8 @@ Object {
     },
     "Bar" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Bar",
@@ -21,7 +23,8 @@ Object {
     },
     "Baz" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [
         "Foo",

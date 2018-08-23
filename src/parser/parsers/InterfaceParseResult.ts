@@ -1,8 +1,8 @@
 import * as ts from "typescript";
 
-import { NodeParseResult } from "./NodeParseResult";
+import { StatementParseResult } from "./StatementParseResult";
 
-export class InterfaceParseResult extends NodeParseResult {
+export class InterfaceParseResult extends StatementParseResult {
   public extendedInterfaces: string[];
 
   public constructor(node: ts.InterfaceDeclaration) {

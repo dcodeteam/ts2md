@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-class.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "Foo",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+      "methods": Array [],
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-default-class.ts 1`] = `
+Object {
+  "nodes": Map {
+    "default" => ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "default",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+      "methods": Array [],
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-default-function.ts 1`] = `
+Object {
+  "nodes": Map {
+    "foo" => FunctionParseResult {
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "foo",
+      "kind": 237,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-default-interface.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => InterfaceParseResult {
+      "defaultExported": true,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "Foo",
+      "kind": 239,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-function.ts 1`] = `
+Object {
+  "nodes": Map {
+    "foo" => FunctionParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "foo",
+      "kind": 237,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-interface.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => InterfaceParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "Foo",
+      "kind": 239,
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ export-variable.ts 1`] = `
+Object {
+  "nodes": Map {
+    "FOO" => VariableParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "id": "FOO",
+      "kind": 235,
+      "type": "string",
+    },
+  },
+}
+`;

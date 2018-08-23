@@ -1,31 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-docs.ts 1`] = `
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-constructor.ts 1`] = `
 Object {
   "nodes": Map {
     "Foo" => ClassParseResult {
-      "defaultExported": false,
-      "docs": Array [
-        Object {
-          "comment": "Foo class",
-          "tag": "description",
-        },
-        Object {
-          "comment": "foo",
-          "tag": "see",
-        },
-        Object {
-          "comment": "\`\`\`javascript
- * const foo = new Foo();
- * \`\`\`",
-          "tag": "usage",
+      "constructors": Array [
+        ConstructorParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "constructor",
+          "kind": 155,
         },
       ],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,
       "id": "Foo",
       "implementedInterfaces": Array [],
       "kind": 238,
+      "methods": Array [],
     },
   },
 }
@@ -35,22 +31,28 @@ exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/par
 Object {
   "nodes": Map {
     "Foo" => ClassParseResult {
+      "constructors": Array [],
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedClass": null,
       "id": "Foo",
       "implementedInterfaces": Array [],
       "kind": 238,
+      "methods": Array [],
     },
     "Bar" => ClassParseResult {
+      "constructors": Array [],
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "extendedClass": "Foo",
       "id": "Bar",
       "implementedInterfaces": Array [],
       "kind": 238,
+      "methods": Array [],
     },
   },
 }
@@ -61,7 +63,8 @@ Object {
   "nodes": Map {
     "Foo" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Foo",
@@ -69,15 +72,18 @@ Object {
     },
     "Bar" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Bar",
       "kind": 239,
     },
     "Baz" => ClassParseResult {
+      "constructors": Array [],
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,
       "id": "Baz",
@@ -86,6 +92,70 @@ Object {
         "Bar",
       ],
       "kind": 238,
+      "methods": Array [],
+    },
+  },
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-methods.ts 1`] = `
+Object {
+  "nodes": Map {
+    "Foo" => ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "Foo",
+      "implementedInterfaces": Array [],
+      "kind": 238,
+      "methods": Array [
+        MethodParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "bar",
+          "kind": 154,
+          "parameters": Array [],
+          "returnType": "Promise<void>",
+        },
+        MethodParseResult {
+          "accessibility": "protected",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "baz",
+          "kind": 154,
+          "parameters": Array [
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "foo",
+              "kind": 149,
+              "type": "number",
+            },
+          ],
+          "returnType": "Promise<string>",
+        },
+        MethodParseResult {
+          "accessibility": "private",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "quoz",
+          "kind": 154,
+          "parameters": Array [
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "foo",
+              "kind": 149,
+              "type": "string",
+            },
+          ],
+          "returnType": "string",
+        },
+      ],
     },
   },
 }
@@ -96,7 +166,8 @@ Object {
   "nodes": Map {
     "Foo" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Foo",
@@ -104,24 +175,30 @@ Object {
     },
     "Bar" => InterfaceParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Bar",
       "kind": 239,
     },
     "Baz" => ClassParseResult {
+      "constructors": Array [],
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": false,
       "extendedClass": null,
       "id": "Baz",
       "implementedInterfaces": Array [],
       "kind": 238,
+      "methods": Array [],
     },
     "Quoz" => ClassParseResult {
+      "constructors": Array [],
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "extendedClass": "Baz",
       "id": "Quoz",
@@ -130,6 +207,7 @@ Object {
         "Bar",
       ],
       "kind": 238,
+      "methods": Array [],
     },
   },
 }

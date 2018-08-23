@@ -1,21 +1,46 @@
 import * as ts from "typescript";
 
-import { NodeParseResult } from "./NodeParseResult";
+import { ConstructorParseResult } from "./ConstructorParseResult";
+import { MethodParseResult } from "./MethodParseResult";
+import { StatementParseResult } from "./StatementParseResult";
 
-export class ClassParseResult extends NodeParseResult {
+export class ClassParseResult extends StatementParseResult {
   public extendedClass: null | string;
 
   public implementedInterfaces: string[];
 
-  public constructor(node: ts.ClassDeclaration) {
+  public constructors: ConstructorParseResult[];
+
+  public methods: MethodParseResult[];
+
+  public constructor(node: ts.ClassDeclaration, program: ts.Program) {
     super(node);
 
-    if (node.name) {
-      this.id = node.name.text;
-    }
+    const checker = program.getTypeChecker();
 
     this.extendedClass = null;
     this.implementedInterfaces = [];
+
+    this.methods = [];
+    this.constructors = [];
+
+    if (node.name) {
+      const symbol = checker.getSymbolAtLocation(node.name);
+
+      if (symbol) {
+        this.fulfillSymbolData(symbol, checker);
+      }
+    }
+
+    node.members.forEach(x => {
+      if (ts.isMethodDeclaration(x)) {
+        this.methods.push(new MethodParseResult(x, program));
+      }
+
+      if (ts.isConstructorDeclaration(x)) {
+        this.constructors.push(new ConstructorParseResult(x, program));
+      }
+    });
 
     if (node.heritageClauses) {
       node.heritageClauses.forEach(heritageClause => {

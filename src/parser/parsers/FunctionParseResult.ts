@@ -1,8 +1,8 @@
 import * as ts from "typescript";
 
-import { NodeParseResult } from "./NodeParseResult";
+import { StatementParseResult } from "./StatementParseResult";
 
-export class FunctionParseResult extends NodeParseResult {
+export class FunctionParseResult extends StatementParseResult {
   public constructor(node: ts.FunctionDeclaration) {
     super(node);
 

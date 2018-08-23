@@ -5,7 +5,8 @@ Object {
   "nodes": Map {
     "foo" => FunctionParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "id": "foo",
       "kind": 237,

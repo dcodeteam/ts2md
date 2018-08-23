@@ -16,8 +16,7 @@ export function parseFixtures(dir: string): void {
 
       test(fileName, () => {
         const filePath = path.join(fixturesDir, fileName);
-        const fileSource = fs.readFileSync(filePath, "utf-8");
-        const parser = new Parser(filePath, fileSource);
+        const parser = new Parser(filePath);
 
         expect(parser.parse()).toMatchSnapshot();
       });

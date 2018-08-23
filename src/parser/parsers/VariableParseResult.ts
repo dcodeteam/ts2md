@@ -1,8 +1,8 @@
 import * as ts from "typescript";
 
-import { NodeParseResult } from "./NodeParseResult";
+import { StatementParseResult } from "./StatementParseResult";
 
-export class VariableParseResult extends NodeParseResult {
+export class VariableParseResult extends StatementParseResult {
   public type: null | "number" | "string";
 
   public constructor(node: ts.VariableDeclaration) {

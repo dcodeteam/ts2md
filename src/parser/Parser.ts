@@ -11,47 +11,53 @@ export interface ParserResult {
 }
 
 export class Parser {
-  private readonly file: ts.SourceFile;
+  private readonly fileName: string;
 
-  public constructor(fileName: string, sourceText: string) {
-    this.file = ts.createSourceFile(
-      fileName,
-      sourceText,
-      ts.ScriptTarget.ESNext,
-      true
-    );
+  private readonly program: ts.Program;
+
+  public constructor(fileName: string, program?: ts.Program) {
+    this.fileName = fileName;
+    this.program =
+      program ||
+      ts.createProgram([fileName], {
+        module: ts.ModuleKind.ESNext,
+        target: ts.ScriptTarget.ESNext
+      });
   }
 
   public parse(): ParserResult {
     const nodes = new Map<string, NodeParseResult>();
+    const file = this.program.getSourceFile(this.fileName);
 
-    this.file.statements.forEach(node => {
-      if (ts.isClassDeclaration(node)) {
-        const result = new ClassParseResult(node);
+    if (file) {
+      file.statements.forEach(node => {
+        if (ts.isClassDeclaration(node)) {
+          const result = new ClassParseResult(node, this.program);
 
-        nodes.set(result.id, result);
-      }
+          nodes.set(result.id, result);
+        }
 
-      if (ts.isInterfaceDeclaration(node)) {
-        const result = new InterfaceParseResult(node);
+        if (ts.isInterfaceDeclaration(node)) {
+          const result = new InterfaceParseResult(node);
 
-        nodes.set(result.id, result);
-      }
+          nodes.set(result.id, result);
+        }
 
-      if (ts.isFunctionDeclaration(node)) {
-        const result = new FunctionParseResult(node);
+        if (ts.isFunctionDeclaration(node)) {
+          const result = new FunctionParseResult(node);
 
-        nodes.set(result.id, result);
-      }
+          nodes.set(result.id, result);
+        }
 
-      if (ts.isVariableStatement(node)) {
-        const result = new VariableListParseResult(node);
+        if (ts.isVariableStatement(node)) {
+          const result = new VariableListParseResult(node);
 
-        result.declarations.forEach(x => {
-          nodes.set(x.id, x);
-        });
-      }
-    });
+          result.declarations.forEach(x => {
+            nodes.set(x.id, x);
+          });
+        }
+      });
+    }
 
     return { nodes };
   }

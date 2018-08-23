@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 
-export interface NodeJSDocTag {
+export interface NodeDocumentationTag {
   tag: string;
   comment: string;
 }
@@ -10,32 +10,37 @@ export class NodeParseResult {
 
   public kind: ts.SyntaxKind;
 
-  public exported: boolean;
+  public documentationTags: NodeDocumentationTag[];
 
-  public defaultExported: boolean;
-
-  public docs: NodeJSDocTag[];
+  public documentation: string;
 
   public constructor(node: ts.Node) {
     this.id = "Anonymous";
     this.kind = node.kind;
-    this.exported = false;
-    this.defaultExported = false;
 
-    this.docs = ts
+    this.documentation = "";
+
+    this.documentationTags = ts
       .getJSDocTags(node)
       .map(x => ({ tag: x.tagName.text, comment: x.comment || "" }));
+  }
 
-    if (node.modifiers) {
-      node.modifiers.forEach(x => {
-        if (x.kind === ts.SyntaxKind.ExportKeyword) {
-          this.exported = true;
-        }
+  protected fulfillSymbolData(
+    symbol: ts.Symbol,
+    checker: ts.TypeChecker
+  ): void {
+    this.id = symbol.getName();
+    this.documentation = ts.displayPartsToString(
+      symbol.getDocumentationComment(checker)
+    );
+  }
 
-        if (x.kind === ts.SyntaxKind.DefaultKeyword) {
-          this.defaultExported = true;
-        }
-      });
-    }
+  protected fulfillSignatureData(
+    signature: ts.Signature,
+    checker: ts.TypeChecker
+  ) {
+    this.documentation = ts.displayPartsToString(
+      signature.getDocumentationComment(checker)
+    );
   }
 }

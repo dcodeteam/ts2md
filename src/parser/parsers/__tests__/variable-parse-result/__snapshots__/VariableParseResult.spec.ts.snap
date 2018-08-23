@@ -1,31 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ variable-docs.ts 1`] = `
-Object {
-  "nodes": Map {
-    "FOO" => VariableParseResult {
-      "defaultExported": false,
-      "docs": Array [
-        Object {
-          "comment": "Represents value of \`FOO\`.",
-          "tag": "description",
-        },
-      ],
-      "exported": true,
-      "id": "FOO",
-      "kind": 235,
-      "type": "string",
-    },
-  },
-}
-`;
-
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ variable-type.ts 1`] = `
 Object {
   "nodes": Map {
     "FOO" => VariableParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "id": "FOO",
       "kind": 235,
@@ -33,7 +14,8 @@ Object {
     },
     "BAR" => VariableParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "id": "BAR",
       "kind": 235,
@@ -41,7 +23,8 @@ Object {
     },
     "BAZ" => VariableParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "id": "BAZ",
       "kind": 235,
@@ -49,7 +32,8 @@ Object {
     },
     "QUOZ" => VariableParseResult {
       "defaultExported": false,
-      "docs": Array [],
+      "documentation": "",
+      "documentationTags": Array [],
       "exported": true,
       "id": "QUOZ",
       "kind": 235,
