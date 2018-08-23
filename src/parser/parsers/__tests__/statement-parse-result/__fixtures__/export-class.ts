@@ -1,1 +1,1 @@
-export class Foo {}
+export class ExportClass {}

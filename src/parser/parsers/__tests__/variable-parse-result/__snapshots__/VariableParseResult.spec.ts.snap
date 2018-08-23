@@ -2,8 +2,8 @@
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ variable-type.ts 1`] = `
 Object {
-  "nodes": Map {
-    "FOO" => VariableParseResult {
+  "nodes": Array [
+    VariableParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -11,7 +11,7 @@ Object {
       "id": "FOO",
       "type": "number",
     },
-    "BAR" => VariableParseResult {
+    VariableParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -19,7 +19,7 @@ Object {
       "id": "BAR",
       "type": "number",
     },
-    "BAZ" => VariableParseResult {
+    VariableParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -27,7 +27,7 @@ Object {
       "id": "BAZ",
       "type": "string",
     },
-    "QUOZ" => VariableParseResult {
+    VariableParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -35,6 +35,6 @@ Object {
       "id": "QUOZ",
       "type": "string",
     },
-  },
+  ],
 }
 `;

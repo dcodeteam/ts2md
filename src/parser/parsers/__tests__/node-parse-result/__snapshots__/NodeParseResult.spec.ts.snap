@@ -2,8 +2,8 @@
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-docs.ts 1`] = `
 Object {
-  "nodes": Map {
-    "Calculator" => ClassParseResult {
+  "nodes": Array [
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -68,14 +68,14 @@ Object {
       ],
       "properties": Array [],
     },
-  },
+  ],
 }
 `;
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ variable-docs.ts 1`] = `
 Object {
-  "nodes": Map {
-    "FOO" => VariableParseResult {
+  "nodes": Array [
+    VariableParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [
@@ -88,6 +88,6 @@ Object {
       "id": "FOO",
       "type": "string",
     },
-  },
+  ],
 }
 `;

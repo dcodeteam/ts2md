@@ -34,6 +34,8 @@ export class ClassParseResult extends StatementParseResult {
       if (symbol) {
         this.fulfillSymbolData(symbol, checker);
       }
+
+      this.id = node.name.text;
     }
 
     node.members.forEach(x => {

@@ -7,7 +7,7 @@ import { NodeParseResult } from "./parsers/NodeParseResult";
 import { VariableListParseResult } from "./parsers/VariableListParseResult";
 
 export interface ParserResult {
-  readonly nodes: Map<string, NodeParseResult>;
+  readonly nodes: NodeParseResult[];
 }
 
 export class Parser {
@@ -21,34 +21,28 @@ export class Parser {
   }
 
   public parse(): ParserResult {
-    const nodes = new Map<string, NodeParseResult>();
+    const nodes: NodeParseResult[] = [];
     const file = this.program.getSourceFile(this.fileName);
 
     if (file) {
       file.statements.forEach(node => {
         if (ts.isClassDeclaration(node)) {
-          const result = new ClassParseResult(node, this.program);
-
-          nodes.set(result.id, result);
+          nodes.push(new ClassParseResult(node, this.program));
         }
 
         if (ts.isInterfaceDeclaration(node)) {
-          const result = new InterfaceParseResult(node);
-
-          nodes.set(result.id, result);
+          nodes.push(new InterfaceParseResult(node));
         }
 
         if (ts.isFunctionDeclaration(node)) {
-          const result = new FunctionParseResult(node);
-
-          nodes.set(result.id, result);
+          nodes.push(new FunctionParseResult(node, this.program));
         }
 
         if (ts.isVariableStatement(node)) {
           const result = new VariableListParseResult(node);
 
           result.declarations.forEach(x => {
-            nodes.set(x.id, x);
+            nodes.push(x);
           });
         }
       });

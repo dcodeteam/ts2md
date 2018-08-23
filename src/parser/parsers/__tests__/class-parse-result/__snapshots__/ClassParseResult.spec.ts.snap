@@ -2,8 +2,8 @@
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-constructor.ts 1`] = `
 Object {
-  "nodes": Map {
-    "ClassConstructor" => ClassParseResult {
+  "nodes": Array [
+    ClassParseResult {
       "constructors": Array [
         ConstructorParseResult {
           "accessibility": "public",
@@ -22,14 +22,14 @@ Object {
       "methods": Array [],
       "properties": Array [],
     },
-  },
+  ],
 }
 `;
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-extends.ts 1`] = `
 Object {
-  "nodes": Map {
-    "A" => ClassParseResult {
+  "nodes": Array [
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -41,7 +41,7 @@ Object {
       "methods": Array [],
       "properties": Array [],
     },
-    "ClassExtends" => ClassParseResult {
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -53,14 +53,14 @@ Object {
       "methods": Array [],
       "properties": Array [],
     },
-  },
+  ],
 }
 `;
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-implements.ts 1`] = `
 Object {
-  "nodes": Map {
-    "A" => InterfaceParseResult {
+  "nodes": Array [
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -68,7 +68,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "A",
     },
-    "B" => InterfaceParseResult {
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -76,7 +76,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "B",
     },
-    "ClassImplements" => ClassParseResult {
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -91,14 +91,14 @@ Object {
       "methods": Array [],
       "properties": Array [],
     },
-  },
+  ],
 }
 `;
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-methods.ts 1`] = `
 Object {
-  "nodes": Map {
-    "ClassMethods" => ClassParseResult {
+  "nodes": Array [
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -149,14 +149,14 @@ Object {
       ],
       "properties": Array [],
     },
-  },
+  ],
 }
 `;
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-mixed-extends-and-implements.ts 1`] = `
 Object {
-  "nodes": Map {
-    "A" => ClassParseResult {
+  "nodes": Array [
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -168,7 +168,7 @@ Object {
       "methods": Array [],
       "properties": Array [],
     },
-    "B" => InterfaceParseResult {
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -176,7 +176,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "B",
     },
-    "C" => InterfaceParseResult {
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -184,7 +184,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "C",
     },
-    "ClassMixedExtendsAndImplements" => ClassParseResult {
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -199,14 +199,14 @@ Object {
       "methods": Array [],
       "properties": Array [],
     },
-  },
+  ],
 }
 `;
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ class-properties.ts 1`] = `
 Object {
-  "nodes": Map {
-    "ClassProperties" => ClassParseResult {
+  "nodes": Array [
+    ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
@@ -249,6 +249,6 @@ Object {
         },
       ],
     },
-  },
+  ],
 }
 `;

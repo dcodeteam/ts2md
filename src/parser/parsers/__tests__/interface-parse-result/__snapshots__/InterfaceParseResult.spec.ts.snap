@@ -2,8 +2,8 @@
 
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-extends.ts 1`] = `
 Object {
-  "nodes": Map {
-    "Foo" => InterfaceParseResult {
+  "nodes": Array [
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -11,7 +11,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "Foo",
     },
-    "Bar" => InterfaceParseResult {
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -19,7 +19,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "Bar",
     },
-    "Baz" => InterfaceParseResult {
+    InterfaceParseResult {
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -30,6 +30,6 @@ Object {
       ],
       "id": "Baz",
     },
-  },
+  ],
 }
 `;
