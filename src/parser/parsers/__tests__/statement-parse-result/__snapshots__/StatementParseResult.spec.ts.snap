@@ -65,6 +65,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "ExportDefaultInterface",
       "methods": Array [],
+      "properties": Array [],
     },
   ],
 }
@@ -97,6 +98,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "ExportInterface",
       "methods": Array [],
+      "properties": Array [],
     },
   ],
 }

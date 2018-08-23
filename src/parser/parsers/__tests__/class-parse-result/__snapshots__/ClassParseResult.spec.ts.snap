@@ -68,6 +68,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "A",
       "methods": Array [],
+      "properties": Array [],
     },
     InterfaceParseResult {
       "defaultExported": false,
@@ -77,6 +78,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "B",
       "methods": Array [],
+      "properties": Array [],
     },
     ClassParseResult {
       "constructors": Array [],
@@ -178,6 +180,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "B",
       "methods": Array [],
+      "properties": Array [],
     },
     InterfaceParseResult {
       "defaultExported": false,
@@ -187,6 +190,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "C",
       "methods": Array [],
+      "properties": Array [],
     },
     ClassParseResult {
       "constructors": Array [],

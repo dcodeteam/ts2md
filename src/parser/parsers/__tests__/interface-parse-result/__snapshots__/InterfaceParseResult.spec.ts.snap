@@ -11,6 +11,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "Foo",
       "methods": Array [],
+      "properties": Array [],
     },
     InterfaceParseResult {
       "defaultExported": false,
@@ -20,6 +21,7 @@ Object {
       "extendedInterfaces": Array [],
       "id": "Bar",
       "methods": Array [],
+      "properties": Array [],
     },
     InterfaceParseResult {
       "defaultExported": false,
@@ -32,6 +34,7 @@ Object {
       ],
       "id": "Baz",
       "methods": Array [],
+      "properties": Array [],
     },
   ],
 }
@@ -91,6 +94,43 @@ Object {
             },
           ],
           "returnType": "string",
+        },
+      ],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-properties.ts 1`] = `
+Object {
+  "nodes": Array [
+    InterfaceParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "InterfaceProperties",
+      "methods": Array [],
+      "properties": Array [
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "a",
+          "type": "string",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "b",
+          "type": "string | number",
+        },
+        PropertyParseResult {
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "c",
+          "type": "(a: string, b: { c: number; }) => boolean",
         },
       ],
     },

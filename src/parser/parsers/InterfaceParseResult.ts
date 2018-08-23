@@ -1,6 +1,7 @@
 import * as ts from "typescript";
 
 import { MethodParseResult } from "./MethodParseResult";
+import { PropertyParseResult } from "./PropertyParseResult";
 import { StatementParseResult } from "./StatementParseResult";
 
 export class InterfaceParseResult extends StatementParseResult {
@@ -8,16 +9,23 @@ export class InterfaceParseResult extends StatementParseResult {
 
   public methods: MethodParseResult[];
 
+  public properties: PropertyParseResult[];
+
   public constructor(node: ts.InterfaceDeclaration, program: ts.Program) {
     super(node);
 
     this.methods = [];
+    this.properties = [];
     this.id = node.name.text;
     this.extendedInterfaces = [];
 
     node.members.forEach(x => {
       if (ts.isMethodSignature(x)) {
         this.methods.push(new MethodParseResult(x, program));
+      }
+
+      if (ts.isPropertySignature(x)) {
+        this.properties.push(new PropertyParseResult(x, program));
       }
     });
 

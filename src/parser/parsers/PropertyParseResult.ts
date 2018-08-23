@@ -5,7 +5,10 @@ import { NodeParseResult } from "./NodeParseResult";
 export class PropertyParseResult extends NodeParseResult {
   public type: string;
 
-  public constructor(node: ts.PropertyDeclaration, program: ts.Program) {
+  public constructor(
+    node: ts.PropertySignature | ts.PropertyDeclaration,
+    program: ts.Program
+  ) {
     super(node);
 
     this.type = "unknown";
