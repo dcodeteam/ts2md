@@ -1,9 +1,9 @@
 import * as ts from "typescript";
 
+import { ConstructorParseResult } from "./ConstructorParseResult";
 import { MethodParseResult } from "./MethodParseResult";
 import { PropertyParseResult } from "./PropertyParseResult";
 import { StatementParseResult } from "./StatementParseResult";
-import { ConstructorParseResult } from "./ConstructorParseResult";
 
 export class InterfaceParseResult extends StatementParseResult {
   public extendedInterfaces: string[];
@@ -33,7 +33,7 @@ export class InterfaceParseResult extends StatementParseResult {
       }
 
       if (ts.isConstructSignatureDeclaration(x)) {
-        this.constructors.push(new ConstructorParseResult(x, program))
+        this.constructors.push(new ConstructorParseResult(x, program));
       }
     });
 
