@@ -3,6 +3,7 @@ import * as ts from "typescript";
 import { MethodParseResult } from "./MethodParseResult";
 import { PropertyParseResult } from "./PropertyParseResult";
 import { StatementParseResult } from "./StatementParseResult";
+import { ConstructorParseResult } from "./ConstructorParseResult";
 
 export class InterfaceParseResult extends StatementParseResult {
   public extendedInterfaces: string[];
@@ -11,11 +12,14 @@ export class InterfaceParseResult extends StatementParseResult {
 
   public properties: PropertyParseResult[];
 
+  public constructors: ConstructorParseResult[];
+
   public constructor(node: ts.InterfaceDeclaration, program: ts.Program) {
     super(node);
 
     this.methods = [];
     this.properties = [];
+    this.constructors = [];
     this.id = node.name.text;
     this.extendedInterfaces = [];
 
@@ -26,6 +30,10 @@ export class InterfaceParseResult extends StatementParseResult {
 
       if (ts.isPropertySignature(x)) {
         this.properties.push(new PropertyParseResult(x, program));
+      }
+
+      if (ts.isConstructSignatureDeclaration(x)) {
+        this.constructors.push(new ConstructorParseResult(x, program))
       }
     });
 

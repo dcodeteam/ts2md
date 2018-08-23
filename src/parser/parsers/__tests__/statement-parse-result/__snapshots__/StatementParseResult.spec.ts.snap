@@ -58,6 +58,7 @@ exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/par
 Object {
   "nodes": Array [
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": true,
       "documentation": "",
       "documentationTags": Array [],
@@ -91,6 +92,7 @@ exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/par
 Object {
   "nodes": Array [
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],

@@ -1,9 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-constructor.ts 1`] = `
+Object {
+  "nodes": Array [
+    InterfaceParseResult {
+      "constructors": Array [
+        ConstructorParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "constructor",
+          "parameters": Array [
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "a",
+              "type": "number",
+            },
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "b",
+              "type": "string",
+            },
+          ],
+        },
+      ],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": false,
+      "extendedInterfaces": Array [],
+      "id": "InterfaceConstructor",
+      "methods": Array [],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
 exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-extends.ts 1`] = `
 Object {
   "nodes": Array [
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -14,6 +54,7 @@ Object {
       "properties": Array [],
     },
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -24,6 +65,7 @@ Object {
       "properties": Array [],
     },
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -44,6 +86,7 @@ exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/par
 Object {
   "nodes": Array [
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -106,6 +149,7 @@ exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/par
 Object {
   "nodes": Array [
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],

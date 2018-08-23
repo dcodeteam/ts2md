@@ -10,6 +10,20 @@ Object {
           "documentation": "",
           "documentationTags": Array [],
           "id": "constructor",
+          "parameters": Array [
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "foo",
+              "type": "string",
+            },
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "bar",
+              "type": "number",
+            },
+          ],
         },
       ],
       "defaultExported": false,
@@ -61,6 +75,7 @@ exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/par
 Object {
   "nodes": Array [
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -71,6 +86,7 @@ Object {
       "properties": Array [],
     },
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -173,6 +189,7 @@ Object {
       "properties": Array [],
     },
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
@@ -183,6 +200,7 @@ Object {
       "properties": Array [],
     },
     InterfaceParseResult {
+      "constructors": Array [],
       "defaultExported": false,
       "documentation": "",
       "documentationTags": Array [],
