@@ -1,15 +1,25 @@
 import * as ts from "typescript";
 
+import { MethodParseResult } from "./MethodParseResult";
 import { StatementParseResult } from "./StatementParseResult";
 
 export class InterfaceParseResult extends StatementParseResult {
   public extendedInterfaces: string[];
 
-  public constructor(node: ts.InterfaceDeclaration) {
+  public methods: MethodParseResult[];
+
+  public constructor(node: ts.InterfaceDeclaration, program: ts.Program) {
     super(node);
 
+    this.methods = [];
     this.id = node.name.text;
     this.extendedInterfaces = [];
+
+    node.members.forEach(x => {
+      if (ts.isMethodSignature(x)) {
+        this.methods.push(new MethodParseResult(x, program));
+      }
+    });
 
     if (node.heritageClauses) {
       node.heritageClauses.forEach(heritageClause => {

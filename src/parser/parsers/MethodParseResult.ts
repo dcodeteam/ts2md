@@ -11,7 +11,10 @@ export class MethodParseResult extends NodeParseResult {
 
   public returnType: string;
 
-  public constructor(node: ts.MethodDeclaration, program: ts.Program) {
+  public constructor(
+    node: ts.MethodSignature | ts.MethodDeclaration,
+    program: ts.Program
+  ) {
     super(node);
 
     this.parameters = [];

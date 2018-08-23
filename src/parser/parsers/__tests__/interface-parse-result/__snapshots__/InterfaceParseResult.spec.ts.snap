@@ -10,6 +10,7 @@ Object {
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Foo",
+      "methods": Array [],
     },
     InterfaceParseResult {
       "defaultExported": false,
@@ -18,6 +19,7 @@ Object {
       "exported": false,
       "extendedInterfaces": Array [],
       "id": "Bar",
+      "methods": Array [],
     },
     InterfaceParseResult {
       "defaultExported": false,
@@ -29,6 +31,68 @@ Object {
         "Bar",
       ],
       "id": "Baz",
+      "methods": Array [],
+    },
+  ],
+}
+`;
+
+exports[`/Users/umidbekkarimov/Documents/Projects/dcodeteam/ts2md/src/parser/parsers/__tests__ interface-methods.ts 1`] = `
+Object {
+  "nodes": Array [
+    InterfaceParseResult {
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedInterfaces": Array [],
+      "id": "InterfaceMethods",
+      "methods": Array [
+        MethodParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "a",
+          "parameters": Array [],
+          "returnType": "void",
+        },
+        MethodParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "b",
+          "parameters": Array [
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "a",
+              "type": "string",
+            },
+          ],
+          "returnType": "string",
+        },
+        MethodParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "c",
+          "parameters": Array [
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "a",
+              "type": "boolean",
+            },
+            ParameterParseResult {
+              "documentation": "",
+              "documentationTags": Array [],
+              "id": "b",
+              "type": "number",
+            },
+          ],
+          "returnType": "string",
+        },
+      ],
     },
   ],
 }

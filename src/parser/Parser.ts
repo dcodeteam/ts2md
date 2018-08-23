@@ -31,7 +31,7 @@ export class Parser {
         }
 
         if (ts.isInterfaceDeclaration(node)) {
-          nodes.push(new InterfaceParseResult(node));
+          nodes.push(new InterfaceParseResult(node, this.program));
         }
 
         if (ts.isFunctionDeclaration(node)) {

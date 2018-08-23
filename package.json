@@ -12,7 +12,7 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "scripts": {
     "ci": "yarn lint && yarn dts && yarn cover --ci && yarn build",
-    "all": "yarn lint --fix && yarn dts && yarn cover && yarn build",
+    "all": "yarn lint --fix && yarn dts && yarn cover -u && yarn build",
     "dts": "tsc --noEmit",
     "test": "jest --watch",
     "cover": "jest --coverage",
