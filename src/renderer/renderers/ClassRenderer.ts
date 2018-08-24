@@ -1,3 +1,5 @@
+import { format } from "util";
+
 import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { BaseRenderer } from "./BaseRenderer";
 import { ConstructorRenderer } from "./ConstructorRenderer";
@@ -16,7 +18,6 @@ export class ClassRenderer extends BaseRenderer {
   protected prerender(): void {
     const {
       id,
-
       methods,
       properties,
       constructors,
@@ -26,16 +27,16 @@ export class ClassRenderer extends BaseRenderer {
     } = this.result;
 
     this.addHorizontalLine();
-    this.addHeader(3, `Class ${this.makeCode(id)}`);
+    this.addHeader(3, format("Class %s", this.makeCode(id)));
 
     if (extendedClass) {
-      this.addHeader(4, `Extends ${this.makeCode(extendedClass)}`);
+      this.addHeader(4, format("Extends %s", this.makeCode(extendedClass)));
     }
 
     if (implementedInterfaces.length === 1) {
       this.addHeader(
         4,
-        `Implements ${this.makeCode(implementedInterfaces[0])}`
+        format("Implements %s", this.makeCode(implementedInterfaces[0]))
       );
     } else if (implementedInterfaces.length > 1) {
       this.addHeader(4, "Implements");

@@ -1,3 +1,5 @@
+import { format } from "util";
+
 import { MethodParseResult } from "../../parser/parsers/MethodParseResult";
 import { BaseRenderer } from "./BaseRenderer";
 
@@ -30,9 +32,13 @@ export class MethodRenderer extends BaseRenderer {
     }
 
     this.addCode(
-      `${accessibility} ${id}(${parameters
-        .map(x => `${x.id}: ${x.type}`)
-        .join(", ")}): ${returnType};`
+      format(
+        "%s %s(%s): %s;",
+        accessibility,
+        id,
+        parameters.map(x => format("%s: %s", x.id, x.type)),
+        returnType
+      )
     );
 
     if (parameters.length > 0) {
@@ -40,7 +46,11 @@ export class MethodRenderer extends BaseRenderer {
 
       this.addList(
         parameters.map(x => {
-          const line = `${this.makeBold(x.id)}: ${this.makeCode(x.type)}`;
+          const line = format(
+            "%s: %s",
+            this.makeBold(x.id),
+            this.makeCode(x.type)
+          );
 
           return !x.documentation ? line : `${line}\n${x.documentation}`;
         })

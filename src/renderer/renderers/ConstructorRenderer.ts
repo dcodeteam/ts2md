@@ -1,3 +1,5 @@
+import { format } from "util";
+
 import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { ConstructorParseResult } from "../../parser/parsers/ConstructorParseResult";
 import { BaseRenderer } from "./BaseRenderer";
@@ -27,9 +29,11 @@ export class ConstructorRenderer extends BaseRenderer {
     }
 
     this.addCode(
-      `new ${parentId}(${parameters
-        .map(x => `${x.id}: ${x.type}`)
-        .join(", ")});`
+      format(
+        "new %s(%s);",
+        parentId,
+        parameters.map(x => format("%s: %s", x.id, x.type)).join(", ")
+      )
     );
 
     if (parameters.length > 0) {
@@ -37,9 +41,15 @@ export class ConstructorRenderer extends BaseRenderer {
 
       this.addList(
         parameters.map(x => {
-          const line = `${this.makeBold(x.id)}: ${this.makeCode(x.type)}`;
+          const line = format(
+            "%s: %s",
+            this.makeBold(x.id),
+            this.makeCode(x.type)
+          );
 
-          return !x.documentation ? line : `${line}\n${x.documentation}`;
+          return !x.documentation
+            ? line
+            : format("%s\n%s", line, x.documentation);
         })
       );
     }

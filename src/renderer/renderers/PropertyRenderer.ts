@@ -1,3 +1,5 @@
+import { format } from "util";
+
 import { PropertyParseResult } from "../..";
 import { BaseRenderer } from "./BaseRenderer";
 
@@ -22,6 +24,8 @@ export class PropertyRenderer extends BaseRenderer {
     if (documentation) {
       this.addTextLine(documentation);
     }
+
+    format("%s %s: %s;", accessibility, id, type);
 
     this.addCode(`${accessibility} ${id}: ${type};`);
   }
