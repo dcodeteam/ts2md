@@ -159,5 +159,26 @@ exports[`class class-mixed-extends-and-implements.ts 1`] = `
 exports[`class class-properties.ts 1`] = `
 "------
 ### Class \`ClassProperties\`
+#### Properties
+##### a
+\`\`\`typescript
+public a: number;
+\`\`\`
+
+##### d
+\`\`\`typescript
+public d: () => string | number;
+\`\`\`
+
+##### e
+\`\`\`typescript
+public e: (a: number) => number;
+\`\`\`
+
+##### b
+\`\`\`typescript
+protected b: string | number;
+\`\`\`
+
 "
 `;

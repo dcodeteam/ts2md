@@ -2,6 +2,10 @@ export { Cli } from "./cli/Cli";
 
 export { App } from "./app/App";
 
+//
+// Parsers
+//
+
 export { Parser, ParseResult } from "./parser/Parser";
 
 export { ClassParseResult } from "./parser/parsers/ClassParseResult";
@@ -31,6 +35,10 @@ export {
 } from "./parser/parsers/VariableListParseResult";
 
 export { VariableParseResult } from "./parser/parsers/VariableParseResult";
+
+//
+// Renderers
+//
 
 export { Renderer } from "./renderer/Renderer";
 

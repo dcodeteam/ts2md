@@ -2,6 +2,7 @@ import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { BaseRenderer } from "./BaseRenderer";
 import { ConstructorRenderer } from "./ConstructorRenderer";
 import { MethodRenderer } from "./MethodRenderer";
+import { PropertyRenderer } from "./PropertyRenderer";
 
 export class ClassRenderer extends BaseRenderer {
   private readonly result: ClassParseResult;
@@ -17,6 +18,7 @@ export class ClassRenderer extends BaseRenderer {
       id,
 
       methods,
+      properties,
       constructors,
       extendedClass,
       documentation,
@@ -49,6 +51,14 @@ export class ClassRenderer extends BaseRenderer {
 
       constructors.forEach(x => {
         this.addText(new ConstructorRenderer(this.result, x).render());
+      });
+    }
+
+    if (properties.length > 0) {
+      this.addHeader(4, "Properties");
+
+      properties.forEach(x => {
+        this.addText(new PropertyRenderer(x).render());
       });
     }
 
