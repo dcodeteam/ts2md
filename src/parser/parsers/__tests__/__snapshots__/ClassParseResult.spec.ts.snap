@@ -229,7 +229,15 @@ Object {
     ClassParseResult {
       "constructors": Array [],
       "defaultExported": false,
-      "documentation": "",
+      "documentation": "This is class methods documentation.
+
+\`\`\`javascript
+const instance = new ClassMethods();
+
+instance.a().catch(() => {
+  process.exit(1);
+})
+\`\`\`",
       "documentationTags": Array [],
       "exported": true,
       "extendedClass": null,
@@ -238,7 +246,15 @@ Object {
       "methods": Array [
         MethodParseResult {
           "accessibility": "public",
-          "documentation": "",
+          "documentation": "This is public method \`a\`.
+
+\`\`\`javascript
+const instance = new ClassMethods();
+
+instance.a().catch(() => {
+  process.exit(1);
+})
+\`\`\`",
           "documentationTags": Array [],
           "id": "a",
           "parameters": Array [],
@@ -246,13 +262,53 @@ Object {
         },
         MethodParseResult {
           "accessibility": "protected",
-          "documentation": "",
-          "documentationTags": Array [],
+          "documentation": "This is protected method \`b\`.
+
+You can extend class and call it whenever you want.
+
+\`\`\`javascript
+import { ClassMethods } from \\".\\";
+
+export class MyClassMethods extends ClassMethods {
+  constructor() {
+    super();
+
+    this.b(1).catch(() => {
+      process.exit(1);
+    })
+  }
+}
+\`\`\`
+
+Or you can override it.
+
+\`\`\`javascript
+import { ClassMethods } from \\".\\";
+
+export class MyClassMethods extends ClassMethods {
+  protected b(a: number): Promise<string> {
+    return super.b(a).catch(() => {
+      process.exit(1);
+    })
+  }
+}
+\`\`\`",
+          "documentationTags": Array [
+            Object {
+              "comment": "is very useful parameter.",
+              "tag": "param",
+            },
+          ],
           "id": "b",
           "parameters": Array [
             ParameterParseResult {
-              "documentation": "",
-              "documentationTags": Array [],
+              "documentation": "is very useful parameter.",
+              "documentationTags": Array [
+                Object {
+                  "comment": "is very useful parameter.",
+                  "tag": "param",
+                },
+              ],
               "id": "a",
               "type": "number",
             },
@@ -261,18 +317,57 @@ Object {
         },
         MethodParseResult {
           "accessibility": "private",
-          "documentation": "",
-          "documentationTags": Array [],
+          "documentation": "Should not be documented.",
+          "documentationTags": Array [
+            Object {
+              "comment": "",
+              "tag": "param",
+            },
+          ],
           "id": "c",
           "parameters": Array [
             ParameterParseResult {
               "documentation": "",
-              "documentationTags": Array [],
+              "documentationTags": Array [
+                Object {
+                  "comment": "",
+                  "tag": "param",
+                },
+              ],
               "id": "a",
               "type": "string",
             },
           ],
           "returnType": "string",
+        },
+      ],
+      "properties": Array [],
+    },
+  ],
+}
+`;
+
+exports[`class class-methods-external-result.ts 1`] = `
+Object {
+  "exported": Array [],
+  "nodes": Array [
+    ClassParseResult {
+      "constructors": Array [],
+      "defaultExported": false,
+      "documentation": "",
+      "documentationTags": Array [],
+      "exported": true,
+      "extendedClass": null,
+      "id": "ClassMethodsExternalResult",
+      "implementedInterfaces": Array [],
+      "methods": Array [
+        MethodParseResult {
+          "accessibility": "public",
+          "documentation": "",
+          "documentationTags": Array [],
+          "id": "createProgram",
+          "parameters": Array [],
+          "returnType": "ts.Program",
         },
       ],
       "properties": Array [],

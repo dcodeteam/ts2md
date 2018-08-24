@@ -16,32 +16,28 @@ export class ConstructorRenderer extends BaseRenderer {
 
   protected prerender(): void {
     const { id: parentId } = this.parent;
-    const { id, parameters, documentation, accessibility } = this.result;
+    const { parameters, documentation, accessibility } = this.result;
 
     if (accessibility !== "public") {
       return;
     }
 
-    this.addHorizontalLine();
-
-    this.addHeader(5, id);
+    if (documentation) {
+      this.addTextLine(documentation);
+    }
 
     this.addCode(
-      `new ${parentId}(${parameters.map(x => `${x.id}: ${x.type}`).join(", ")})`
+      `new ${parentId}(${parameters
+        .map(x => `${x.id}: ${x.type}`)
+        .join(", ")});`
     );
-
-    this.addHorizontalLine();
-
-    if (documentation) {
-      this.addText(documentation);
-    }
 
     if (parameters.length > 0) {
       this.addHeader(6, "Parameters");
 
       this.addList(
         parameters.map(x => {
-          const line = `${this.makeBold(x.id)}: ${this.makeItalic(x.type)}`;
+          const line = `${this.makeBold(x.id)}: ${this.makeCode(x.type)}`;
 
           return !x.documentation ? line : `${line}\n${x.documentation}`;
         })

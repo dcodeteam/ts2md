@@ -37,3 +37,37 @@ export function getNodeAccessibility(node: ts.Declaration): NodeAccessibility {
       ? "protected"
       : "public";
 }
+
+function typeToString(
+  checker: ts.TypeChecker,
+  type: ts.Type,
+  typeNode?: ts.TypeNode
+) {
+  const typeString = checker.typeToString(type);
+
+  return !typeNode || typeString !== "any" ? typeString : typeNode.getText();
+}
+
+export function getSymbolType(
+  checker: ts.TypeChecker,
+  symbol: ts.Symbol,
+  typeNode?: ts.TypeNode
+): string {
+  return typeToString(
+    checker,
+    checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration),
+    typeNode
+  );
+}
+
+export function getSignatureType(
+  checker: ts.TypeChecker,
+  signature: ts.Signature,
+  typeNode?: ts.TypeNode
+): string {
+  return typeToString(
+    checker,
+    checker.getReturnTypeOfSignature(signature),
+    typeNode
+  );
+}

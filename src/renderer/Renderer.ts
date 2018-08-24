@@ -1,13 +1,13 @@
-import { ParserResult } from "../parser/Parser";
+import { ParseResult } from "../parser/Parser";
 import { ClassParseResult } from "../parser/parsers/ClassParseResult";
 import { ClassRenderer } from "./renderers/ClassRenderer";
 
 export class Renderer {
-  private parseResult: ParserResult;
+  private parseResult: ParseResult;
 
   private renderedBlocks?: string[];
 
-  public constructor(result: ParserResult) {
+  public constructor(result: ParseResult) {
     this.parseResult = result;
   }
 

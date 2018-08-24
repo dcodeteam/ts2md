@@ -7,16 +7,20 @@ export abstract class BaseRenderer {
     return this;
   }
 
+  protected addTextLine(text: string): this {
+    return this.addText(`${text}\n`);
+  }
+
   protected addHeader(size: number, text: string): this {
-    return this.addText(`${"#".repeat(size)} ${text}\n`);
+    return this.addTextLine(`${"#".repeat(size)} ${text}`);
   }
 
   protected addLineBreak(): this {
-    return this.addText("\n");
+    return this.addTextLine("");
   }
 
   protected addHorizontalLine(): this {
-    return this.addText("------\n");
+    return this.addTextLine("------");
   }
 
   protected addList(values: string[]): this {
@@ -29,11 +33,11 @@ export abstract class BaseRenderer {
       )
       .join("\n");
 
-    return this.addText(`${text}\n`);
+    return this.addTextLine(text);
   }
 
   protected addCode(text: string): this {
-    return this.addText(["```typescript", text, "```", ""].join("\n"));
+    return this.addTextLine(["```typescript", text, "```", ""].join("\n"));
   }
 
   protected makeBold(text: string): string {
@@ -42,6 +46,10 @@ export abstract class BaseRenderer {
 
   protected makeItalic(text: string): string {
     return `*${text}*`;
+  }
+
+  protected makeCode(text: string): string {
+    return `\`${text}\``;
   }
 
   protected abstract prerender(): void;

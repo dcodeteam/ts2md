@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 
+import { getSymbolType } from "../utils/ParseUtils";
 import { StatementParseResult } from "./StatementParseResult";
 
 export class VariableParseResult extends StatementParseResult {
@@ -16,9 +17,7 @@ export class VariableParseResult extends StatementParseResult {
     if (symbol) {
       this.fulfillSymbolData(symbol, checker);
 
-      this.type = checker.typeToString(
-        checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration)
-      );
+      this.type = getSymbolType(checker, symbol, node.type);
     }
   }
 }

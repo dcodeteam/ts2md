@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 
+import { getSymbolType } from "../utils/ParseUtils";
 import { NodeParseResult } from "./NodeParseResult";
 
 export class PropertyParseResult extends NodeParseResult {
@@ -19,9 +20,7 @@ export class PropertyParseResult extends NodeParseResult {
     if (symbol) {
       this.fulfillSymbolData(symbol, checker);
 
-      this.type = checker.typeToString(
-        checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration)
-      );
+      this.type = getSymbolType(checker, symbol, node.type);
     }
   }
 }

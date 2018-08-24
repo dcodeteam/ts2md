@@ -1,73 +1,163 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`class class-constructor.ts 1`] = `
-"#### Class ClassConstructor
+"------
+### Class \`ClassConstructor\`
 This is ClassConstructor documentation.
 
 \`\`\`javascript
 const instance = new ClassConstructor(\\"foo\\", 1);
 \`\`\`
-
-------
-##### constructor
+#### Constructors
+Creates new instance.
 \`\`\`typescript
-new ClassConstructor(foo: string, bar: number)
+new ClassConstructor(foo: string, bar: number);
 \`\`\`
-------
-Creates new instance.###### Parameters
-- **foo**: *string*
+
+###### Parameters
+- **foo**: \`string\`
   This is \`foo\` argument.
-- **bar**: *number*
+- **bar**: \`number\`
   And this is \`bar\` argument.
 "
 `;
 
 exports[`class class-docs.ts 1`] = `
-"#### Class Calculator
+"------
+### Class \`Calculator\`
+#### Methods
+##### add
+\`\`\`typescript
+public add(numbers: number[]): number;
+\`\`\`
 
+###### Parameters
+- **numbers**: \`number[]\`
+##### subtract
+\`\`\`typescript
+public subtract(numbers: number[]): number;
+\`\`\`
+
+###### Parameters
+- **numbers**: \`number[]\`
 "
 `;
 
 exports[`class class-extends.ts 1`] = `
-"#### Class A
+"------
+### Class \`A\`
 
-
-#### Class ClassExtends
-### Extends A
-
+------
+### Class \`ClassExtends\`
+#### Extends \`A\`
 "
 `;
 
 exports[`class class-implements.ts 1`] = `
-"#### Class ClassImplements
-### Implements
-- A
-- B
-
+"------
+### Class \`ClassImplements\`
+#### Implements
+- \`A\`
+- \`B\`
 "
 `;
 
 exports[`class class-methods.ts 1`] = `
-"#### Class ClassMethods
+"------
+### Class \`ClassMethods\`
+This is class methods documentation.
+
+\`\`\`javascript
+const instance = new ClassMethods();
+
+instance.a().catch(() => {
+  process.exit(1);
+})
+\`\`\`
+#### Methods
+##### a
+This is public method \`a\`.
+
+\`\`\`javascript
+const instance = new ClassMethods();
+
+instance.a().catch(() => {
+  process.exit(1);
+})
+\`\`\`
+\`\`\`typescript
+public a(): Promise<void>;
+\`\`\`
+
+##### b
+This is protected method \`b\`.
+
+You can extend class and call it whenever you want.
+
+\`\`\`javascript
+import { ClassMethods } from \\".\\";
+
+export class MyClassMethods extends ClassMethods {
+  constructor() {
+    super();
+
+    this.b(1).catch(() => {
+      process.exit(1);
+    })
+  }
+}
+\`\`\`
+
+Or you can override it.
+
+\`\`\`javascript
+import { ClassMethods } from \\".\\";
+
+export class MyClassMethods extends ClassMethods {
+  protected b(a: number): Promise<string> {
+    return super.b(a).catch(() => {
+      process.exit(1);
+    })
+  }
+}
+\`\`\`
+\`\`\`typescript
+protected b(a: number): Promise<string>;
+\`\`\`
+
+###### Parameters
+- **a**: \`number\`
+  is very useful parameter.
+"
+`;
+
+exports[`class class-methods-external-result.ts 1`] = `
+"------
+### Class \`ClassMethodsExternalResult\`
+#### Methods
+##### createProgram
+\`\`\`typescript
+public createProgram(): ts.Program;
+\`\`\`
 
 "
 `;
 
 exports[`class class-mixed-extends-and-implements.ts 1`] = `
-"#### Class A
+"------
+### Class \`A\`
 
-
-#### Class ClassMixedExtendsAndImplements
-### Extends A
-### Implements
-- B
-- C
-
+------
+### Class \`ClassMixedExtendsAndImplements\`
+#### Extends \`A\`
+#### Implements
+- \`B\`
+- \`C\`
 "
 `;
 
 exports[`class class-properties.ts 1`] = `
-"#### Class ClassProperties
-
+"------
+### Class \`ClassProperties\`
 "
 `;

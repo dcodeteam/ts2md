@@ -5,6 +5,26 @@ export interface NodeDocumentationTag {
   comment: string;
 }
 
+const ASTERIX_REGEX = /^((\s+)\*[\s]?)/;
+
+function stringifyDocumentation(docs: ts.SymbolDisplayPart[]): string {
+  const lines = ts.displayPartsToString(docs).split("\n");
+
+  let codeStarted = false;
+
+  return lines
+    .map(line => {
+      const result = !codeStarted ? line : line.replace(ASTERIX_REGEX, "");
+
+      if (result.startsWith("```")) {
+        codeStarted = !codeStarted;
+      }
+
+      return result;
+    })
+    .join("\n");
+}
+
 export class NodeParseResult {
   public id: string;
 
@@ -27,7 +47,7 @@ export class NodeParseResult {
     checker: ts.TypeChecker
   ): void {
     this.id = symbol.getName();
-    this.documentation = ts.displayPartsToString(
+    this.documentation = stringifyDocumentation(
       symbol.getDocumentationComment(checker)
     );
   }
@@ -36,7 +56,7 @@ export class NodeParseResult {
     signature: ts.Signature,
     checker: ts.TypeChecker
   ) {
-    this.documentation = ts.displayPartsToString(
+    this.documentation = stringifyDocumentation(
       signature.getDocumentationComment(checker)
     );
   }

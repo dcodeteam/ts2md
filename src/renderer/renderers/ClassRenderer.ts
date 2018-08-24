@@ -1,6 +1,7 @@
 import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { BaseRenderer } from "./BaseRenderer";
 import { ConstructorRenderer } from "./ConstructorRenderer";
+import { MethodRenderer } from "./MethodRenderer";
 
 export class ClassRenderer extends BaseRenderer {
   private readonly result: ClassParseResult;
@@ -14,62 +15,49 @@ export class ClassRenderer extends BaseRenderer {
   protected prerender(): void {
     const {
       id,
+
+      methods,
+      constructors,
       extendedClass,
       documentation,
       implementedInterfaces
     } = this.result;
 
-    this.addHeader(4, `Class ${id}`);
+    this.addHorizontalLine();
+    this.addHeader(3, `Class ${this.makeCode(id)}`);
 
     if (extendedClass) {
-      this.addHeader(3, `Extends ${extendedClass}`);
+      this.addHeader(4, `Extends ${this.makeCode(extendedClass)}`);
     }
 
     if (implementedInterfaces.length === 1) {
-      this.addHeader(3, `Implements ${implementedInterfaces[0]}`);
+      this.addHeader(
+        4,
+        `Implements ${this.makeCode(implementedInterfaces[0])}`
+      );
     } else if (implementedInterfaces.length > 1) {
-      this.addHeader(3, "Implements");
-      this.addList(implementedInterfaces);
+      this.addHeader(4, "Implements");
+      this.addList(implementedInterfaces.map(x => this.makeCode(x)));
     }
 
     if (documentation) {
-      this.addText(documentation);
-      this.addLineBreak();
+      this.addTextLine(documentation);
     }
 
-    this.addLineBreak();
+    if (constructors.length > 0) {
+      this.addHeader(4, "Constructors");
 
-    this.result.constructors.forEach(constructor => {
-      this.addText(new ConstructorRenderer(this.result, constructor).render());
+      constructors.forEach(x => {
+        this.addText(new ConstructorRenderer(this.result, x).render());
+      });
+    }
 
-      // if (constructors.accessibility !== "public") {
-      //   return;
-      // }
-      // text.push(this.renderHeading(constructors.id));
-      // text.push(
-      //   this.renderCode(
-      //     `new ${this.result.id}(${constructors.parameters
-      //       .map(parameter => `${parameter.id}: ${parameter.type}`)
-      //       .join(", ")}): ${this.result.id}`
-      //   )
-      // );
-      // text.push("");
-      //
-      // if (constructors.documentation) {
-      //   text.push(this.renderText(constructors.documentation));
-      //   text.push("");
-      // }
-      //
-      // if (constructors.parameters.length > 0) {
-      //   text.push(this.renderHeading("Parameters"));
-      //   text.push(
-      //     this.renderList(
-      //       constructors.parameters.map(
-      //         x => `${this.renderBold(x.id)}: ${this.renderItalic(x.type)}`
-      //       )
-      //     )
-      //   );
-      // }
-    });
+    if (methods.length > 0) {
+      this.addHeader(4, "Methods");
+
+      methods.forEach(x => {
+        this.addText(new MethodRenderer(x).render());
+      });
+    }
   }
 }

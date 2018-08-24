@@ -1,9 +1,9 @@
 /**
  * This is ClassConstructor documentation.
-
-```javascript
-const instance = new ClassConstructor("foo", 1);
-```
+ *
+ * ```javascript
+ * const instance = new ClassConstructor("foo", 1);
+ * ```
  */
 export class ClassConstructor {
   /**

@@ -1,6 +1,10 @@
 import * as ts from "typescript";
 
-import { NodeAccessibility, getNodeAccessibility } from "../utils/ParseUtils";
+import {
+  NodeAccessibility,
+  getNodeAccessibility,
+  getSignatureType
+} from "../utils/ParseUtils";
 import { NodeParseResult } from "./NodeParseResult";
 import { ParameterParseResult } from "./ParameterParseResult";
 
@@ -31,9 +35,7 @@ export class MethodParseResult extends NodeParseResult {
     const signature = checker.getSignatureFromDeclaration(node);
 
     if (signature) {
-      this.returnType = checker.typeToString(
-        checker.getReturnTypeOfSignature(signature)
-      );
+      this.returnType = getSignatureType(checker, signature, node.type);
     }
 
     node.parameters.forEach(x => {

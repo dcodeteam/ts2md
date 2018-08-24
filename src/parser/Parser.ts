@@ -9,7 +9,7 @@ import { InterfaceParseResult } from "./parsers/InterfaceParseResult";
 import { NodeParseResult } from "./parsers/NodeParseResult";
 import { VariableListParseResult } from "./parsers/VariableListParseResult";
 
-export interface ParserResult {
+export interface ParseResult {
   readonly nodes: NodeParseResult[];
   readonly exported: ExportElement[];
 }
@@ -19,7 +19,7 @@ export class Parser {
 
   private readonly program: ts.Program;
 
-  private result?: ParserResult;
+  private result?: ParseResult;
 
   public constructor(fileName: string, program: ts.Program) {
     this.program = program;
@@ -91,7 +91,7 @@ export class Parser {
     });
   }
 
-  public parse(): ParserResult {
+  public parse(): ParseResult {
     if (!this.result) {
       this.result = { exported: [], nodes: [] };
 

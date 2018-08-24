@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "commander": "^2.17.1",
+    "globby": "^8.0.1",
+    "lodash": "^4.17.10",
     "typedoc": "^0.12.0"
   },
   "devDependencies": {
@@ -30,7 +32,9 @@
     "@dc0de/eslint-config-base": "^0.3.0",
     "@dc0de/eslint-config-node": "^0.3.0",
     "@dc0de/js-scripts": "^0.1.12",
+    "@types/globby": "^8.0.0",
     "@types/jest": "^23.3.1",
+    "@types/lodash": "^4.14.116",
     "@types/node": "^10.7.1",
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
