@@ -1,12 +1,9 @@
 import * as ts from "typescript";
 
-import { NodeAccessibility, getNodeAccessibility } from "../utils/ParseUtils";
-import { NodeParseResult } from "./NodeParseResult";
+import { MemberParseResult } from "./MemberParseResult";
 import { ParameterParseResult } from "./ParameterParseResult";
 
-export class ConstructorParseResult extends NodeParseResult {
-  public accessibility: NodeAccessibility;
-
+export class ConstructorParseResult extends MemberParseResult {
   public parameters: ParameterParseResult[];
 
   public constructor(
@@ -17,7 +14,6 @@ export class ConstructorParseResult extends NodeParseResult {
 
     this.id = "constructor";
     this.parameters = [];
-    this.accessibility = getNodeAccessibility(node);
 
     const checker = program.getTypeChecker();
     const signature = checker.getSignatureFromDeclaration(node);

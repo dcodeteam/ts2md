@@ -1,16 +1,10 @@
 import * as ts from "typescript";
 
-import {
-  NodeAccessibility,
-  getNodeAccessibility,
-  getSignatureType
-} from "../utils/ParseUtils";
-import { NodeParseResult } from "./NodeParseResult";
+import { getSignatureType } from "../utils/ParseUtils";
+import { MemberParseResult } from "./MemberParseResult";
 import { ParameterParseResult } from "./ParameterParseResult";
 
-export class MethodParseResult extends NodeParseResult {
-  public accessibility: NodeAccessibility;
-
+export class MethodParseResult extends MemberParseResult {
   public parameters: ParameterParseResult[];
 
   public returnType: string;
@@ -23,7 +17,6 @@ export class MethodParseResult extends NodeParseResult {
 
     this.parameters = [];
     this.returnType = "unknown";
-    this.accessibility = getNodeAccessibility(node);
 
     const checker = program.getTypeChecker();
     const symbol = checker.getSymbolAtLocation(node.name);

@@ -163,18 +163,21 @@ Object {
       "methods": Array [],
       "properties": Array [
         PropertyParseResult {
+          "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "a",
           "type": "string",
         },
         PropertyParseResult {
+          "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "b",
           "type": "string | number",
         },
         PropertyParseResult {
+          "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "c",

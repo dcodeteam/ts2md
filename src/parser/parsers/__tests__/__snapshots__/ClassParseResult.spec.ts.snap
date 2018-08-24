@@ -449,30 +449,35 @@ Object {
       "methods": Array [],
       "properties": Array [
         PropertyParseResult {
+          "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "a",
           "type": "number",
         },
         PropertyParseResult {
+          "accessibility": "protected",
           "documentation": "",
           "documentationTags": Array [],
           "id": "b",
           "type": "string | number",
         },
         PropertyParseResult {
+          "accessibility": "private",
           "documentation": "",
           "documentationTags": Array [],
           "id": "c",
           "type": "Promise<boolean>",
         },
         PropertyParseResult {
+          "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "d",
           "type": "() => string | number",
         },
         PropertyParseResult {
+          "accessibility": "public",
           "documentation": "",
           "documentationTags": Array [],
           "id": "e",

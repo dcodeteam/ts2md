@@ -1,9 +1,9 @@
 import * as ts from "typescript";
 
 import { getSymbolType } from "../utils/ParseUtils";
-import { NodeParseResult } from "./NodeParseResult";
+import { MemberParseResult } from "./MemberParseResult";
 
-export class PropertyParseResult extends NodeParseResult {
+export class PropertyParseResult extends MemberParseResult {
   public type: string;
 
   public constructor(
