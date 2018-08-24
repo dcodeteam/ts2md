@@ -1,5 +1,7 @@
 import * as ts from "typescript";
 
+import { MemberParseResult } from "../parsers/MemberParseResult";
+
 export function isNodeExported(node: ts.Declaration): boolean {
   // eslint-disable-next-line no-bitwise
   return (ts.getCombinedModifierFlags(node) & ts.ModifierFlags.Export) !== 0;
@@ -36,6 +38,22 @@ export function getNodeAccessibility(node: ts.Declaration): NodeAccessibility {
     : isNodeProtected(node)
       ? "protected"
       : "public";
+}
+
+const accessibilityWeight = {
+  public: 1,
+  protected: 2,
+  private: 3
+};
+
+export function compareAccessibility(
+  a: MemberParseResult,
+  b: MemberParseResult
+): number {
+  const aWeight = accessibilityWeight[a.accessibility];
+  const bWeight = accessibilityWeight[b.accessibility];
+
+  return aWeight - bWeight;
 }
 
 function typeToString(

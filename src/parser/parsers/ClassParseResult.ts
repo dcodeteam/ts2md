@@ -1,5 +1,6 @@
 import * as ts from "typescript";
 
+import { compareAccessibility } from "../utils/ParseUtils";
 import { ConstructorParseResult } from "./ConstructorParseResult";
 import { MethodParseResult } from "./MethodParseResult";
 import { PropertyParseResult } from "./PropertyParseResult";
@@ -43,14 +44,18 @@ export class ClassParseResult extends StatementParseResult {
         this.methods.push(new MethodParseResult(x, program));
       }
 
-      if (ts.isConstructorDeclaration(x)) {
-        this.constructors.push(new ConstructorParseResult(x, program));
-      }
-
       if (ts.isPropertyDeclaration(x)) {
         this.properties.push(new PropertyParseResult(x, program));
       }
+
+      if (ts.isConstructorDeclaration(x)) {
+        this.constructors.push(new ConstructorParseResult(x, program));
+      }
     });
+
+    this.methods.sort(compareAccessibility);
+    this.properties.sort(compareAccessibility);
+    this.constructors.sort(compareAccessibility);
 
     if (node.heritageClauses) {
       node.heritageClauses.forEach(heritageClause => {
