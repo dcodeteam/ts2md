@@ -4,6 +4,7 @@ import { MD } from "../../md/MD";
 import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { InterfaceParseResult } from "../../parser/parsers/InterfaceParseResult";
 import { MethodParseResult } from "../../parser/parsers/MethodParseResult";
+import { ParametersBlock } from "./ParametersBlock";
 
 interface Props {
   data: MethodParseResult;
@@ -40,20 +41,7 @@ export function MethodsBlockItem({
         </pre>
       )}
 
-      {parameters.length > 0 && (
-        <section>
-          <h6>Parameters</h6>
-
-          <ul>
-            {parameters.map(x => (
-              <li>
-                <strong>{x.id}</strong>: <code>{x.type}</code>
-                {x.documentation && <section>{x.documentation}</section>}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <ParametersBlock data={parameters} />
     </section>
   );
 }

@@ -1,9 +1,18 @@
+/**
+ * This is function docs.
+ *
+ * @param a this is parameter `a`.
+ * @param b this is parameter `b`.
+ */
 export function functionArguments(
-  // @ts-ignore
+  /**
+   * this is parameter a docs
+   */
   a: number,
-  // @ts-ignore
+  /**
+   * this is parameter b docs
+   */
   b: { c: number },
-  // @ts-ignore
 ) {
   return a + b.c;
 }

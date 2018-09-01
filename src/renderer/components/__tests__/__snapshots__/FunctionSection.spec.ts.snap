@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`function function-arguments.ts 1`] = `
+### Function \`functionArguments\`
+
+This is function docs.
+
+\`\`\`typescript
+function functionArguments(a: number, b: { c: number }): number;
+\`\`\`
+
+###### Parameters
+
+- **a**: \`number\`
+  this is parameter a docs
+- **b**: \`{ c: number; }\`
+  this is parameter b docs
+
+`;

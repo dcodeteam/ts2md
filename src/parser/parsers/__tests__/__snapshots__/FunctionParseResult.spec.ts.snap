@@ -6,19 +6,19 @@ Object {
   nodes: Array [
     FunctionParseResult {
       defaultExported: false,
-      documentation: ,
+      documentation: This is function docs.,
       documentationTags: Array [],
       exported: true,
       id: functionArguments,
       parameters: Array [
         ParameterParseResult {
-          documentation: ,
+          documentation: this is parameter a docs,
           documentationTags: Array [],
           id: a,
           type: number,
         },
         ParameterParseResult {
-          documentation: ,
+          documentation: this is parameter b docs,
           documentationTags: Array [],
           id: b,
           type: { c: number; },
