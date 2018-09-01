@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variable variable-docs.ts 1`] = `
+### Variable \`FOO\`
+
+Represents value of \`FOO\`.
+
+\`\`\`typescript
+const FOO: "foo";
+\`\`\`
+
+`;
+
+exports[`variable variable-type.ts 1`] = `
+### Variable \`FOO\`
+
+\`\`\`typescript
+const FOO: 1;
+\`\`\`
+
+### Variable \`BAR\`
+
+\`\`\`typescript
+const BAR: number;
+\`\`\`
+
+### Variable \`BAZ\`
+
+\`\`\`typescript
+const BAZ: "baz";
+\`\`\`
+
+### Variable \`QUOZ\`
+
+\`\`\`typescript
+const QUOZ: string;
+\`\`\`
+
+`;

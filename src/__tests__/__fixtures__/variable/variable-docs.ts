@@ -1,4 +1,4 @@
 /**
- * @description Represents value of `FOO`.
+ * Represents value of `FOO`.
  */
 export const FOO = "foo";

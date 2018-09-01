@@ -6,7 +6,7 @@ Object {
   nodes: Array [
     VariableParseResult {
       defaultExported: false,
-      documentation: ,
+      documentation: Represents value of \`FOO\`.,
       documentationTags: Array [],
       exported: true,
       id: FOO,

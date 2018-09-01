@@ -6,9 +6,11 @@ import { ParseResult } from "../parser/Parser";
 import { ClassParseResult } from "../parser/parsers/ClassParseResult";
 import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
 import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
+import { VariableParseResult } from "../parser/parsers/VariableParseResult";
 import { ClassSection } from "./components/ClassSection";
 import { FunctionSection } from "./components/FunctionSection";
 import { InterfaceSection } from "./components/InterfaceSection";
+import { VariableSection } from "./components/VariableSection";
 
 export class Renderer {
   private readonly element: MDElement<object>;
@@ -27,6 +29,10 @@ export class Renderer {
 
           if (data instanceof FunctionParseResult) {
             return <FunctionSection data={data} />;
+          }
+
+          if (data instanceof VariableParseResult) {
+            return <VariableSection data={data} />;
           }
 
           return null;
