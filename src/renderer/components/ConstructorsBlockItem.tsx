@@ -10,16 +10,11 @@ interface Props {
   parent: ClassParseResult | InterfaceParseResult;
 }
 
-export function ConstructorSection({
+export function ConstructorsBlockItem({
   parent,
   data: { parameters, documentation, accessibility },
 }: Props) {
   const { id: parentId } = parent;
-
-  if (accessibility === "private") {
-    return null;
-  }
-
   const isClass = parent instanceof ClassParseResult;
   const args = parameters.map(x => `${x.id}: ${x.type}`).join(", ");
 

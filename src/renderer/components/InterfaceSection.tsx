@@ -2,9 +2,9 @@
 
 import { MD } from "../../md/MD";
 import { InterfaceParseResult } from "../../parser/parsers/InterfaceParseResult";
-import { ConstructorSection } from "./ConstructorSection";
-import { MethodSection } from "./MethodSection";
-import { PropertySection } from "./PropertySection";
+import { ConstructorsBlock } from "./ConstructorsBlock";
+import { MethodsBlock } from "./MethodsBlock";
+import { PropertiesBlock } from "./PropertiesBlock";
 
 interface Props {
   data: InterfaceParseResult;
@@ -12,12 +12,6 @@ interface Props {
 
 export function InterfaceSection({ data }: Props) {
   const { id, documentation, extendedInterfaces } = data;
-
-  const methods = data.methods.filter(x => x.accessibility !== "private");
-  const properties = data.properties.filter(x => x.accessibility !== "private");
-  const constructors = data.constructors.filter(
-    x => x.accessibility !== "private",
-  );
 
   return (
     <section>
@@ -44,35 +38,9 @@ export function InterfaceSection({ data }: Props) {
 
       {documentation && <section>{documentation}</section>}
 
-      {constructors.length > 0 && (
-        <section>
-          <h4>Constructors</h4>
-
-          {constructors.map(x => (
-            <ConstructorSection data={x} parent={data} />
-          ))}
-        </section>
-      )}
-
-      {properties.length > 0 && (
-        <section>
-          <h4>Properties</h4>
-
-          {properties.map(x => (
-            <PropertySection data={x} parent={data} />
-          ))}
-        </section>
-      )}
-
-      {methods.length > 0 && (
-        <section>
-          <h4>Methods</h4>
-
-          {methods.map(x => (
-            <MethodSection data={x} parent={data} />
-          ))}
-        </section>
-      )}
+      <ConstructorsBlock data={data} />
+      <PropertiesBlock data={data} />
+      <MethodsBlock data={data} />
     </section>
   );
 }

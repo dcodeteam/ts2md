@@ -3,23 +3,20 @@
 import { MD } from "../../md/MD";
 import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { InterfaceParseResult } from "../../parser/parsers/InterfaceParseResult";
-import { PropertyParseResult } from "../../parser/parsers/PropertyParseResult";
+import { MethodParseResult } from "../../parser/parsers/MethodParseResult";
 
 interface Props {
-  data: PropertyParseResult;
+  data: MethodParseResult;
   parent: ClassParseResult | InterfaceParseResult;
 }
 
-export function PropertySection({
+export function MethodsBlockItem({
   parent,
-  data: { id, type, documentation, accessibility },
+  data: { id, parameters, returnType, documentation, accessibility },
 }: Props) {
-  if (accessibility === "private") {
-    return null;
-  }
-
   const { id: parentId } = parent;
   const isClass = parent instanceof ClassParseResult;
+  const args = parameters.map(x => `${x.id}: ${x.type}`).join(", ");
 
   return (
     <section>
@@ -32,15 +29,30 @@ export function PropertySection({
       {isClass ? (
         <pre language="typescript">
           class {parentId} {"{"}
-          {accessibility} {id}:{type}
+          {accessibility} {id}( {args} ): {returnType}
           {"}"}
         </pre>
       ) : (
         <pre language="typescript">
           interface {parentId} {"{"}
-          {id}:{type}
+          {id}( {args} ): {returnType}
           {"}"}
         </pre>
+      )}
+
+      {parameters.length > 0 && (
+        <section>
+          <h6>Parameters</h6>
+
+          <ul>
+            {parameters.map(x => (
+              <li>
+                <strong>{x.id}</strong>: <code>{x.type}</code>
+                {x.documentation && <section>{x.documentation}</section>}
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
     </section>
   );
