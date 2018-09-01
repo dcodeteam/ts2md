@@ -8,7 +8,7 @@ export class PropertyParseResult extends MemberParseResult {
 
   public constructor(
     node: ts.PropertySignature | ts.PropertyDeclaration,
-    program: ts.Program
+    program: ts.Program,
   ) {
     super(node);
 

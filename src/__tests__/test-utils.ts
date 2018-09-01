@@ -1,29 +1,32 @@
-import * as fs from "fs";
 import * as path from "path";
 
 import * as ts from "typescript";
 
+import { Glob } from "../glob/Glob";
 import { Parser } from "../parser/Parser";
 import { Renderer } from "../renderer/Renderer";
 
 function textFixtures(
   type: string,
-  spec: (filePath: string, program: ts.Program) => void
+  spec: (filePath: string, program: ts.Program) => void,
 ) {
+  expect.addSnapshotSerializer({
+    test: x => typeof x === "string",
+    print: raw => raw,
+  });
+
   describe(type, () => {
-    const fixturesDir = path.join(__dirname, "__fixtures__", type);
-
-    const files = fs
-      .readdirSync(fixturesDir)
-      .filter(x => x.endsWith("ts"))
-      .map(x => path.join(fixturesDir, x));
-
-    const program = ts.createProgram(files, {
+    const fixturesDir = path.join(__dirname, "__fixtures__");
+    const fixturesGlob = new Glob(fixturesDir, "**/*.ts");
+    const program = ts.createProgram(fixturesGlob.find(), {
       module: ts.ModuleKind.ESNext,
-      target: ts.ScriptTarget.ESNext
+      target: ts.ScriptTarget.ESNext,
     });
 
-    files.forEach(filePath => {
+    const specFixturesDir = path.join(fixturesDir, type);
+    const specFixturesGlob = new Glob(specFixturesDir, "**/*.ts");
+
+    specFixturesGlob.find().forEach(filePath => {
       const fileName = path.basename(filePath);
 
       test(fileName, () => {

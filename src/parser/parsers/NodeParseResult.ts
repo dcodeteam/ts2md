@@ -44,20 +44,20 @@ export class NodeParseResult {
 
   protected fulfillSymbolData(
     symbol: ts.Symbol,
-    checker: ts.TypeChecker
+    checker: ts.TypeChecker,
   ): void {
     this.id = symbol.getName();
     this.documentation = stringifyDocumentation(
-      symbol.getDocumentationComment(checker)
+      symbol.getDocumentationComment(checker),
     );
   }
 
   protected fulfillSignatureData(
     signature: ts.Signature,
-    checker: ts.TypeChecker
+    checker: ts.TypeChecker,
   ) {
     this.documentation = stringifyDocumentation(
-      signature.getDocumentationComment(checker)
+      signature.getDocumentationComment(checker),
     );
   }
 }

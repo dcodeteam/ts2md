@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MDTestRenderer Blockquotes.tsx 1`] = `
+<Blockquotes>
+  <blockquote>
+    This is a very long line that will still be quoted properly when it wraps.
+    Oh boy lets keep writing to make sure this is long enough to actually wrap
+    for everyone. Oh, you can put <strong>Markdown</strong> <em>into</em> a
+    blockquote.
+  </blockquote>
+</Blockquotes>;
+
+`;
+
+exports[`MDTestRenderer CodeAndSyntaxHighlighting.tsx 1`] = `
+<CodeAndSyntaxHighlighting>
+  <section>
+    <code>const a = 1;</code>
+    {"\\n"}
+    <pre language="javascript">
+      const a = 1;
+      {"\\n"}
+      const b = 2;
+    </pre>
+  </section>
+</CodeAndSyntaxHighlighting>;
+
+`;
+
+exports[`MDTestRenderer Emphasis.tsx 1`] = `
+<Emphasis>
+  <section>
+    <section>
+      <em>Emphasis, aka italics</em>
+    </section>
+    {"\\n"}
+    <section>
+      <strong>Strong emphasis, aka bold</strong>
+    </section>
+    {"\\n"}
+    <section>
+      <strong>
+        <em>Combined emphasis</em>
+      </strong>
+    </section>
+    {"\\n"}
+    <section>
+      <del>Strikethrough</del>
+    </section>
+  </section>
+</Emphasis>;
+
+`;
+
+exports[`MDTestRenderer Header.tsx 1`] = `
+<Header>
+  <section>
+    <h1>H1 Header</h1>
+    {"\\n"}
+    <h2>H2 Header</h2>
+    {"\\n"}
+    <h3>H3 Header</h3>
+    {"\\n"}
+    <h4>H4 Header</h4>
+    {"\\n"}
+    <h5>H5 Header</h5>
+    {"\\n"}
+    <h6>H6 Header</h6>
+  </section>
+</Header>;
+
+`;
+
+exports[`MDTestRenderer HorizontalRule.tsx 1`] = `
+<HorizontalRule>
+  <hr />
+</HorizontalRule>;
+
+`;
+
+exports[`MDTestRenderer Images.tsx 1`] = `
+<Images>
+  <img
+    title="Google"
+    alt="Google Logo"
+    src="https://google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+  />
+</Images>;
+
+`;
+
+exports[`MDTestRenderer Links.tsx 1`] = `
+<Lists>
+  <a href="https://google.com">Google</a>
+</Lists>;
+
+`;
+
+exports[`MDTestRenderer Lists.tsx 1`] = `
+<Lists>
+  <section>
+    <ol>
+      <li>Ordered</li>
+      {"\\n"}
+      <li>List</li>
+    </ol>
+    {"\\n"}
+    <ul>
+      <li>Unsorted</li>
+      {"\\n"}
+      <li>List</li>
+    </ul>
+    {"\\n"}
+    <ol>
+      <li>
+        Nested:
+        {"\\n"}
+        <ol>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ol>
+      </li>
+      {"\\n"}
+      <li>
+        Nested:
+        {"\\n"}
+        <ol>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ol>
+      </li>
+      {"\\n"}
+      <li>
+        Nested:
+        {"\\n"}
+        <ol>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ol>
+      </li>
+    </ol>
+    {"\\n"}
+    <ul>
+      <li>
+        Nested:
+        {"\\n"}
+        <ul>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ul>
+      </li>
+      {"\\n"}
+      <li>
+        Nested:
+        {"\\n"}
+        <ul>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ul>
+      </li>
+      {"\\n"}
+      <li>
+        Nested:
+        {"\\n"}
+        <ul>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ul>
+      </li>
+    </ul>
+    {"\\n"}
+    <ol>
+      <li>
+        Nested:
+        {"\\n"}
+        <ul>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ul>
+      </li>
+      {"\\n"}
+      <li>
+        Nested:
+        {"\\n"}
+        <ul>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ul>
+      </li>
+      {"\\n"}
+      <li>
+        Nested:
+        {"\\n"}
+        <ul>
+          <li>Ordered</li>
+          {"\\n"}
+          <li>List</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+</Lists>;
+
+`;
+
+exports[`MDTestRenderer Section.tsx 1`] = `
+<Section>
+  <section>
+    <section>Section A</section>
+    {"\\n"}
+    <section>Section B</section>
+  </section>
+</Section>;
+
+`;
+
+exports[`MDTestRenderer Table.tsx 1`] = `
+<Table>
+  <table>
+    <tr>
+      <th>Tables</th>
+      {"\\n"}
+      <th textAlign="center">Are</th>
+      {"\\n"}
+      <th textAlign="right">Cool</th>
+    </tr>
+    {"\\n"}
+    <tr>
+      <td>col 3 is</td>
+      {"\\n"}
+      <td>right-aligned</td>
+      {"\\n"}
+      <td>$1600</td>
+    </tr>
+    {"\\n"}
+    <tr>
+      <td>col 2 is</td>
+      {"\\n"}
+      <td>centered</td>
+      {"\\n"}
+      <td>$12</td>
+    </tr>
+    {"\\n"}
+    <tr>
+      <td>zebra stripes</td>
+      {"\\n"}
+      <td>are neat</td>
+      {"\\n"}
+      <td>$1</td>
+    </tr>
+  </table>
+</Table>;
+
+`;

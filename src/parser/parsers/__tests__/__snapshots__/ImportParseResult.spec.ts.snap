@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`import import-default.ts 1`] = `
+Object {
+  exported: Array [],
+  nodes: Array [
+    ImportParseResult {
+      documentation: ,
+      documentationTags: Array [],
+      id: Anonymous,
+      imports: Array [
+        Object {
+          id: default,
+          importedId: ts,
+          modulePath: ./import-named,
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`import import-named.ts 1`] = `
+Object {
+  exported: Array [],
+  nodes: Array [
+    ImportParseResult {
+      documentation: ,
+      documentationTags: Array [],
+      id: Anonymous,
+      imports: Array [],
+    },
+  ],
+}
+`;

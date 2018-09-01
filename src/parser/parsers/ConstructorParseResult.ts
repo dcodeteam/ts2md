@@ -8,7 +8,7 @@ export class ConstructorParseResult extends MemberParseResult {
 
   public constructor(
     node: ts.ConstructorDeclaration | ts.ConstructSignatureDeclaration,
-    program: ts.Program
+    program: ts.Program,
   ) {
     super(node);
 

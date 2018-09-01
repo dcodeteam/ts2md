@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`interface interface-constructor.ts 1`] = `""`;
-
-exports[`interface interface-extends.ts 1`] = `""`;
-
-exports[`interface interface-methods.ts 1`] = `""`;
-
-exports[`interface interface-properties.ts 1`] = `""`;

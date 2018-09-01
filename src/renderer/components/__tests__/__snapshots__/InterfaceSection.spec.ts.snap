@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interface interface-constructor.ts 1`] = `
+### Interface \`InterfaceConstructor\`
+
+#### Constructors
+
+\`\`\`typescript
+interface InterfaceConstructor {
+  new (a: number, b: string): InterfaceConstructor;
+}
+\`\`\`
+
+###### Parameters
+
+- **a**: \`number\`
+- **b**: \`string\`
+
+`;
+
+exports[`interface interface-extends.ts 1`] = `
+### Interface \`Foo\`
+
+### Interface \`Bar\`
+
+### Interface \`Baz\`
+
+#### Extends
+
+- \`Foo\`
+- \`Bar\`
+
+`;
+
+exports[`interface interface-methods.ts 1`] = `
+### Interface \`InterfaceMethods\`
+
+#### Methods
+
+##### \`a\`
+
+\`\`\`typescript
+interface InterfaceMethods {
+  a(): void;
+}
+\`\`\`
+
+##### \`b\`
+
+\`\`\`typescript
+interface InterfaceMethods {
+  b(a: string): string;
+}
+\`\`\`
+
+###### Parameters
+
+- **a**: \`string\`
+
+##### \`c\`
+
+\`\`\`typescript
+interface InterfaceMethods {
+  c(a: boolean, b: number): string;
+}
+\`\`\`
+
+###### Parameters
+
+- **a**: \`boolean\`
+- **b**: \`number\`
+
+`;
+
+exports[`interface interface-properties.ts 1`] = `
+### Interface \`InterfaceProperties\`
+
+#### Properties
+
+##### \`a\`
+
+\`\`\`typescript
+interface InterfaceProperties {
+  a: string;
+}
+\`\`\`
+
+##### \`b\`
+
+\`\`\`typescript
+interface InterfaceProperties {
+  b: string | number;
+}
+\`\`\`
+
+##### \`c\`
+
+\`\`\`typescript
+interface InterfaceProperties {
+  c: (a: string, b: { c: number }) => boolean;
+}
+\`\`\`
+
+`;

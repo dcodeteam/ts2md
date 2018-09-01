@@ -2,10 +2,10 @@ import * as fs from "fs";
 import * as path from "path";
 
 import * as commander from "commander";
-import * as globby from "globby";
 import * as ts from "typescript";
 
 import { App } from "../app/App";
+import { Glob } from "../glob/Glob";
 
 /**
  * By default it will output files to `docs.md` file relative to `cwd`.
@@ -57,21 +57,26 @@ export class Cli {
   }
 
   /**
-   * Creates TypeScript Program from files in `root` directory.
+   * Collects TypeScript files in `root` directory.
    *
    * @param root Relative root path.
    */
-  protected createProgram(root: string): ts.Program {
+  protected collectFiles(root: string): string[] {
     const rootPath = this.resolvePath(root);
+    const glob = new Glob(rootPath, "**/*.{ts,tsx}");
 
-    const files = globby.sync("**/*.{ts,tsx}", {
-      cwd: rootPath,
-      absolute: true
-    });
+    return glob.find();
+  }
 
+  /**
+   * Creates TypeScript Program from files in `root` directory.
+   *
+   * @param files Relative root path.
+   */
+  protected createProgram(files: string[]): ts.Program {
     return ts.createProgram(files, {
       module: ts.ModuleKind.ESNext,
-      target: ts.ScriptTarget.ESNext
+      target: ts.ScriptTarget.ESNext,
     });
   }
 
@@ -117,9 +122,17 @@ export class Cli {
       throw new Error("Pass 'entry' file path.");
     }
 
-    const program = this.createProgram(root);
-    const docs = this.generateDocs(entry, program);
+    try {
+      const files = this.collectFiles(root);
+      const program = this.createProgram(files);
+      const docs = this.generateDocs(entry, program);
 
-    this.writeDocs(out, docs);
+      this.writeDocs(out, docs);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error((e && e.stack) || e.message || "Unknown error");
+
+      process.exit(1);
+    }
   }
 }

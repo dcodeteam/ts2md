@@ -6,6 +6,8 @@
     "lib": ["dom", "es2018"],
     // Use for debugging and error tracking.
     "sourceMap": true,
+    // Use JSX.
+    "jsx": "react",
     // Use commonjs modules.
     "module": "commonjs",
     // Transpile to ES2015.

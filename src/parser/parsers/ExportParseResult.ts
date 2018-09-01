@@ -18,7 +18,7 @@ export class ExportParseResult {
       node.exportClause.elements.forEach(x => {
         this.elements.push({
           id: x.name.text,
-          exportedId: !x.propertyName ? x.name.text : x.propertyName.text
+          exportedId: !x.propertyName ? x.name.text : x.propertyName.text,
         });
       });
     }

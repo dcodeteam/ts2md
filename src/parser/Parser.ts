@@ -5,6 +5,7 @@ import * as ts from "typescript";
 import { ClassParseResult } from "./parsers/ClassParseResult";
 import { ExportElement, ExportParseResult } from "./parsers/ExportParseResult";
 import { FunctionParseResult } from "./parsers/FunctionParseResult";
+import { ImportParseResult } from "./parsers/ImportParseResult";
 import { InterfaceParseResult } from "./parsers/InterfaceParseResult";
 import { NodeParseResult } from "./parsers/NodeParseResult";
 import { VariableListParseResult } from "./parsers/VariableListParseResult";
@@ -27,7 +28,9 @@ export class Parser {
   }
 
   private getFile(filePath: string): ts.SourceFile {
-    const file = this.program.getSourceFile(filePath);
+    const file = this.program
+      .getSourceFiles()
+      .find(x => x.fileName.startsWith(filePath));
 
     if (!file) {
       throw new Error(`File ${filePath} not found.`);
@@ -38,25 +41,21 @@ export class Parser {
 
   private resolveDependency(
     fileName: string,
-    dependency: string
+    dependency: string,
   ): ts.SourceFile {
     const basePath = path.join(path.dirname(fileName), dependency);
 
-    const file = this.program
-      .getSourceFiles()
-      .find(x => x.fileName.startsWith(basePath));
-
-    if (!file) {
-      throw new Error(`File ${basePath} not found.`);
-    }
-
-    return file;
+    return this.getFile(basePath);
   }
 
   private parseFile(file: ts.SourceFile): void {
     const { nodes, exported } = this.result!;
 
     file.statements.forEach(node => {
+      if (ts.isImportDeclaration(node)) {
+        nodes.push(new ImportParseResult(node));
+      }
+
       if (ts.isClassDeclaration(node)) {
         nodes.push(new ClassParseResult(node, this.program));
       }

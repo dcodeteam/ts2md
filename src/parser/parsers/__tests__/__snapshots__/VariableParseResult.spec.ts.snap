@@ -2,15 +2,15 @@
 
 exports[`variable variable-docs.ts 1`] = `
 Object {
-  "exported": Array [],
-  "nodes": Array [
+  exported: Array [],
+  nodes: Array [
     VariableParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "FOO",
-      "type": "\\"foo\\"",
+      defaultExported: false,
+      documentation: ,
+      documentationTags: Array [],
+      exported: true,
+      id: FOO,
+      type: "foo",
     },
   ],
 }
@@ -18,39 +18,39 @@ Object {
 
 exports[`variable variable-type.ts 1`] = `
 Object {
-  "exported": Array [],
-  "nodes": Array [
+  exported: Array [],
+  nodes: Array [
     VariableParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "FOO",
-      "type": "1",
+      defaultExported: false,
+      documentation: ,
+      documentationTags: Array [],
+      exported: true,
+      id: FOO,
+      type: 1,
     },
     VariableParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "BAR",
-      "type": "number",
+      defaultExported: false,
+      documentation: ,
+      documentationTags: Array [],
+      exported: true,
+      id: BAR,
+      type: number,
     },
     VariableParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "BAZ",
-      "type": "\\"baz\\"",
+      defaultExported: false,
+      documentation: ,
+      documentationTags: Array [],
+      exported: true,
+      id: BAZ,
+      type: "baz",
     },
     VariableParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "QUOZ",
-      "type": "string",
+      defaultExported: false,
+      documentation: ,
+      documentationTags: Array [],
+      exported: true,
+      id: QUOZ,
+      type: string,
     },
   ],
 }

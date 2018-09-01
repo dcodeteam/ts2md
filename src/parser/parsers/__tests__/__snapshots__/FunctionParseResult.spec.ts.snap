@@ -2,29 +2,29 @@
 
 exports[`function function-arguments.ts 1`] = `
 Object {
-  "exported": Array [],
-  "nodes": Array [
+  exported: Array [],
+  nodes: Array [
     FunctionParseResult {
-      "defaultExported": false,
-      "documentation": "",
-      "documentationTags": Array [],
-      "exported": true,
-      "id": "functionArguments",
-      "parameters": Array [
+      defaultExported: false,
+      documentation: ,
+      documentationTags: Array [],
+      exported: true,
+      id: functionArguments,
+      parameters: Array [
         ParameterParseResult {
-          "documentation": "",
-          "documentationTags": Array [],
-          "id": "a",
-          "type": "number",
+          documentation: ,
+          documentationTags: Array [],
+          id: a,
+          type: number,
         },
         ParameterParseResult {
-          "documentation": "",
-          "documentationTags": Array [],
-          "id": "b",
-          "type": "{ c: number; }",
+          documentation: ,
+          documentationTags: Array [],
+          id: b,
+          type: { c: number; },
         },
       ],
-      "returnType": "number",
+      returnType: number,
     },
   ],
 }

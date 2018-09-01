@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MDRenderer Blockquotes.tsx 1`] = `
+> This is a very long line that will still be quoted properly when it wraps. Oh boy lets keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put **Markdown** _into_ a blockquote.
+
+`;
+
+exports[`MDRenderer CodeAndSyntaxHighlighting.tsx 1`] = `
+\`const a = 1;\`
+
+\`\`\`javascript
+const a = 1;
+const b = 2;
+\`\`\`
+
+`;
+
+exports[`MDRenderer Emphasis.tsx 1`] = `
+_Emphasis, aka italics_
+**Strong emphasis, aka bold**
+**_Combined emphasis_**
+~~Strikethrough~~
+
+`;
+
+exports[`MDRenderer Header.tsx 1`] = `
+# H1 Header
+
+## H2 Header
+
+### H3 Header
+
+#### H4 Header
+
+##### H5 Header
+
+###### H6 Header
+
+`;
+
+exports[`MDRenderer HorizontalRule.tsx 1`] = `
+---
+
+`;
+
+exports[`MDRenderer Images.tsx 1`] = `
+![Google Logo](https://google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png "Google")
+
+`;
+
+exports[`MDRenderer Links.tsx 1`] = `
+[Google](https://google.com)
+
+`;
+
+exports[`MDRenderer Lists.tsx 1`] = `
+1. Ordered
+1. List
+
+- Unsorted
+- List
+
+1. Nested:
+   1. Ordered
+   1. List
+1. Nested:
+   1. Ordered
+   1. List
+1. Nested:
+   1. Ordered
+   1. List
+
+- Nested:
+  - Ordered
+  - List
+- Nested:
+  - Ordered
+  - List
+- Nested:
+  - Ordered
+  - List
+
+1. Nested:
+   - Ordered
+   - List
+1. Nested:
+   - Ordered
+   - List
+1. Nested:
+   - Ordered
+   - List
+
+`;
+
+exports[`MDRenderer Section.tsx 1`] = `
+Section A
+Section B
+
+`;
+
+exports[`MDRenderer Table.tsx 1`] = `
+| Tables        |      Are      |  Cool |
+| :------------ | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
+
+`;

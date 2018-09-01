@@ -11,7 +11,7 @@ export class MethodParseResult extends MemberParseResult {
 
   public constructor(
     node: ts.MethodSignature | ts.MethodDeclaration,
-    program: ts.Program
+    program: ts.Program,
   ) {
     super(node);
 
