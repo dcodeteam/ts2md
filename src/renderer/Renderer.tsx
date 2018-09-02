@@ -2,14 +2,14 @@
 
 import { MD, MDNode } from "../md/MD";
 import { MDRenderer } from "../md/MDRenderer";
-import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
 import { ClassParseResult } from "../parser/parsers/ClassParseResult";
-import { ClassSection } from "./components/ClassSection";
-import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
-import { InterfaceSection } from "./components/InterfaceSection";
 import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
-import { FunctionSection } from "./components/FunctionSection";
+import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
+import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
 import { VariableParseResult } from "../parser/parsers/VariableParseResult";
+import { ClassSection } from "./components/ClassSection";
+import { FunctionSection } from "./components/FunctionSection";
+import { InterfaceSection } from "./components/InterfaceSection";
 import { VariableSection } from "./components/VariableSection";
 
 export class Renderer {
@@ -23,7 +23,11 @@ export class Renderer {
     const module = this.result.modules.get(modulePath);
 
     if (!module) {
-      throw new Error(`Module "${module}" not found.`);
+      throw new Error(
+        `Module "${modulePath}" not found. Expected:\n ${Array.from(
+          this.result.modules.keys(),
+        ).join(", ")}`,
+      );
     }
 
     module.nodes.forEach(node => {
@@ -42,6 +46,10 @@ export class Renderer {
       if (node instanceof VariableParseResult) {
         sections.push(<VariableSection data={node} />);
       }
+    });
+
+    module.reexports.forEach(node => {
+      this.visit(node.modulePath, sections);
     });
   }
 

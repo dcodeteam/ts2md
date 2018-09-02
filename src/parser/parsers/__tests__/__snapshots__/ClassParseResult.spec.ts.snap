@@ -5,7 +5,6 @@ ProjectParseResult {
   entryModule: class/class-constructor.ts,
   modules: Map {
     class/class-constructor.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-constructor.ts,
       nodes: Array [
@@ -66,6 +65,7 @@ const instance = new ClassConstructor("foo", 1);
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -76,7 +76,6 @@ ProjectParseResult {
   entryModule: class/class-docs.ts,
   modules: Map {
     class/class-docs.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-docs.ts,
       nodes: Array [
@@ -154,6 +153,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -164,7 +164,6 @@ ProjectParseResult {
   entryModule: class/class-extends.ts,
   modules: Map {
     class/class-extends.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-extends.ts,
       nodes: Array [
@@ -193,6 +192,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -203,7 +203,6 @@ ProjectParseResult {
   entryModule: class/class-implements.ts,
   modules: Map {
     class/class-implements.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-implements.ts,
       nodes: Array [
@@ -276,6 +275,7 @@ ProjectParseResult {
           ],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -286,7 +286,6 @@ ProjectParseResult {
   entryModule: class/class-methods.ts,
   modules: Map {
     class/class-methods.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-methods.ts,
       nodes: Array [
@@ -408,6 +407,7 @@ export class MyClassMethods extends ClassMethods {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -418,7 +418,6 @@ ProjectParseResult {
   entryModule: class/class-methods-external-result.ts,
   modules: Map {
     class/class-methods-external-result.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [
         ImportParseResult {
           documentation: ,
@@ -451,6 +450,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -461,7 +461,6 @@ ProjectParseResult {
   entryModule: class/class-mixed-extends-and-implements.ts,
   modules: Map {
     class/class-mixed-extends-and-implements.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-mixed-extends-and-implements.ts,
       nodes: Array [
@@ -515,6 +514,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -525,7 +525,6 @@ ProjectParseResult {
   entryModule: class/class-properties.ts,
   modules: Map {
     class/class-properties.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: class/class-properties.ts,
       nodes: Array [
@@ -578,6 +577,7 @@ ProjectParseResult {
           ],
         },
       ],
+      reexports: Array [],
     },
   },
 }

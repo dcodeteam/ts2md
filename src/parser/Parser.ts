@@ -2,7 +2,8 @@ import * as path from "path";
 
 import * as ts from "typescript";
 
-import { ExportElement } from "./parsers/ExportParseResult";
+import { ExportElement, ExportParseResult } from "./parsers/ExportParseResult";
+import { ImportElement } from "./parsers/ImportParseResult";
 import { ModuleParseResult } from "./parsers/ModuleParseResult";
 import { NodeParseResult } from "./parsers/NodeParseResult";
 import { ProjectParseResult } from "./parsers/ProjectParseResult";
@@ -57,11 +58,20 @@ export class Parser {
 
     this.modules.set(modulePath, result);
 
+    const visitDependency = (x: ImportElement | ExportParseResult) => {
+      const importFilePath = path.join(path.dirname(filePath), x.modulePath);
+
+      // eslint-disable-next-line no-param-reassign
+      x.modulePath = this.assureRelativePath(importFilePath);
+
+      this.visit(importFilePath);
+    };
+
     result.imports.forEach(moduleImports => {
-      moduleImports.imports.forEach(x => {
-        this.visit(path.join(path.dirname(filePath), x.modulePath));
-      });
+      moduleImports.imports.forEach(visitDependency);
     });
+
+    result.reexports.forEach(visitDependency);
   }
 
   public parse(): ProjectParseResult {

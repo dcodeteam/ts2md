@@ -5,7 +5,6 @@ ProjectParseResult {
   entryModule: import/import-default.ts,
   modules: Map {
     import/import-default.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [
         ImportParseResult {
           documentation: ,
@@ -15,16 +14,16 @@ ProjectParseResult {
             Object {
               id: default,
               importedId: ts,
-              modulePath: ./import-named,
+              modulePath: import/import-named,
             },
           ],
         },
       ],
       modulePath: import/import-default.ts,
       nodes: Array [],
+      reexports: Array [],
     },
     import/import-named => ModuleParseResult {
-      exports: Array [],
       imports: Array [
         ImportParseResult {
           documentation: ,
@@ -35,6 +34,7 @@ ProjectParseResult {
       ],
       modulePath: import/import-named,
       nodes: Array [],
+      reexports: Array [],
     },
   },
 }
@@ -45,7 +45,6 @@ ProjectParseResult {
   entryModule: import/import-named.ts,
   modules: Map {
     import/import-named.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [
         ImportParseResult {
           documentation: ,
@@ -56,6 +55,7 @@ ProjectParseResult {
       ],
       modulePath: import/import-named.ts,
       nodes: Array [],
+      reexports: Array [],
     },
   },
 }

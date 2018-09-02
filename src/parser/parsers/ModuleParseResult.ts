@@ -15,7 +15,7 @@ export class ModuleParseResult {
 
   public imports: ImportParseResult[];
 
-  public exports: ExportParseResult[];
+  public reexports: ExportParseResult[];
 
   public constructor(
     modulePath: string,
@@ -24,7 +24,7 @@ export class ModuleParseResult {
   ) {
     this.nodes = [];
     this.imports = [];
-    this.exports = [];
+    this.reexports = [];
 
     this.modulePath = modulePath;
 
@@ -54,7 +54,7 @@ export class ModuleParseResult {
       }
 
       if (ts.isExportDeclaration(node)) {
-        this.exports.push(new ExportParseResult(node));
+        this.reexports.push(new ExportParseResult(node));
       }
     });
   }

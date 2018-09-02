@@ -5,7 +5,6 @@ ProjectParseResult {
   entryModule: interface/interface-constructor.ts,
   modules: Map {
     interface/interface-constructor.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: interface/interface-constructor.ts,
       nodes: Array [
@@ -42,6 +41,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -52,7 +52,6 @@ ProjectParseResult {
   entryModule: interface/interface-extends.ts,
   modules: Map {
     interface/interface-extends.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: interface/interface-extends.ts,
       nodes: Array [
@@ -93,6 +92,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -103,7 +103,6 @@ ProjectParseResult {
   entryModule: interface/interface-methods.ts,
   modules: Map {
     interface/interface-methods.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: interface/interface-methods.ts,
       nodes: Array [
@@ -164,6 +163,7 @@ ProjectParseResult {
           properties: Array [],
         },
       ],
+      reexports: Array [],
     },
   },
 }
@@ -174,7 +174,6 @@ ProjectParseResult {
   entryModule: interface/interface-properties.ts,
   modules: Map {
     interface/interface-properties.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: interface/interface-properties.ts,
       nodes: Array [
@@ -212,6 +211,7 @@ ProjectParseResult {
           ],
         },
       ],
+      reexports: Array [],
     },
   },
 }

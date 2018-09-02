@@ -1,5 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`export export-reexport-ordering.ts 1`] = ``;
+exports[`export export-reexport.ts 1`] = `
+### Class \`ClassConstructor\`
 
-exports[`export export-reexports.ts 1`] = ``;
+This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor("foo", 1);
+\`\`\`
+
+#### Constructors
+
+Creates new instance.
+
+\`\`\`typescript
+class ClassConstructor {
+  public constructor(foo: string, bar: number);
+}
+\`\`\`
+
+###### Parameters
+
+- **foo**: \`string\`
+  This is \`foo\` argument.
+- **bar**: \`number\`
+  And this is \`bar\` argument.
+
+`;
+
+exports[`export export-reexport-ordering.ts 1`] = `
+### Variable \`FOO\`
+
+Represents value of \`FOO\`.
+
+\`\`\`typescript
+const FOO: "foo";
+\`\`\`
+
+### Function \`functionArguments\`
+
+This is function docs.
+
+\`\`\`typescript
+function functionArguments(a: number, b: { c: number }): number;
+\`\`\`
+
+###### Parameters
+
+- **a**: \`number\`
+  this is parameter a docs
+  this is parameter \`a\`.
+- **b**: \`{ c: number; }\`
+  this is parameter b docs
+  this is parameter \`b\`.
+
+### Class \`ClassConstructor\`
+
+This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor("foo", 1);
+\`\`\`
+
+#### Constructors
+
+Creates new instance.
+
+\`\`\`typescript
+class ClassConstructor {
+  public constructor(foo: string, bar: number);
+}
+\`\`\`
+
+###### Parameters
+
+- **foo**: \`string\`
+  This is \`foo\` argument.
+- **bar**: \`number\`
+  And this is \`bar\` argument.
+
+`;

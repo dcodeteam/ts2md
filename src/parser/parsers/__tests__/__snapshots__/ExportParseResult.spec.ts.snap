@@ -1,11 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`export export-reexport.ts 1`] = `
+ProjectParseResult {
+  entryModule: export/export-reexport.ts,
+  modules: Map {
+    export/export-reexport.ts => ModuleParseResult {
+      imports: Array [],
+      modulePath: export/export-reexport.ts,
+      nodes: Array [],
+      reexports: Array [
+        ExportParseResult {
+          elements: Array [
+            Object {
+              exportedId: ClassConstructor,
+              id: ClassConstructor,
+            },
+          ],
+          modulePath: class/class-constructor,
+        },
+      ],
+    },
+    class/class-constructor => ModuleParseResult {
+      imports: Array [],
+      modulePath: class/class-constructor,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [
+            ConstructorParseResult {
+              accessibility: public,
+              documentation: Creates new instance.,
+              documentationTags: Array [
+                Object {
+                  comment: This is \`foo\` argument.,
+                  tag: param,
+                },
+                Object {
+                  comment: And this is \`bar\` argument.,
+                  tag: param,
+                },
+              ],
+              id: constructor,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: This is \`foo\` argument.,
+                  documentationTags: Array [
+                    Object {
+                      comment: This is \`foo\` argument.,
+                      tag: param,
+                    },
+                  ],
+                  id: foo,
+                  type: string,
+                },
+                ParameterParseResult {
+                  documentation: And this is \`bar\` argument.,
+                  documentationTags: Array [
+                    Object {
+                      comment: And this is \`bar\` argument.,
+                      tag: param,
+                    },
+                  ],
+                  id: bar,
+                  type: number,
+                },
+              ],
+            },
+          ],
+          defaultExported: false,
+          documentation: This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor("foo", 1);
+\`\`\`,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: null,
+          id: ClassConstructor,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [],
+        },
+      ],
+      reexports: Array [],
+    },
+  },
+}
+`;
+
 exports[`export export-reexport-ordering.ts 1`] = `
 ProjectParseResult {
   entryModule: export/export-reexport-ordering.ts,
   modules: Map {
     export/export-reexport-ordering.ts => ModuleParseResult {
-      exports: Array [
+      imports: Array [],
+      modulePath: export/export-reexport-ordering.ts,
+      nodes: Array [],
+      reexports: Array [
         ExportParseResult {
           elements: Array [
             Object {
@@ -13,7 +103,7 @@ ProjectParseResult {
               id: FOO,
             },
           ],
-          modulePath: ../variable/variable-docs,
+          modulePath: variable/variable-docs,
         },
         ExportParseResult {
           elements: Array [
@@ -22,7 +112,7 @@ ProjectParseResult {
               id: functionArguments,
             },
           ],
-          modulePath: ../function/function-arguments,
+          modulePath: function/function-arguments,
         },
         ExportParseResult {
           elements: Array [
@@ -31,99 +121,137 @@ ProjectParseResult {
               id: ClassConstructor,
             },
           ],
-          modulePath: ../class/class-constructor,
+          modulePath: class/class-constructor,
         },
       ],
-      imports: Array [],
-      modulePath: export/export-reexport-ordering.ts,
-      nodes: Array [],
     },
-  },
-}
-`;
-
-exports[`export export-reexports.ts 1`] = `
-ProjectParseResult {
-  entryModule: export/export-reexports.ts,
-  modules: Map {
-    export/export-reexports.ts => ModuleParseResult {
-      exports: Array [
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassConstructor,
-              id: ClassConstructor,
-            },
-          ],
-          modulePath: ../class/class-constructor,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: Calculator,
-              id: Calculator,
-            },
-          ],
-          modulePath: ../class/class-docs,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassExtends,
-              id: ClassExtends,
-            },
-          ],
-          modulePath: ../class/class-extends,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassImplements,
-              id: ClassImplements,
-            },
-          ],
-          modulePath: ../class/class-implements,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassMethods,
-              id: ClassMethods,
-            },
-          ],
-          modulePath: ../class/class-methods,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassMethodsExternalResult,
-              id: ClassMethodsExternalResult,
-            },
-          ],
-          modulePath: ../class/class-methods-external-result,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassMixedExtendsAndImplements,
-              id: ClassMixedExtendsAndImplements,
-            },
-          ],
-          modulePath: ../class/class-mixed-extends-and-implements,
-        },
-        ExportParseResult {
-          elements: Array [
-            Object {
-              exportedId: ClassProperties,
-              id: ClassProperties,
-            },
-          ],
-          modulePath: ../class/class-properties,
+    variable/variable-docs => ModuleParseResult {
+      imports: Array [],
+      modulePath: variable/variable-docs,
+      nodes: Array [
+        VariableParseResult {
+          defaultExported: false,
+          documentation: Represents value of \`FOO\`.,
+          documentationTags: Array [],
+          exported: true,
+          id: FOO,
+          type: "foo",
         },
       ],
+      reexports: Array [],
+    },
+    function/function-arguments => ModuleParseResult {
       imports: Array [],
-      modulePath: export/export-reexports.ts,
-      nodes: Array [],
+      modulePath: function/function-arguments,
+      nodes: Array [
+        FunctionParseResult {
+          defaultExported: false,
+          documentation: This is function docs.,
+          documentationTags: Array [
+            Object {
+              comment: this is parameter \`a\`.,
+              tag: param,
+            },
+            Object {
+              comment: this is parameter \`b\`.,
+              tag: param,
+            },
+          ],
+          exported: true,
+          id: functionArguments,
+          parameters: Array [
+            ParameterParseResult {
+              documentation: this is parameter a docs
+this is parameter \`a\`.,
+              documentationTags: Array [
+                Object {
+                  comment: this is parameter \`a\`.,
+                  tag: param,
+                },
+              ],
+              id: a,
+              type: number,
+            },
+            ParameterParseResult {
+              documentation: this is parameter b docs
+this is parameter \`b\`.,
+              documentationTags: Array [
+                Object {
+                  comment: this is parameter \`b\`.,
+                  tag: param,
+                },
+              ],
+              id: b,
+              type: { c: number; },
+            },
+          ],
+          returnType: number,
+        },
+      ],
+      reexports: Array [],
+    },
+    class/class-constructor => ModuleParseResult {
+      imports: Array [],
+      modulePath: class/class-constructor,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [
+            ConstructorParseResult {
+              accessibility: public,
+              documentation: Creates new instance.,
+              documentationTags: Array [
+                Object {
+                  comment: This is \`foo\` argument.,
+                  tag: param,
+                },
+                Object {
+                  comment: And this is \`bar\` argument.,
+                  tag: param,
+                },
+              ],
+              id: constructor,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: This is \`foo\` argument.,
+                  documentationTags: Array [
+                    Object {
+                      comment: This is \`foo\` argument.,
+                      tag: param,
+                    },
+                  ],
+                  id: foo,
+                  type: string,
+                },
+                ParameterParseResult {
+                  documentation: And this is \`bar\` argument.,
+                  documentationTags: Array [
+                    Object {
+                      comment: And this is \`bar\` argument.,
+                      tag: param,
+                    },
+                  ],
+                  id: bar,
+                  type: number,
+                },
+              ],
+            },
+          ],
+          defaultExported: false,
+          documentation: This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor("foo", 1);
+\`\`\`,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: null,
+          id: ClassConstructor,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [],
+        },
+      ],
+      reexports: Array [],
     },
   },
 }

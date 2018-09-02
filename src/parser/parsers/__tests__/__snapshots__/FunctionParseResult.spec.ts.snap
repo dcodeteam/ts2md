@@ -5,7 +5,6 @@ ProjectParseResult {
   entryModule: function/function-arguments.ts,
   modules: Map {
     function/function-arguments.ts => ModuleParseResult {
-      exports: Array [],
       imports: Array [],
       modulePath: function/function-arguments.ts,
       nodes: Array [
@@ -32,6 +31,7 @@ ProjectParseResult {
           returnType: number,
         },
       ],
+      reexports: Array [],
     },
   },
 }
