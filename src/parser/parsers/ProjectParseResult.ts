@@ -1,9 +1,15 @@
 import { ModuleParseResult } from "./ModuleParseResult";
 
 export class ProjectParseResult {
-  public modules: Map<string, ModuleParseResult>;
+  public readonly entryModule: string;
 
-  public constructor(modules: Map<string, ModuleParseResult>) {
+  public readonly modules: Map<string, ModuleParseResult>;
+
+  public constructor(
+    entryModule: string,
+    modules: Map<string, ModuleParseResult>,
+  ) {
+    this.entryModule = entryModule;
     this.modules = modules;
   }
 }

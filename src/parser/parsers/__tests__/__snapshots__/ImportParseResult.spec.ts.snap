@@ -2,6 +2,7 @@
 
 exports[`import import-default.ts 1`] = `
 ProjectParseResult {
+  entryModule: import/import-default.ts,
   modules: Map {
     import/import-default.ts => ModuleParseResult {
       exports: Array [],
@@ -41,6 +42,7 @@ ProjectParseResult {
 
 exports[`import import-named.ts 1`] = `
 ProjectParseResult {
+  entryModule: import/import-named.ts,
   modules: Map {
     import/import-named.ts => ModuleParseResult {
       exports: Array [],

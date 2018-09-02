@@ -1,49 +1,55 @@
 /** @jsx MD.createElement */
 
-import { MD, MDElement, MDNode } from "../md/MD";
+import { MD, MDNode } from "../md/MD";
 import { MDRenderer } from "../md/MDRenderer";
-import { ClassParseResult } from "../parser/parsers/ClassParseResult";
-import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
-import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
 import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
-import { VariableParseResult } from "../parser/parsers/VariableParseResult";
+import { ClassParseResult } from "../parser/parsers/ClassParseResult";
 import { ClassSection } from "./components/ClassSection";
-import { FunctionSection } from "./components/FunctionSection";
+import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
 import { InterfaceSection } from "./components/InterfaceSection";
+import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
+import { FunctionSection } from "./components/FunctionSection";
+import { VariableParseResult } from "../parser/parsers/VariableParseResult";
 import { VariableSection } from "./components/VariableSection";
 
 export class Renderer {
-  private readonly element: MDElement<object>;
+  private readonly result: ProjectParseResult;
 
   public constructor(result: ProjectParseResult) {
-    const sections: MDNode[] = [];
+    this.result = result;
+  }
 
-    result.modules.forEach(module => {
-      module.nodes.forEach(node => {
-        if (node instanceof ClassParseResult) {
-          sections.push(<ClassSection data={node} />);
-        }
+  private visit(modulePath: string, sections: MDNode[]): void {
+    const module = this.result.modules.get(modulePath);
 
-        if (node instanceof InterfaceParseResult) {
-          sections.push(<InterfaceSection data={node} />);
-        }
+    if (!module) {
+      throw new Error(`Module "${module}" not found.`);
+    }
 
-        if (node instanceof FunctionParseResult) {
-          sections.push(<FunctionSection data={node} />);
-        }
+    module.nodes.forEach(node => {
+      if (node instanceof ClassParseResult) {
+        sections.push(<ClassSection data={node} />);
+      }
 
-        if (node instanceof VariableParseResult) {
-          sections.push(<VariableSection data={node} />);
-        }
-      });
+      if (node instanceof InterfaceParseResult) {
+        sections.push(<InterfaceSection data={node} />);
+      }
 
-      return null;
+      if (node instanceof FunctionParseResult) {
+        sections.push(<FunctionSection data={node} />);
+      }
+
+      if (node instanceof VariableParseResult) {
+        sections.push(<VariableSection data={node} />);
+      }
     });
-
-    this.element = <section>{sections}</section>;
   }
 
   public render(): string {
-    return MDRenderer.renderToString(this.element);
+    const sections: MDNode[] = [];
+
+    this.visit(this.result.entryModule, sections);
+
+    return MDRenderer.renderToString(<section>{sections}</section>);
   }
 }

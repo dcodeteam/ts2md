@@ -2,6 +2,7 @@
 
 exports[`function function-arguments.ts 1`] = `
 ProjectParseResult {
+  entryModule: function/function-arguments.ts,
   modules: Map {
     function/function-arguments.ts => ModuleParseResult {
       exports: Array [],

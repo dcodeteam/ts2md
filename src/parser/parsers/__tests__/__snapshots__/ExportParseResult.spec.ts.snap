@@ -2,6 +2,7 @@
 
 exports[`export export-reexport-ordering.ts 1`] = `
 ProjectParseResult {
+  entryModule: export/export-reexport-ordering.ts,
   modules: Map {
     export/export-reexport-ordering.ts => ModuleParseResult {
       exports: Array [
@@ -43,6 +44,7 @@ ProjectParseResult {
 
 exports[`export export-reexports.ts 1`] = `
 ProjectParseResult {
+  entryModule: export/export-reexports.ts,
   modules: Map {
     export/export-reexports.ts => ModuleParseResult {
       exports: Array [

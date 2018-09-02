@@ -28,7 +28,7 @@ export class Parser {
     this.modules = new Map();
   }
 
-  private makeRelativeUrl(absoluteUrl: string): string {
+  private assureRelativePath(absoluteUrl: string): string {
     return !path.isAbsolute(absoluteUrl)
       ? absoluteUrl
       : path.relative(this.root, absoluteUrl);
@@ -43,7 +43,7 @@ export class Parser {
       throw new Error(`File ${filePath} not found.`);
     }
 
-    const modulePath = this.makeRelativeUrl(filePath);
+    const modulePath = this.assureRelativePath(filePath);
 
     if (this.modules.has(modulePath)) {
       return;
@@ -65,8 +65,10 @@ export class Parser {
   }
 
   public parse(): ProjectParseResult {
+    const modulePath = this.assureRelativePath(this.entryFile);
+
     this.visit(this.entryFile);
 
-    return new ProjectParseResult(this.modules);
+    return new ProjectParseResult(modulePath, this.modules);
   }
 }

@@ -2,6 +2,7 @@
 
 exports[`class class-constructor.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-constructor.ts,
   modules: Map {
     class/class-constructor.ts => ModuleParseResult {
       exports: Array [],
@@ -72,6 +73,7 @@ const instance = new ClassConstructor("foo", 1);
 
 exports[`class class-docs.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-docs.ts,
   modules: Map {
     class/class-docs.ts => ModuleParseResult {
       exports: Array [],
@@ -159,6 +161,7 @@ ProjectParseResult {
 
 exports[`class class-extends.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-extends.ts,
   modules: Map {
     class/class-extends.ts => ModuleParseResult {
       exports: Array [],
@@ -197,6 +200,7 @@ ProjectParseResult {
 
 exports[`class class-implements.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-implements.ts,
   modules: Map {
     class/class-implements.ts => ModuleParseResult {
       exports: Array [],
@@ -279,6 +283,7 @@ ProjectParseResult {
 
 exports[`class class-methods.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-methods.ts,
   modules: Map {
     class/class-methods.ts => ModuleParseResult {
       exports: Array [],
@@ -410,6 +415,7 @@ export class MyClassMethods extends ClassMethods {
 
 exports[`class class-methods-external-result.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-methods-external-result.ts,
   modules: Map {
     class/class-methods-external-result.ts => ModuleParseResult {
       exports: Array [],
@@ -452,6 +458,7 @@ ProjectParseResult {
 
 exports[`class class-mixed-extends-and-implements.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-mixed-extends-and-implements.ts,
   modules: Map {
     class/class-mixed-extends-and-implements.ts => ModuleParseResult {
       exports: Array [],
@@ -515,6 +522,7 @@ ProjectParseResult {
 
 exports[`class class-properties.ts 1`] = `
 ProjectParseResult {
+  entryModule: class/class-properties.ts,
   modules: Map {
     class/class-properties.ts => ModuleParseResult {
       exports: Array [],

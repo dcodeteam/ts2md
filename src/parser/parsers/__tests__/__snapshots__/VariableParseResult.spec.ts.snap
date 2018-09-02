@@ -2,6 +2,7 @@
 
 exports[`variable variable-docs.ts 1`] = `
 ProjectParseResult {
+  entryModule: variable/variable-docs.ts,
   modules: Map {
     variable/variable-docs.ts => ModuleParseResult {
       exports: Array [],
@@ -24,6 +25,7 @@ ProjectParseResult {
 
 exports[`variable variable-type.ts 1`] = `
 ProjectParseResult {
+  entryModule: variable/variable-type.ts,
   modules: Map {
     variable/variable-type.ts => ModuleParseResult {
       exports: Array [],
