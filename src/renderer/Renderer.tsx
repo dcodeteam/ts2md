@@ -5,6 +5,7 @@ import { MDRenderer } from "../md/MDRenderer";
 import { ClassParseResult } from "../parser/parsers/ClassParseResult";
 import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
 import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
+import { NodeParseResult } from "../parser/parsers/NodeParseResult";
 import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
 import { VariableParseResult } from "../parser/parsers/VariableParseResult";
 import { ClassSection } from "./components/ClassSection";
@@ -15,11 +16,76 @@ import { VariableSection } from "./components/VariableSection";
 export class Renderer {
   private readonly result: ProjectParseResult;
 
+  private readonly mdNodes: Map<NodeParseResult, MDNode>;
+
+  private readonly moduleResultsMap: Map<string, Map<string, NodeParseResult>>;
+
   public constructor(result: ProjectParseResult) {
     this.result = result;
+    this.mdNodes = new Map();
+    this.moduleResultsMap = new Map();
   }
 
-  private visit(modulePath: string, sections: MDNode[]): void {
+  private fulfillResultsMap() {
+    this.result.modules.forEach(module => {
+      if (this.moduleResultsMap.has(module.modulePath)) {
+        return;
+      }
+
+      const nodes = new Map();
+
+      module.nodes.forEach(node => {
+        nodes.set(node.id, node);
+      });
+
+      this.moduleResultsMap.set(module.modulePath, nodes);
+    });
+  }
+
+  private resolveModuleNode(
+    modulePath: string,
+    nodeId: string,
+  ): NodeParseResult {
+    const moduleNodes = this.moduleResultsMap.get(modulePath);
+
+    if (!moduleNodes) {
+      throw new Error(`Module "${modulePath}" not found .`);
+    }
+
+    const node = moduleNodes.get(nodeId);
+
+    if (!node) {
+      throw new Error(`Node "${nodeId}" not fond in module  "${modulePath}".`);
+    }
+
+    return node;
+  }
+
+  private documentNode(node: NodeParseResult): void {
+    if (this.mdNodes.has(node)) {
+      return;
+    }
+
+    if (node instanceof ClassParseResult) {
+      this.mdNodes.set(node, <ClassSection data={node} />);
+    }
+
+    if (node instanceof InterfaceParseResult) {
+      this.mdNodes.set(node, <InterfaceSection data={node} />);
+    }
+
+    if (node instanceof FunctionParseResult) {
+      if (node.exported || node.defaultExported) {
+        this.mdNodes.set(node, <FunctionSection data={node} />);
+      }
+    }
+
+    if (node instanceof VariableParseResult) {
+      this.mdNodes.set(node, <VariableSection data={node} />);
+    }
+  }
+
+  private visit(modulePath: string): void {
     const module = this.result.modules.get(modulePath);
 
     if (!module) {
@@ -30,34 +96,44 @@ export class Renderer {
       );
     }
 
+    // Document internal nodes.
     module.nodes.forEach(node => {
-      if (node instanceof ClassParseResult) {
-        sections.push(<ClassSection data={node} />);
-      }
-
-      if (node instanceof InterfaceParseResult) {
-        sections.push(<InterfaceSection data={node} />);
-      }
-
-      if (node instanceof FunctionParseResult) {
-        sections.push(<FunctionSection data={node} />);
-      }
-
-      if (node instanceof VariableParseResult) {
-        sections.push(<VariableSection data={node} />);
-      }
+      this.documentNode(node);
     });
 
-    module.reexports.forEach(node => {
-      this.visit(node.modulePath, sections);
+    // Document reexported nodes.
+    module.reexports.forEach(reexport => {
+      reexport.elements.forEach(exportElement => {
+        this.documentNode(
+          this.resolveModuleNode(reexport.modulePath, exportElement.id),
+        );
+      });
+    });
+
+    // Visit reexported dependencies.
+    module.reexports.forEach(x => {
+      this.visit(x.modulePath);
+    });
+
+    // Visit imported dependencies.
+    module.imports.forEach(({ imports }) => {
+      imports.forEach(x => {
+        this.visit(x.modulePath);
+      });
     });
   }
 
+  private visitEntry(): void {
+    this.visit(this.result.entryModule);
+  }
+
   public render(): string {
-    const sections: MDNode[] = [];
+    this.fulfillResultsMap();
 
-    this.visit(this.result.entryModule, sections);
+    this.visitEntry();
 
-    return MDRenderer.renderToString(<section>{sections}</section>);
+    return MDRenderer.renderToString(
+      <section>{Array.from(this.mdNodes.values())}</section>,
+    );
   }
 }
