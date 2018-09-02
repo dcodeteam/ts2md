@@ -7,6 +7,7 @@ import { FunctionParseResult } from "./FunctionParseResult";
 import { ImportParseResult } from "./ImportParseResult";
 import { InterfaceParseResult } from "./InterfaceParseResult";
 import { NodeParseResult } from "./NodeParseResult";
+import { TypeParseResult } from "./TypeParseResult";
 import { VariableListParseResult } from "./VariableListParseResult";
 
 export class ModuleParseResult {
@@ -52,6 +53,10 @@ export class ModuleParseResult {
         result.declarations.forEach(x => {
           this.nodes.push(x);
         });
+      }
+
+      if (ts.isTypeAliasDeclaration(node)) {
+        this.nodes.push(new TypeParseResult(node, program));
       }
 
       if (ts.isImportDeclaration(node)) {

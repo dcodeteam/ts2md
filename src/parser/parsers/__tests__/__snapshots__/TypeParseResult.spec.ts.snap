@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type type-base.ts 1`] = `
+ProjectParseResult {
+  entryModule: type/type-base.ts,
+  modules: Map {
+    type/type-base.ts => ModuleParseResult {
+      imports: Array [],
+      modulePath: type/type-base.ts,
+      nodes: Array [
+        TypeParseResult {
+          defaultExported: false,
+          documentation: This is type docs.,
+          documentationTags: Array [],
+          exported: true,
+          id: TypeBase,
+          type: "TYPE" | "BASE",
+        },
+      ],
+      reexports: Array [],
+    },
+  },
+}
+`;
