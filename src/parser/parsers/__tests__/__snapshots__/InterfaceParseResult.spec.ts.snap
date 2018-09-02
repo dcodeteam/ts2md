@@ -1,190 +1,214 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`interface interface-constructor.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    InterfaceParseResult {
-      constructors: Array [
-        ConstructorParseResult {
-          accessibility: undefined,
-          documentation: ,
-          documentationTags: Array [],
-          id: constructor,
-          parameters: Array [
-            ParameterParseResult {
+ProjectParseResult {
+  modules: Map {
+    interface/interface-constructor.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: interface/interface-constructor.ts,
+      nodes: Array [
+        InterfaceParseResult {
+          constructors: Array [
+            ConstructorParseResult {
+              accessibility: undefined,
               documentation: ,
               documentationTags: Array [],
-              id: a,
-              type: number,
-            },
-            ParameterParseResult {
-              documentation: ,
-              documentationTags: Array [],
-              id: b,
-              type: string,
+              id: constructor,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: a,
+                  type: number,
+                },
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: b,
+                  type: string,
+                },
+              ],
             },
           ],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: InterfaceConstructor,
+          methods: Array [],
+          properties: Array [],
         },
       ],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: InterfaceConstructor,
-      methods: Array [],
-      properties: Array [],
     },
-  ],
+  },
 }
 `;
 
 exports[`interface interface-extends.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: Foo,
-      methods: Array [],
-      properties: Array [],
-    },
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: Bar,
-      methods: Array [],
-      properties: Array [],
-    },
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [
-        Foo,
-        Bar,
+ProjectParseResult {
+  modules: Map {
+    interface/interface-extends.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: interface/interface-extends.ts,
+      nodes: Array [
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: Foo,
+          methods: Array [],
+          properties: Array [],
+        },
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: Bar,
+          methods: Array [],
+          properties: Array [],
+        },
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [
+            Foo,
+            Bar,
+          ],
+          id: Baz,
+          methods: Array [],
+          properties: Array [],
+        },
       ],
-      id: Baz,
-      methods: Array [],
-      properties: Array [],
     },
-  ],
+  },
 }
 `;
 
 exports[`interface interface-methods.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedInterfaces: Array [],
-      id: InterfaceMethods,
-      methods: Array [
-        MethodParseResult {
-          accessibility: undefined,
+ProjectParseResult {
+  modules: Map {
+    interface/interface-methods.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: interface/interface-methods.ts,
+      nodes: Array [
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
           documentation: ,
           documentationTags: Array [],
-          id: a,
-          parameters: Array [],
-          returnType: void,
+          exported: true,
+          extendedInterfaces: Array [],
+          id: InterfaceMethods,
+          methods: Array [
+            MethodParseResult {
+              accessibility: undefined,
+              documentation: ,
+              documentationTags: Array [],
+              id: a,
+              parameters: Array [],
+              returnType: void,
+            },
+            MethodParseResult {
+              accessibility: undefined,
+              documentation: ,
+              documentationTags: Array [],
+              id: b,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: a,
+                  type: string,
+                },
+              ],
+              returnType: string,
+            },
+            MethodParseResult {
+              accessibility: undefined,
+              documentation: ,
+              documentationTags: Array [],
+              id: c,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: a,
+                  type: boolean,
+                },
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: b,
+                  type: number,
+                },
+              ],
+              returnType: string,
+            },
+          ],
+          properties: Array [],
         },
-        MethodParseResult {
-          accessibility: undefined,
+      ],
+    },
+  },
+}
+`;
+
+exports[`interface interface-properties.ts 1`] = `
+ProjectParseResult {
+  modules: Map {
+    interface/interface-properties.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: interface/interface-properties.ts,
+      nodes: Array [
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
           documentation: ,
           documentationTags: Array [],
-          id: b,
-          parameters: Array [
-            ParameterParseResult {
+          exported: true,
+          extendedInterfaces: Array [],
+          id: InterfaceProperties,
+          methods: Array [],
+          properties: Array [
+            PropertyParseResult {
+              accessibility: undefined,
               documentation: ,
               documentationTags: Array [],
               id: a,
               type: string,
             },
-          ],
-          returnType: string,
-        },
-        MethodParseResult {
-          accessibility: undefined,
-          documentation: ,
-          documentationTags: Array [],
-          id: c,
-          parameters: Array [
-            ParameterParseResult {
-              documentation: ,
-              documentationTags: Array [],
-              id: a,
-              type: boolean,
-            },
-            ParameterParseResult {
+            PropertyParseResult {
+              accessibility: undefined,
               documentation: ,
               documentationTags: Array [],
               id: b,
-              type: number,
+              type: string | number,
+            },
+            PropertyParseResult {
+              accessibility: undefined,
+              documentation: ,
+              documentationTags: Array [],
+              id: c,
+              type: (a: string, b: { c: number; }) => boolean,
             },
           ],
-          returnType: string,
-        },
-      ],
-      properties: Array [],
-    },
-  ],
-}
-`;
-
-exports[`interface interface-properties.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedInterfaces: Array [],
-      id: InterfaceProperties,
-      methods: Array [],
-      properties: Array [
-        PropertyParseResult {
-          accessibility: undefined,
-          documentation: ,
-          documentationTags: Array [],
-          id: a,
-          type: string,
-        },
-        PropertyParseResult {
-          accessibility: undefined,
-          documentation: ,
-          documentationTags: Array [],
-          id: b,
-          type: string | number,
-        },
-        PropertyParseResult {
-          accessibility: undefined,
-          documentation: ,
-          documentationTags: Array [],
-          id: c,
-          type: (a: string, b: { c: number; }) => boolean,
         },
       ],
     },
-  ],
+  },
 }
 `;

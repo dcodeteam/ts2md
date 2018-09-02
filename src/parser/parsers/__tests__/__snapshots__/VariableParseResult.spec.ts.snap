@@ -1,57 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`variable variable-docs.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    VariableParseResult {
-      defaultExported: false,
-      documentation: Represents value of \`FOO\`.,
-      documentationTags: Array [],
-      exported: true,
-      id: FOO,
-      type: "foo",
+ProjectParseResult {
+  modules: Map {
+    variable/variable-docs.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: variable/variable-docs.ts,
+      nodes: Array [
+        VariableParseResult {
+          defaultExported: false,
+          documentation: Represents value of \`FOO\`.,
+          documentationTags: Array [],
+          exported: true,
+          id: FOO,
+          type: "foo",
+        },
+      ],
     },
-  ],
+  },
 }
 `;
 
 exports[`variable variable-type.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    VariableParseResult {
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      id: FOO,
-      type: 1,
+ProjectParseResult {
+  modules: Map {
+    variable/variable-type.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: variable/variable-type.ts,
+      nodes: Array [
+        VariableParseResult {
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          id: FOO,
+          type: 1,
+        },
+        VariableParseResult {
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          id: BAR,
+          type: number,
+        },
+        VariableParseResult {
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          id: BAZ,
+          type: "baz",
+        },
+        VariableParseResult {
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          id: QUOZ,
+          type: string,
+        },
+      ],
     },
-    VariableParseResult {
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      id: BAR,
-      type: number,
-    },
-    VariableParseResult {
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      id: BAZ,
-      type: "baz",
-    },
-    VariableParseResult {
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      id: QUOZ,
-      type: string,
-    },
-  ],
+  },
 }
 `;

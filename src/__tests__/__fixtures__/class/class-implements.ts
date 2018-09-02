@@ -1,4 +1,15 @@
-interface A {}
-interface B {}
+interface A {
+  a: string;
+}
 
-export class ClassImplements implements A, B {}
+interface B {
+  b: number;
+}
+
+export class ClassImplements implements A, B {
+  // @ts-ignore
+  public a: string;
+
+  // @ts-ignore
+  public b: number;
+}

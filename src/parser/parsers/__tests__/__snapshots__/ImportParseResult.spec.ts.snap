@@ -1,35 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`import import-default.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ImportParseResult {
-      documentation: ,
-      documentationTags: Array [],
-      id: Anonymous,
+ProjectParseResult {
+  modules: Map {
+    import/import-default.ts => ModuleParseResult {
+      exports: Array [],
       imports: Array [
-        Object {
-          id: default,
-          importedId: ts,
-          modulePath: ./import-named,
+        ImportParseResult {
+          documentation: ,
+          documentationTags: Array [],
+          id: Anonymous,
+          imports: Array [
+            Object {
+              id: default,
+              importedId: ts,
+              modulePath: ./import-named,
+            },
+          ],
         },
       ],
+      modulePath: import/import-default.ts,
+      nodes: Array [],
     },
-  ],
+    import/import-named => ModuleParseResult {
+      exports: Array [],
+      imports: Array [
+        ImportParseResult {
+          documentation: ,
+          documentationTags: Array [],
+          id: Anonymous,
+          imports: Array [],
+        },
+      ],
+      modulePath: import/import-named,
+      nodes: Array [],
+    },
+  },
 }
 `;
 
 exports[`import import-named.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ImportParseResult {
-      documentation: ,
-      documentationTags: Array [],
-      id: Anonymous,
-      imports: Array [],
+ProjectParseResult {
+  modules: Map {
+    import/import-named.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [
+        ImportParseResult {
+          documentation: ,
+          documentationTags: Array [],
+          id: Anonymous,
+          imports: Array [],
+        },
+      ],
+      modulePath: import/import-named.ts,
+      nodes: Array [],
     },
-  ],
+  },
 }
 `;

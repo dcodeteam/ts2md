@@ -1,31 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`function function-arguments.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    FunctionParseResult {
-      defaultExported: false,
-      documentation: This is function docs.,
-      documentationTags: Array [],
-      exported: true,
-      id: functionArguments,
-      parameters: Array [
-        ParameterParseResult {
-          documentation: this is parameter a docs,
+ProjectParseResult {
+  modules: Map {
+    function/function-arguments.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: function/function-arguments.ts,
+      nodes: Array [
+        FunctionParseResult {
+          defaultExported: false,
+          documentation: This is function docs.,
           documentationTags: Array [],
-          id: a,
-          type: number,
-        },
-        ParameterParseResult {
-          documentation: this is parameter b docs,
-          documentationTags: Array [],
-          id: b,
-          type: { c: number; },
+          exported: true,
+          id: functionArguments,
+          parameters: Array [
+            ParameterParseResult {
+              documentation: this is parameter a docs,
+              documentationTags: Array [],
+              id: a,
+              type: number,
+            },
+            ParameterParseResult {
+              documentation: this is parameter b docs,
+              documentationTags: Array [],
+              id: b,
+              type: { c: number; },
+            },
+          ],
+          returnType: number,
         },
       ],
-      returnType: number,
     },
-  ],
+  },
 }
 `;

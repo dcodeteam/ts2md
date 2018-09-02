@@ -1,11 +1,11 @@
 /** @jsx MD.createElement */
 
-import { MD, MDElement } from "../md/MD";
+import { MD, MDElement, MDNode } from "../md/MD";
 import { MDRenderer } from "../md/MDRenderer";
-import { ParseResult } from "../parser/Parser";
 import { ClassParseResult } from "../parser/parsers/ClassParseResult";
 import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
 import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
+import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
 import { VariableParseResult } from "../parser/parsers/VariableParseResult";
 import { ClassSection } from "./components/ClassSection";
 import { FunctionSection } from "./components/FunctionSection";
@@ -15,30 +15,32 @@ import { VariableSection } from "./components/VariableSection";
 export class Renderer {
   private readonly element: MDElement<object>;
 
-  public constructor(result: ParseResult) {
-    this.element = (
-      <section>
-        {result.nodes.map(data => {
-          if (data instanceof ClassParseResult) {
-            return <ClassSection data={data} />;
-          }
+  public constructor(result: ProjectParseResult) {
+    const sections: MDNode[] = [];
 
-          if (data instanceof InterfaceParseResult) {
-            return <InterfaceSection data={data} />;
-          }
+    result.modules.forEach(module => {
+      module.nodes.forEach(node => {
+        if (node instanceof ClassParseResult) {
+          sections.push(<ClassSection data={node} />);
+        }
 
-          if (data instanceof FunctionParseResult) {
-            return <FunctionSection data={data} />;
-          }
+        if (node instanceof InterfaceParseResult) {
+          sections.push(<InterfaceSection data={node} />);
+        }
 
-          if (data instanceof VariableParseResult) {
-            return <VariableSection data={data} />;
-          }
+        if (node instanceof FunctionParseResult) {
+          sections.push(<FunctionSection data={node} />);
+        }
 
-          return null;
-        })}
-      </section>
-    );
+        if (node instanceof VariableParseResult) {
+          sections.push(<VariableSection data={node} />);
+        }
+      });
+
+      return null;
+    });
+
+    this.element = <section>{sections}</section>;
   }
 
   public render(): string {

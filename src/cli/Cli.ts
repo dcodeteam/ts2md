@@ -63,9 +63,8 @@ export class Cli {
    */
   protected collectFiles(root: string): string[] {
     const rootPath = this.resolvePath(root);
-    const glob = new Glob(rootPath, "**/*.{ts,tsx}");
 
-    return glob.find();
+    return new Glob(rootPath, "**/*.{ts,tsx}").find();
   }
 
   /**
@@ -83,15 +82,19 @@ export class Cli {
   /**
    * Generates documentation for `entry` file.
    *
+   * @param root Relative root path.
    * @param entry Project entry point.
    * @param program TypeScript program.
    */
-  protected generateDocs(entry: string, program: ts.Program): string {
+  protected generateDocs(
+    root: string,
+    entry: string,
+    program: ts.Program,
+  ): string {
+    const rootPath = this.resolvePath(root);
     const entryPath = this.resolvePath(entry);
 
-    const app = new App(entryPath, program);
-
-    return app.generateDocs();
+    return new App(rootPath, entryPath, program).generateDocs();
   }
 
   /**
@@ -125,7 +128,7 @@ export class Cli {
     try {
       const files = this.collectFiles(root);
       const program = this.createProgram(files);
-      const docs = this.generateDocs(entry, program);
+      const docs = this.generateDocs(root, entry, program);
 
       this.writeDocs(out, docs);
     } catch (e) {

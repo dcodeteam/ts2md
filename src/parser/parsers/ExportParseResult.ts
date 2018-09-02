@@ -8,11 +8,11 @@ export interface ExportElement {
 export class ExportParseResult {
   public elements: ExportElement[];
 
-  public moduleSpecifier: string;
+  public modulePath: string;
 
   public constructor(node: ts.ExportDeclaration) {
     this.elements = [];
-    this.moduleSpecifier = "";
+    this.modulePath = "";
 
     if (node.exportClause) {
       node.exportClause.elements.forEach(x => {
@@ -24,7 +24,7 @@ export class ExportParseResult {
     }
 
     if (node.moduleSpecifier && ts.isStringLiteral(node.moduleSpecifier)) {
-      this.moduleSpecifier = node.moduleSpecifier.text;
+      this.modulePath = node.moduleSpecifier.text;
     }
   }
 }

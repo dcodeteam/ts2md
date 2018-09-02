@@ -1,6 +1,7 @@
 import * as ts from "typescript";
 
-import { ParseResult, Parser } from "../parser/Parser";
+import { Parser } from "../parser/Parser";
+import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
 import { Renderer } from "../renderer/Renderer";
 
 /**
@@ -17,15 +18,19 @@ import { Renderer } from "../renderer/Renderer";
  * ```
  */
 export class App {
+  private readonly root: string;
+
   private readonly entryFile: string;
 
   private readonly program: ts.Program;
 
   /**
-   * @param entryFile Absolute path to documentation entry file.
+   * @param root Absolute path to project root directory.
+   * @param entryFile Absolute path to project entry file.
    * @param program TypeScript program.
    */
-  public constructor(entryFile: string, program: ts.Program) {
+  public constructor(root: string, entryFile: string, program: ts.Program) {
+    this.root = root;
     this.program = program;
     this.entryFile = entryFile;
   }
@@ -33,10 +38,8 @@ export class App {
   /**
    * Creates parse result.
    */
-  protected parse(): ParseResult {
-    const parser = new Parser(this.entryFile, this.program);
-
-    return parser.parse();
+  protected parse(): ProjectParseResult {
+    return new Parser(this.root, this.entryFile, this.program).parse();
   }
 
   /**
@@ -44,10 +47,8 @@ export class App {
    *
    * @param parseResult Plain object representation of parsed files.
    */
-  protected render(parseResult: ParseResult): string {
-    const renderer = new Renderer(parseResult);
-
-    return renderer.render();
+  protected render(parseResult: ProjectParseResult): string {
+    return new Renderer(parseResult).render();
   }
 
   /**

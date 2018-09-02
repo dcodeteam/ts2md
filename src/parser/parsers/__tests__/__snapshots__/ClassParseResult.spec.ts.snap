@@ -1,252 +1,294 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`class class-constructor.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ClassParseResult {
-      constructors: Array [
-        ConstructorParseResult {
-          accessibility: public,
-          documentation: Creates new instance.,
-          documentationTags: Array [
-            Object {
-              comment: This is \`foo\` argument.,
-              tag: param,
-            },
-            Object {
-              comment: And this is \`bar\` argument.,
-              tag: param,
-            },
-          ],
-          id: constructor,
-          parameters: Array [
-            ParameterParseResult {
-              documentation: This is \`foo\` argument.,
+ProjectParseResult {
+  modules: Map {
+    class/class-constructor.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-constructor.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [
+            ConstructorParseResult {
+              accessibility: public,
+              documentation: Creates new instance.,
               documentationTags: Array [
                 Object {
                   comment: This is \`foo\` argument.,
                   tag: param,
                 },
-              ],
-              id: foo,
-              type: string,
-            },
-            ParameterParseResult {
-              documentation: And this is \`bar\` argument.,
-              documentationTags: Array [
                 Object {
                   comment: And this is \`bar\` argument.,
                   tag: param,
                 },
               ],
-              id: bar,
+              id: constructor,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: This is \`foo\` argument.,
+                  documentationTags: Array [
+                    Object {
+                      comment: This is \`foo\` argument.,
+                      tag: param,
+                    },
+                  ],
+                  id: foo,
+                  type: string,
+                },
+                ParameterParseResult {
+                  documentation: And this is \`bar\` argument.,
+                  documentationTags: Array [
+                    Object {
+                      comment: And this is \`bar\` argument.,
+                      tag: param,
+                    },
+                  ],
+                  id: bar,
+                  type: number,
+                },
+              ],
+            },
+          ],
+          defaultExported: false,
+          documentation: This is ClassConstructor documentation.
+
+\`\`\`javascript
+const instance = new ClassConstructor("foo", 1);
+\`\`\`,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: null,
+          id: ClassConstructor,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [],
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`class class-docs.ts 1`] = `
+ProjectParseResult {
+  modules: Map {
+    class/class-docs.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-docs.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [
+            Object {
+              comment: ##### Initialization
+\`\`\`javascript
+ const calculator = new Calculator();
+ \`\`\`,
+              tag: usage,
+            },
+          ],
+          exported: true,
+          extendedClass: null,
+          id: Calculator,
+          implementedInterfaces: Array [],
+          methods: Array [
+            MethodParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [
+                Object {
+                  comment: Adds provided \`numbers\`.,
+                  tag: description,
+                },
+                Object {
+                  comment: \`\`\`javascript
+   * const result = calculator.add(1, 2, 3);
+   * \`\`\`,
+                  tag: example,
+                },
+              ],
+              id: add,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: numbers,
+                  type: number[],
+                },
+              ],
+              returnType: number,
+            },
+            MethodParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [
+                Object {
+                  comment: Subtracts provided \`numbers\`.,
+                  tag: description,
+                },
+                Object {
+                  comment: \`\`\`javascript
+   * const result = calculator.subtract(1, 2, 3);
+   * \`\`\`,
+                  tag: example,
+                },
+              ],
+              id: subtract,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [],
+                  id: numbers,
+                  type: number[],
+                },
+              ],
+              returnType: number,
+            },
+          ],
+          properties: Array [],
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`class class-extends.ts 1`] = `
+ProjectParseResult {
+  modules: Map {
+    class/class-extends.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-extends.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedClass: null,
+          id: A,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [],
+        },
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: A,
+          id: ClassExtends,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [],
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`class class-implements.ts 1`] = `
+ProjectParseResult {
+  modules: Map {
+    class/class-implements.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-implements.ts,
+      nodes: Array [
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: A,
+          methods: Array [],
+          properties: Array [
+            PropertyParseResult {
+              accessibility: undefined,
+              documentation: ,
+              documentationTags: Array [],
+              id: a,
+              type: string,
+            },
+          ],
+        },
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: B,
+          methods: Array [],
+          properties: Array [
+            PropertyParseResult {
+              accessibility: undefined,
+              documentation: ,
+              documentationTags: Array [],
+              id: b,
+              type: number,
+            },
+          ],
+        },
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: null,
+          id: ClassImplements,
+          implementedInterfaces: Array [
+            A,
+            B,
+          ],
+          methods: Array [],
+          properties: Array [
+            PropertyParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [],
+              id: a,
+              type: string,
+            },
+            PropertyParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [],
+              id: b,
               type: number,
             },
           ],
         },
       ],
-      defaultExported: false,
-      documentation: This is ClassConstructor documentation.
-
-\`\`\`javascript
-const instance = new ClassConstructor("foo", 1);
-\`\`\`,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: null,
-      id: ClassConstructor,
-      implementedInterfaces: Array [],
-      methods: Array [],
-      properties: Array [],
     },
-  ],
-}
-`;
-
-exports[`class class-docs.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [
-        Object {
-          comment: ##### Initialization
-\`\`\`javascript
- const calculator = new Calculator();
- \`\`\`,
-          tag: usage,
-        },
-      ],
-      exported: true,
-      extendedClass: null,
-      id: Calculator,
-      implementedInterfaces: Array [],
-      methods: Array [
-        MethodParseResult {
-          accessibility: public,
-          documentation: ,
-          documentationTags: Array [
-            Object {
-              comment: Adds provided \`numbers\`.,
-              tag: description,
-            },
-            Object {
-              comment: \`\`\`javascript
-   * const result = calculator.add(1, 2, 3);
-   * \`\`\`,
-              tag: example,
-            },
-          ],
-          id: add,
-          parameters: Array [
-            ParameterParseResult {
-              documentation: ,
-              documentationTags: Array [],
-              id: numbers,
-              type: number[],
-            },
-          ],
-          returnType: number,
-        },
-        MethodParseResult {
-          accessibility: public,
-          documentation: ,
-          documentationTags: Array [
-            Object {
-              comment: Subtracts provided \`numbers\`.,
-              tag: description,
-            },
-            Object {
-              comment: \`\`\`javascript
-   * const result = calculator.subtract(1, 2, 3);
-   * \`\`\`,
-              tag: example,
-            },
-          ],
-          id: subtract,
-          parameters: Array [
-            ParameterParseResult {
-              documentation: ,
-              documentationTags: Array [],
-              id: numbers,
-              type: number[],
-            },
-          ],
-          returnType: number,
-        },
-      ],
-      properties: Array [],
-    },
-  ],
-}
-`;
-
-exports[`class class-extends.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedClass: null,
-      id: A,
-      implementedInterfaces: Array [],
-      methods: Array [],
-      properties: Array [],
-    },
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: A,
-      id: ClassExtends,
-      implementedInterfaces: Array [],
-      methods: Array [],
-      properties: Array [],
-    },
-  ],
-}
-`;
-
-exports[`class class-implements.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: A,
-      methods: Array [],
-      properties: Array [],
-    },
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: B,
-      methods: Array [],
-      properties: Array [],
-    },
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: null,
-      id: ClassImplements,
-      implementedInterfaces: Array [
-        A,
-        B,
-      ],
-      methods: Array [],
-      properties: Array [],
-    },
-  ],
+  },
 }
 `;
 
 exports[`class class-methods.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: This is class methods documentation.
-
-\`\`\`javascript
-const instance = new ClassMethods();
-
-instance.a().catch(() => {
-  process.exit(1);
-})
-\`\`\`,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: null,
-      id: ClassMethods,
-      implementedInterfaces: Array [],
-      methods: Array [
-        MethodParseResult {
-          accessibility: public,
-          documentation: This is public method \`a\`.
+ProjectParseResult {
+  modules: Map {
+    class/class-methods.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-methods.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: This is class methods documentation.
 
 \`\`\`javascript
 const instance = new ClassMethods();
@@ -256,13 +298,30 @@ instance.a().catch(() => {
 })
 \`\`\`,
           documentationTags: Array [],
-          id: a,
-          parameters: Array [],
-          returnType: Promise<void>,
-        },
-        MethodParseResult {
-          accessibility: protected,
-          documentation: This is protected method \`b\`.
+          exported: true,
+          extendedClass: null,
+          id: ClassMethods,
+          implementedInterfaces: Array [],
+          methods: Array [
+            MethodParseResult {
+              accessibility: public,
+              documentation: This is public method \`a\`.
+
+\`\`\`javascript
+const instance = new ClassMethods();
+
+instance.a().catch(() => {
+  process.exit(1);
+})
+\`\`\`,
+              documentationTags: Array [],
+              id: a,
+              parameters: Array [],
+              returnType: Promise<void>,
+            },
+            MethodParseResult {
+              accessibility: protected,
+              documentation: This is protected method \`b\`.
 
 You can extend class and call it whenever you want.
 
@@ -293,204 +352,225 @@ export class MyClassMethods extends ClassMethods {
   }
 }
 \`\`\`,
-          documentationTags: Array [
-            Object {
-              comment: is very useful parameter.,
-              tag: param,
-            },
-          ],
-          id: b,
-          parameters: Array [
-            ParameterParseResult {
-              documentation: is very useful parameter.,
               documentationTags: Array [
                 Object {
                   comment: is very useful parameter.,
                   tag: param,
                 },
               ],
-              id: a,
-              type: number,
+              id: b,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: is very useful parameter.,
+                  documentationTags: Array [
+                    Object {
+                      comment: is very useful parameter.,
+                      tag: param,
+                    },
+                  ],
+                  id: a,
+                  type: number,
+                },
+              ],
+              returnType: Promise<string>,
             },
-          ],
-          returnType: Promise<string>,
-        },
-        MethodParseResult {
-          accessibility: private,
-          documentation: Should not be documented.,
-          documentationTags: Array [
-            Object {
-              comment: ,
-              tag: param,
-            },
-          ],
-          id: c,
-          parameters: Array [
-            ParameterParseResult {
-              documentation: ,
+            MethodParseResult {
+              accessibility: private,
+              documentation: Should not be documented.,
               documentationTags: Array [
                 Object {
                   comment: ,
                   tag: param,
                 },
               ],
-              id: a,
-              type: string,
+              id: c,
+              parameters: Array [
+                ParameterParseResult {
+                  documentation: ,
+                  documentationTags: Array [
+                    Object {
+                      comment: ,
+                      tag: param,
+                    },
+                  ],
+                  id: a,
+                  type: string,
+                },
+              ],
+              returnType: string,
             },
           ],
-          returnType: string,
+          properties: Array [],
         },
       ],
-      properties: Array [],
     },
-  ],
+  },
 }
 `;
 
 exports[`class class-methods-external-result.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ImportParseResult {
-      documentation: ,
-      documentationTags: Array [],
-      id: Anonymous,
-      imports: Array [],
-    },
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: null,
-      id: ClassMethodsExternalResult,
-      implementedInterfaces: Array [],
-      methods: Array [
-        MethodParseResult {
-          accessibility: public,
+ProjectParseResult {
+  modules: Map {
+    class/class-methods-external-result.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [
+        ImportParseResult {
           documentation: ,
           documentationTags: Array [],
-          id: createProgram,
-          parameters: Array [],
-          returnType: ts.Program,
+          id: Anonymous,
+          imports: Array [],
         },
       ],
-      properties: Array [],
+      modulePath: class/class-methods-external-result.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: null,
+          id: ClassMethodsExternalResult,
+          implementedInterfaces: Array [],
+          methods: Array [
+            MethodParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [],
+              id: createProgram,
+              parameters: Array [],
+              returnType: ts.Program,
+            },
+          ],
+          properties: Array [],
+        },
+      ],
     },
-  ],
+  },
 }
 `;
 
 exports[`class class-mixed-extends-and-implements.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedClass: null,
-      id: A,
-      implementedInterfaces: Array [],
-      methods: Array [],
-      properties: Array [],
-    },
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: B,
-      methods: Array [],
-      properties: Array [],
-    },
-    InterfaceParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: false,
-      extendedInterfaces: Array [],
-      id: C,
-      methods: Array [],
-      properties: Array [],
-    },
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: A,
-      id: ClassMixedExtendsAndImplements,
-      implementedInterfaces: Array [
-        B,
-        C,
+ProjectParseResult {
+  modules: Map {
+    class/class-mixed-extends-and-implements.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-mixed-extends-and-implements.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedClass: null,
+          id: A,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [],
+        },
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: B,
+          methods: Array [],
+          properties: Array [],
+        },
+        InterfaceParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: false,
+          extendedInterfaces: Array [],
+          id: C,
+          methods: Array [],
+          properties: Array [],
+        },
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
+          documentation: ,
+          documentationTags: Array [],
+          exported: true,
+          extendedClass: A,
+          id: ClassMixedExtendsAndImplements,
+          implementedInterfaces: Array [
+            B,
+            C,
+          ],
+          methods: Array [],
+          properties: Array [],
+        },
       ],
-      methods: Array [],
-      properties: Array [],
     },
-  ],
+  },
 }
 `;
 
 exports[`class class-properties.ts 1`] = `
-Object {
-  exported: Array [],
-  nodes: Array [
-    ClassParseResult {
-      constructors: Array [],
-      defaultExported: false,
-      documentation: ,
-      documentationTags: Array [],
-      exported: true,
-      extendedClass: null,
-      id: ClassProperties,
-      implementedInterfaces: Array [],
-      methods: Array [],
-      properties: Array [
-        PropertyParseResult {
-          accessibility: public,
+ProjectParseResult {
+  modules: Map {
+    class/class-properties.ts => ModuleParseResult {
+      exports: Array [],
+      imports: Array [],
+      modulePath: class/class-properties.ts,
+      nodes: Array [
+        ClassParseResult {
+          constructors: Array [],
+          defaultExported: false,
           documentation: ,
           documentationTags: Array [],
-          id: a,
-          type: number,
-        },
-        PropertyParseResult {
-          accessibility: public,
-          documentation: ,
-          documentationTags: Array [],
-          id: d,
-          type: () => string | number,
-        },
-        PropertyParseResult {
-          accessibility: public,
-          documentation: ,
-          documentationTags: Array [],
-          id: e,
-          type: (a: number) => number,
-        },
-        PropertyParseResult {
-          accessibility: protected,
-          documentation: ,
-          documentationTags: Array [],
-          id: b,
-          type: string | number,
-        },
-        PropertyParseResult {
-          accessibility: private,
-          documentation: ,
-          documentationTags: Array [],
-          id: c,
-          type: Promise<boolean>,
+          exported: true,
+          extendedClass: null,
+          id: ClassProperties,
+          implementedInterfaces: Array [],
+          methods: Array [],
+          properties: Array [
+            PropertyParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [],
+              id: a,
+              type: number,
+            },
+            PropertyParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [],
+              id: d,
+              type: () => string | number,
+            },
+            PropertyParseResult {
+              accessibility: public,
+              documentation: ,
+              documentationTags: Array [],
+              id: e,
+              type: (a: number) => number,
+            },
+            PropertyParseResult {
+              accessibility: protected,
+              documentation: ,
+              documentationTags: Array [],
+              id: b,
+              type: string | number,
+            },
+            PropertyParseResult {
+              accessibility: private,
+              documentation: ,
+              documentationTags: Array [],
+              id: c,
+              type: Promise<boolean>,
+            },
+          ],
         },
       ],
     },
-  ],
+  },
 }
 `;

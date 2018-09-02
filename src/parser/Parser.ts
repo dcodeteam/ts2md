@@ -2,13 +2,10 @@ import * as path from "path";
 
 import * as ts from "typescript";
 
-import { ClassParseResult } from "./parsers/ClassParseResult";
-import { ExportElement, ExportParseResult } from "./parsers/ExportParseResult";
-import { FunctionParseResult } from "./parsers/FunctionParseResult";
-import { ImportParseResult } from "./parsers/ImportParseResult";
-import { InterfaceParseResult } from "./parsers/InterfaceParseResult";
+import { ExportElement } from "./parsers/ExportParseResult";
+import { ModuleParseResult } from "./parsers/ModuleParseResult";
 import { NodeParseResult } from "./parsers/NodeParseResult";
-import { VariableListParseResult } from "./parsers/VariableListParseResult";
+import { ProjectParseResult } from "./parsers/ProjectParseResult";
 
 export interface ParseResult {
   readonly nodes: NodeParseResult[];
@@ -16,18 +13,28 @@ export interface ParseResult {
 }
 
 export class Parser {
-  private readonly fileName: string;
+  private readonly root: string;
+
+  private readonly entryFile: string;
 
   private readonly program: ts.Program;
 
-  private result?: ParseResult;
+  private readonly modules: Map<string, ModuleParseResult>;
 
-  public constructor(fileName: string, program: ts.Program) {
+  public constructor(root: string, entryFile: string, program: ts.Program) {
+    this.root = root;
     this.program = program;
-    this.fileName = fileName;
+    this.entryFile = entryFile;
+    this.modules = new Map();
   }
 
-  private getFile(filePath: string): ts.SourceFile {
+  private makeRelativeUrl(absoluteUrl: string): string {
+    return !path.isAbsolute(absoluteUrl)
+      ? absoluteUrl
+      : path.relative(this.root, absoluteUrl);
+  }
+
+  private visit(filePath: string) {
     const file = this.program
       .getSourceFiles()
       .find(x => x.fileName.startsWith(filePath));
@@ -36,67 +43,30 @@ export class Parser {
       throw new Error(`File ${filePath} not found.`);
     }
 
-    return file;
-  }
+    const modulePath = this.makeRelativeUrl(filePath);
 
-  private resolveDependency(
-    fileName: string,
-    dependency: string,
-  ): ts.SourceFile {
-    const basePath = path.join(path.dirname(fileName), dependency);
+    if (this.modules.has(modulePath)) {
+      return;
+    }
 
-    return this.getFile(basePath);
-  }
+    const result = new ModuleParseResult(
+      modulePath,
+      file.statements,
+      this.program,
+    );
 
-  private parseFile(file: ts.SourceFile): void {
-    const { nodes, exported } = this.result!;
+    this.modules.set(modulePath, result);
 
-    file.statements.forEach(node => {
-      if (ts.isImportDeclaration(node)) {
-        nodes.push(new ImportParseResult(node));
-      }
-
-      if (ts.isClassDeclaration(node)) {
-        nodes.push(new ClassParseResult(node, this.program));
-      }
-
-      if (ts.isInterfaceDeclaration(node)) {
-        nodes.push(new InterfaceParseResult(node, this.program));
-      }
-
-      if (ts.isFunctionDeclaration(node)) {
-        nodes.push(new FunctionParseResult(node, this.program));
-      }
-
-      if (ts.isVariableStatement(node)) {
-        const result = new VariableListParseResult(node, this.program);
-
-        result.declarations.forEach(x => {
-          nodes.push(x);
-        });
-      }
-
-      if (ts.isExportDeclaration(node)) {
-        const { elements, moduleSpecifier } = new ExportParseResult(node);
-
-        if (this.fileName === file.fileName) {
-          elements.forEach(dependency => {
-            exported.push(dependency);
-          });
-        }
-
-        this.parseFile(this.resolveDependency(file.fileName, moduleSpecifier));
-      }
+    result.imports.forEach(moduleImports => {
+      moduleImports.imports.forEach(x => {
+        this.visit(path.join(path.dirname(filePath), x.modulePath));
+      });
     });
   }
 
-  public parse(): ParseResult {
-    if (!this.result) {
-      this.result = { exported: [], nodes: [] };
+  public parse(): ProjectParseResult {
+    this.visit(this.entryFile);
 
-      this.parseFile(this.getFile(this.fileName));
-    }
-
-    return this.result;
+    return new ProjectParseResult(this.modules);
   }
 }

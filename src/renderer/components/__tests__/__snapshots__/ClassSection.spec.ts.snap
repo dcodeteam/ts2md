@@ -71,7 +71,27 @@ exports[`class class-extends.ts 1`] = `
 exports[`class class-implements.ts 1`] = `
 ### Interface \`A\`
 
+#### Properties
+
+##### \`a\`
+
+\`\`\`typescript
+interface A {
+  a: string;
+}
+\`\`\`
+
 ### Interface \`B\`
+
+#### Properties
+
+##### \`b\`
+
+\`\`\`typescript
+interface B {
+  b: number;
+}
+\`\`\`
 
 ### Class \`ClassImplements\`
 
@@ -79,6 +99,24 @@ exports[`class class-implements.ts 1`] = `
 
 - \`A\`
 - \`B\`
+
+#### Properties
+
+##### \`a\`
+
+\`\`\`typescript
+class ClassImplements {
+  public a: string;
+}
+\`\`\`
+
+##### \`b\`
+
+\`\`\`typescript
+class ClassImplements {
+  public b: number;
+}
+\`\`\`
 
 `;
 
