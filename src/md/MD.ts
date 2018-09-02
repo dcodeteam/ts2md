@@ -43,6 +43,12 @@ declare global {
      */
     interface IntrinsicElements {
       //
+      // Span
+      //
+
+      span: { children: MDNode };
+
+      //
       // Section
       //
 

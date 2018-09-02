@@ -1,6 +1,7 @@
 import * as ts from "typescript";
 
 import { ClassParseResult } from "./ClassParseResult";
+import { EnumParseResult } from "./EnumParseResult";
 import { ExportParseResult } from "./ExportParseResult";
 import { FunctionParseResult } from "./FunctionParseResult";
 import { ImportParseResult } from "./ImportParseResult";
@@ -35,6 +36,10 @@ export class ModuleParseResult {
 
       if (ts.isInterfaceDeclaration(node)) {
         this.nodes.push(new InterfaceParseResult(node, program));
+      }
+
+      if (ts.isEnumDeclaration(node)) {
+        this.nodes.push(new EnumParseResult(node, program));
       }
 
       if (ts.isFunctionDeclaration(node)) {

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum enum-base.ts 1`] = `
+ProjectParseResult {
+  entryModule: enum/enum-base.ts,
+  modules: Map {
+    enum/enum-base.ts => ModuleParseResult {
+      imports: Array [],
+      modulePath: enum/enum-base.ts,
+      nodes: Array [
+        EnumParseResult {
+          defaultExported: false,
+          documentation: This is enum docs.,
+          documentationTags: Array [],
+          exported: true,
+          id: EnumBase,
+          members: Array [
+            EnumMemberParseResult {
+              documentation: This is untyped enum member docs.,
+              documentationTags: Array [],
+              id: Untyped,
+            },
+            EnumMemberParseResult {
+              documentation: This is number enum member docs.,
+              documentationTags: Array [],
+              id: Number,
+              value: 1,
+            },
+            EnumMemberParseResult {
+              documentation: This is string enum member docs.,
+              documentationTags: Array [],
+              id: String,
+              value: string,
+            },
+          ],
+        },
+      ],
+      reexports: Array [],
+    },
+  },
+}
+`;

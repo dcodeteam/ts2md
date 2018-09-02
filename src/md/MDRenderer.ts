@@ -44,6 +44,7 @@ export class MDRenderer {
 
   protected isBlockElement(element: MDElement<object>): boolean {
     switch (element.type) {
+      case "span":
       case "em":
       case "strong":
       case "del":

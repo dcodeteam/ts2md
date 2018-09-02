@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum enum-base.ts 1`] = `
+### Enumeration \`EnumBase\`
+
+This is enum docs.
+
+#### Enumeration members
+
+- **Untyped**
+  This is untyped enum member docs.
+- **Number**: \`1\`
+  This is number enum member docs.
+- **String**: \`string\`
+  This is string enum member docs.
+
+`;

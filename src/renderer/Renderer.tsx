@@ -3,12 +3,14 @@
 import { MD, MDNode } from "../md/MD";
 import { MDRenderer } from "../md/MDRenderer";
 import { ClassParseResult } from "../parser/parsers/ClassParseResult";
+import { EnumParseResult } from "../parser/parsers/EnumParseResult";
 import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
 import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
 import { NodeParseResult } from "../parser/parsers/NodeParseResult";
 import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
 import { VariableParseResult } from "../parser/parsers/VariableParseResult";
 import { ClassSection } from "./components/ClassSection";
+import { EnumSection } from "./components/EnumSection";
 import { FunctionSection } from "./components/FunctionSection";
 import { InterfaceSection } from "./components/InterfaceSection";
 import { VariableSection } from "./components/VariableSection";
@@ -72,6 +74,10 @@ export class Renderer {
 
     if (node instanceof InterfaceParseResult) {
       this.mdNodes.set(node, <InterfaceSection data={node} />);
+    }
+
+    if (node instanceof EnumParseResult) {
+      this.mdNodes.set(node, <EnumSection data={node} />);
     }
 
     if (node instanceof FunctionParseResult) {
