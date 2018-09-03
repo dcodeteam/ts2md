@@ -6,7 +6,7 @@ exports[`type type-base.ts 1`] = `
 This is type docs.
 
 \`\`\`typescript
-type TypeBase: "TYPE" | "BASE"
+type TypeBase = "TYPE" | "BASE";
 \`\`\`
 
 `;

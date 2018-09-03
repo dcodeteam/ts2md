@@ -19,7 +19,7 @@ export function TypeSection({ data }: Props) {
       {documentation && <section>{documentation}</section>}
 
       <pre language="typescript">
-        type {id}: {type}
+        type {id} = {type}
       </pre>
     </section>
   );
