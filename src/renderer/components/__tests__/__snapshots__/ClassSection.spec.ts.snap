@@ -45,6 +45,10 @@ class Calculator {
 
 - **numbers**: \`number[]\`
 
+###### Returns
+
+- \`number\`
+
 ##### \`subtract\`
 
 \`\`\`typescript
@@ -56,6 +60,10 @@ class Calculator {
 ###### Parameters
 
 - **numbers**: \`number[]\`
+
+###### Returns
+
+- \`number\`
 
 `;
 
@@ -153,6 +161,11 @@ class ClassMethods {
 }
 \`\`\`
 
+###### Returns
+
+- \`Promise<void>\`
+  $This is return value docs for Promise<void>.
+
 ##### \`b\`
 
 This is protected method \`b\`.
@@ -198,6 +211,11 @@ class ClassMethods {
 - **a**: \`number\`
   is very useful parameter.
 
+###### Returns
+
+- \`Promise<string>\`
+  $This is return value docs for Promise<string>.
+
 `;
 
 exports[`class class-methods-external-result.ts 1`] = `
@@ -212,6 +230,10 @@ class ClassMethodsExternalResult {
   public createProgram(): ts.Program;
 }
 \`\`\`
+
+###### Returns
+
+- \`ts.Program\`
 
 `;
 

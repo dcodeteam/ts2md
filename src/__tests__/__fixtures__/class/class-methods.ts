@@ -20,6 +20,8 @@ export class ClassMethods {
    *   process.exit(1);
    * })
    * ```
+   *
+   * @returns This is return value docs for Promise<void>.
    */
   // eslint-disable-next-line no-empty-function
   public async a(): Promise<void> {}
@@ -58,6 +60,8 @@ export class ClassMethods {
    * ```
    *
    * @param a is very useful parameter.
+   *
+   * @return This is return value docs for Promise<string>.
    */
   // @ts-ignore
   // eslint-disable-next-line no-empty-function
@@ -67,6 +71,8 @@ export class ClassMethods {
    * Should not be documented.
    *
    * @param a
+   *
+   * @return This is return value docs for string.
    */
   // @ts-ignore
   private c(a: string): string {}

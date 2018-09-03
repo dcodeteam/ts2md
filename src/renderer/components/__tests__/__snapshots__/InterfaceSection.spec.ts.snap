@@ -45,6 +45,10 @@ interface InterfaceMethods {
 }
 \`\`\`
 
+###### Returns
+
+- \`void\`
+
 ##### \`b\`
 
 \`\`\`typescript
@@ -56,6 +60,10 @@ interface InterfaceMethods {
 ###### Parameters
 
 - **a**: \`string\`
+
+###### Returns
+
+- \`string\`
 
 ##### \`c\`
 
@@ -69,6 +77,10 @@ interface InterfaceMethods {
 
 - **a**: \`boolean\`
 - **b**: \`number\`
+
+###### Returns
+
+- \`string\`
 
 `;
 

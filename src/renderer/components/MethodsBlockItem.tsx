@@ -14,7 +14,14 @@ interface Props {
 
 export function MethodsBlockItem({
   parent,
-  data: { id, parameters, returnType, documentation, accessibility },
+  data: {
+    id,
+    parameters,
+    returnType,
+    documentation,
+    documentationTags,
+    accessibility,
+  },
 }: Props) {
   const { id: parentId } = parent;
   const isClass = parent instanceof ClassParseResult;
@@ -43,6 +50,11 @@ export function MethodsBlockItem({
       )}
 
       <ParametersBlock data={parameters} />
+
+      <ReturnTypeBlock
+        returnType={returnType}
+        documentationTags={documentationTags}
+      />
     </section>
   );
 }

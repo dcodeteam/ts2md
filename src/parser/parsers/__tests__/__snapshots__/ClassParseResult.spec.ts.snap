@@ -318,7 +318,12 @@ instance.a().catch(() => {
   process.exit(1);
 })
 \`\`\`,
-              documentationTags: Array [],
+              documentationTags: Array [
+                Object {
+                  comment: This is return value docs for Promise<void>.,
+                  tag: returns,
+                },
+              ],
               id: a,
               parameters: Array [],
               returnType: Promise<void>,
@@ -361,6 +366,10 @@ export class MyClassMethods extends ClassMethods {
                   comment: is very useful parameter.,
                   tag: param,
                 },
+                Object {
+                  comment: This is return value docs for Promise<string>.,
+                  tag: return,
+                },
               ],
               id: b,
               parameters: Array [
@@ -385,6 +394,10 @@ export class MyClassMethods extends ClassMethods {
                 Object {
                   comment: ,
                   tag: param,
+                },
+                Object {
+                  comment: This is return value docs for string.,
+                  tag: return,
                 },
               ],
               id: c,
