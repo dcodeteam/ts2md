@@ -68,8 +68,6 @@ class Calculator {
 `;
 
 exports[`class class-extends.ts 1`] = `
-### Class \`A\`
-
 ### Class \`ClassExtends\`
 
 #### Extends \`A\`
@@ -77,30 +75,6 @@ exports[`class class-extends.ts 1`] = `
 `;
 
 exports[`class class-implements.ts 1`] = `
-### Interface \`A\`
-
-#### Properties
-
-##### \`a\`
-
-\`\`\`typescript
-interface A {
-  a: string;
-}
-\`\`\`
-
-### Interface \`B\`
-
-#### Properties
-
-##### \`b\`
-
-\`\`\`typescript
-interface B {
-  b: number;
-}
-\`\`\`
-
 ### Class \`ClassImplements\`
 
 #### Implements
@@ -238,12 +212,6 @@ class ClassMethodsExternalResult {
 `;
 
 exports[`class class-mixed-extends-and-implements.ts 1`] = `
-### Class \`A\`
-
-### Interface \`B\`
-
-### Interface \`C\`
-
 ### Class \`ClassMixedExtendsAndImplements\`
 
 #### Extends \`A\`

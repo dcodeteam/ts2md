@@ -1,36 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`interface interface-constructor.ts 1`] = `
-### Interface \`InterfaceConstructor\`
+exports[`interface interface-constructor.ts 1`] = ``;
 
-#### Constructors
-
-\`\`\`typescript
-interface InterfaceConstructor {
-  new (a: number, b: string): InterfaceConstructor;
-}
-\`\`\`
-
-###### Parameters
-
-- **a**: \`number\`
-- **b**: \`string\`
-
-`;
-
-exports[`interface interface-extends.ts 1`] = `
-### Interface \`Foo\`
-
-### Interface \`Bar\`
-
-### Interface \`Baz\`
-
-#### Extends
-
-- \`Foo\`
-- \`Bar\`
-
-`;
+exports[`interface interface-extends.ts 1`] = ``;
 
 exports[`interface interface-methods.ts 1`] = `
 ### Interface \`InterfaceMethods\`

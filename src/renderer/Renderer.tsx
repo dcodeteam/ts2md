@@ -67,7 +67,11 @@ export class Renderer {
   }
 
   private documentNode(node: NodeParseResult): void {
-    if (this.mdNodes.has(node)) {
+    if (
+      this.mdNodes.has(node) ||
+      !(node instanceof StatementParseResult) ||
+      (!node.exported && !node.defaultExported)
+    ) {
       return;
     }
 
@@ -87,29 +91,20 @@ export class Renderer {
       this.mdNodes.set(node, <TypeSection data={node} />);
     }
 
-    if (
-      node instanceof StatementParseResult &&
-      (node.exported || node.defaultExported)
-    ) {
-      if (node instanceof FunctionParseResult) {
-        this.mdNodes.set(node, <FunctionSection data={node} />);
-      }
+    if (node instanceof FunctionParseResult) {
+      this.mdNodes.set(node, <FunctionSection data={node} />);
+    }
 
-      if (node instanceof VariableParseResult) {
-        this.mdNodes.set(node, <VariableSection data={node} />);
-      }
+    if (node instanceof VariableParseResult) {
+      this.mdNodes.set(node, <VariableSection data={node} />);
     }
   }
 
-  private visit(modulePath: string): void {
-    const module = this.result.modules.get(modulePath);
+  private fulfillMarkdownNodes(): void {
+    const module = this.result.modules.get(this.result.entryModule);
 
     if (!module) {
-      throw new Error(
-        `Module "${modulePath}" not found. Expected:\n ${Array.from(
-          this.result.modules.keys(),
-        ).join(", ")}`,
-      );
+      throw new Error(`Module "${this.result.entryModule}" not found.`);
     }
 
     // Document internal nodes.
@@ -125,28 +120,11 @@ export class Renderer {
         );
       });
     });
-
-    // Visit reexported dependencies.
-    module.reexports.forEach(x => {
-      this.visit(x.modulePath);
-    });
-
-    // Visit imported dependencies.
-    module.imports.forEach(({ imports }) => {
-      imports.forEach(x => {
-        this.visit(x.modulePath);
-      });
-    });
-  }
-
-  private visitEntry(): void {
-    this.visit(this.result.entryModule);
   }
 
   public render(): string {
     this.fulfillResultsMap();
-
-    this.visitEntry();
+    this.fulfillMarkdownNodes();
 
     return MDRenderer.renderToString(
       <section>{Array.from(this.mdNodes.values())}</section>,
