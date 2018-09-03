@@ -5,6 +5,7 @@ import { ClassParseResult } from "../../parser/parsers/ClassParseResult";
 import { InterfaceParseResult } from "../../parser/parsers/InterfaceParseResult";
 import { MethodParseResult } from "../../parser/parsers/MethodParseResult";
 import { ParametersBlock } from "./ParametersBlock";
+import { ReturnTypeBlock } from "./ReturnTypeBlock";
 
 interface Props {
   data: MethodParseResult;

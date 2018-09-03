@@ -3,13 +3,14 @@
 import { MD } from "../../md/MD";
 import { FunctionParseResult } from "../../parser/parsers/FunctionParseResult";
 import { ParametersBlock } from "./ParametersBlock";
+import { ReturnTypeBlock } from "./ReturnTypeBlock";
 
 interface Props {
   data: FunctionParseResult;
 }
 
 export function FunctionSection({ data }: Props) {
-  const { id, documentation, returnType, parameters } = data;
+  const { id, documentation, documentationTags, returnType, parameters } = data;
 
   const args = parameters.map(x => `${x.id}: ${x.type}`).join(", ");
 
@@ -26,6 +27,11 @@ export function FunctionSection({ data }: Props) {
       </pre>
 
       <ParametersBlock data={parameters} />
+
+      <ReturnTypeBlock
+        returnType={returnType}
+        documentationTags={documentationTags}
+      />
     </section>
   );
 }

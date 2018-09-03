@@ -54,6 +54,10 @@ function functionArguments(a: number, b: { c: number }): number;
   this is parameter b docs
   this is parameter \`b\`.
 
+###### Returns
+
+- \`number\`
+
 ### Class \`ClassConstructor\`
 
 This is ClassConstructor documentation.

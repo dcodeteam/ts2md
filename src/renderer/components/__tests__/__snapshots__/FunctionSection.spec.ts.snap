@@ -16,4 +16,8 @@ function functionArguments(a: number, b: { c: number }): number;
 - **b**: \`{ c: number; }\`
   this is parameter b docs
 
+###### Returns
+
+- \`number\`
+
 `;
