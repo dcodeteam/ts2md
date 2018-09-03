@@ -8,11 +8,14 @@ import { FunctionParseResult } from "../parser/parsers/FunctionParseResult";
 import { InterfaceParseResult } from "../parser/parsers/InterfaceParseResult";
 import { NodeParseResult } from "../parser/parsers/NodeParseResult";
 import { ProjectParseResult } from "../parser/parsers/ProjectParseResult";
+import { StatementParseResult } from "../parser/parsers/StatementParseResult";
+import { TypeParseResult } from "../parser/parsers/TypeParseResult";
 import { VariableParseResult } from "../parser/parsers/VariableParseResult";
 import { ClassSection } from "./components/ClassSection";
 import { EnumSection } from "./components/EnumSection";
 import { FunctionSection } from "./components/FunctionSection";
 import { InterfaceSection } from "./components/InterfaceSection";
+import { TypeSection } from "./components/TypeSection";
 import { VariableSection } from "./components/VariableSection";
 
 export class Renderer {
@@ -80,14 +83,21 @@ export class Renderer {
       this.mdNodes.set(node, <EnumSection data={node} />);
     }
 
-    if (node instanceof FunctionParseResult) {
-      if (node.exported || node.defaultExported) {
-        this.mdNodes.set(node, <FunctionSection data={node} />);
-      }
+    if (node instanceof TypeParseResult) {
+      this.mdNodes.set(node, <TypeSection data={node} />);
     }
 
-    if (node instanceof VariableParseResult) {
-      this.mdNodes.set(node, <VariableSection data={node} />);
+    if (
+      node instanceof StatementParseResult &&
+      (node.exported || node.defaultExported)
+    ) {
+      if (node instanceof FunctionParseResult) {
+        this.mdNodes.set(node, <FunctionSection data={node} />);
+      }
+
+      if (node instanceof VariableParseResult) {
+        this.mdNodes.set(node, <VariableSection data={node} />);
+      }
     }
   }
 

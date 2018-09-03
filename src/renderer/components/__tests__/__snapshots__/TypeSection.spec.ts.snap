@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type type-base.ts 1`] = `
+### Type \`TypeBase\`
+
+This is type docs.
+
+\`\`\`typescript
+type TypeBase: "TYPE" | "BASE"
+\`\`\`
+
+`;
